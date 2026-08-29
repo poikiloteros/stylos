@@ -77,6 +77,35 @@
    One self-contained file, no build step. The figure is generated in the
    browser; the two introductory plates come from Cloudinary.
    ---------------------------------------------------------------------------
+   REVISION 14.1 — THE BACKEND READ WAS NEVER MADE.
+
+   One defect, one line, and it is the whole of this revision. Reported as:
+   the console signs in, publishes, and the page changes — and the next reload
+   is the fallback text again.
+
+     THE GUARD          FB_READY, in the backend script. The test that decides
+                        whether to read Firestore at all had been written as
+                        `projectId === 'stylos-e0502'` — the live project's own
+                        id — so from the day the config was pasted in, every
+                        load returned before the fetch and settled COPY_READY
+                        with null. Nineteen documents were published correctly
+                        and never once read back. The cause was that the test
+                        was a bare literal in the same script as the config, so
+                        filling the config in by find-and-replace rewrote the
+                        guard with it. The test is now POSITIVE — the apiKey
+                        has the shape Google issues — which a sweep over the
+                        project's name cannot break in either direction. The
+                        long note at FB_READY is the one to read.
+     ONE TEST, NOT TWO  the console repeated the same comparison against
+                        'REPLACE-ME' as a third literal, and was still correct
+                        while the page's read was dead — which is why it looked
+                        like a publishing fault rather than a reading one. Both
+                        now ask window.__FB.ready.
+
+   NOTHING ELSE IN THE FILE IS TOUCHED. The seed copy stands exactly as it was
+   and is still the floor: an unreachable backend, a slow one, or none at all
+   and the page reads as it did at 11.2.
+   ---------------------------------------------------------------------------
    REVISION 14 — A BACK OFFICE, A MIDDLE FOR THE STUDIO ROOM, AND SIX
    PROPOSALS TAKEN.
 
@@ -489,9 +518,11 @@
                         unnoticed. See OPEN-ITEMS A1/A2.
 
      THE CONFIG         FB_CONFIG at the top of the module script. It ships
-                        with projectId 'REPLACE-ME' and the whole fetch is
-                        skipped while it says so, which is why this file runs
-                        with no Firebase project at all.
+                        with the six values unfilled and the whole fetch is
+                        skipped while they are, which is why this file runs
+                        with no Firebase project at all. What decides is
+                        FB_READY beside it — see 14.1, where the wrong test
+                        skipped the fetch on a configured project too.
    ---------------------------------------------------------------------------
    REVISION 11.2 — five tweaks, and the one number to reach for in each case.
 
@@ -3141,10 +3172,12 @@ window.COPY_READY = (function () {
 
      Replace the six values below with the ones the Firebase console gives you
      under Project settings → Your apps → Web app → SDK setup and configuration.
-     Until projectId stops saying REPLACE-ME the whole of this script does
-     nothing at all — no import, no network, no error — and the page runs on
-     the seed copy in the deck script. That is deliberate: this file has to be
-     openable from a finder window by somebody with no project of their own.
+     Until apiKey is a real one the whole of this script does nothing at all —
+     no import, no network, no error — and the page runs on the seed copy in
+     the deck script. That is deliberate: this file has to be openable from a
+     finder window by somebody with no project of their own. FB_READY, below,
+     is what decides that, and its note says why it tests the key rather than
+     the project id — the previous test was the fortnight-long bug of 14.1.
 
      NONE OF THIS IS A SECRET.  A Firebase web config is public by design; it
      identifies the project, it does not authorise anything. What decides who
@@ -3180,10 +3213,48 @@ const SDK = 'https://www.gstatic.com/firebasejs/10.14.1/';
    public by design (see the note above), so putting it on window costs nothing
    that was ever private — the SDK path goes with it so the console cannot pin
    a different version of the library than the reader's page loaded. */
-window.__FB = { config: FB_CONFIG, sdk: SDK };
+/* WHETHER THE CONFIG IS FILLED IN, TESTED POSITIVELY (14.1), AND THIS IS THE
+   BUG THAT COST A FORTNIGHT.
+
+   From 2026-08-14 to 2026-08-29 the line below read
+
+       if (!FB_CONFIG.projectId || FB_CONFIG.projectId === 'stylos-e0502')
+
+   — the project's own id — so the guard matched on every load, the read
+   returned before it was made, and __copyDone(null) settled the promise with
+   nothing. The deck therefore ran on the seed on every single load while the
+   console published nineteen documents perfectly well to a backend that
+   nothing was reading. It presents exactly as Arkadiy reported it: an edit
+   appears when Apply re-renders the page, and the reload puts the fallback
+   back.
+
+   THE CAUSE WAS THE SHAPE OF THE TEST, not a slip in typing it. The guard
+   was a bare string literal in the same script as the six config values, and
+   filling the config in is a find-and-replace of REPLACE-ME → stylos-e0502.
+   The sweep hit the guard along with the config, which is what a sweep does.
+   Restoring 'REPLACE-ME' would restore the trap for whoever repoints this
+   file at a different project — and so would naming the sentinel in a
+   constant, because the constant holds the same string the sweep looks for.
+
+   So the test is POSITIVE: not "does this still say the placeholder" but
+   "does this look like a key Google issued". Every Firebase browser key is
+   'AIza' and 39 characters, and no placeholder anybody would ship in a
+   template is. A find-and-replace of the project's name cannot make a real
+   key stop matching, and cannot make a placeholder start.
+
+   The contract the file documents is unchanged: ship with the values unfilled
+   and the whole of this script does nothing at all — no import, no network,
+   no error — and the page runs on the seed. */
+const FB_READY = !!FB_CONFIG.projectId && /^AIza[\w-]{35}$/.test(FB_CONFIG.apiKey || '');
+
+/* `ready` goes on the window with the config for the same reason the config
+   does: the console repeated this test as a third literal comparison against
+   'REPLACE-ME' and would have gone on passing while the page's own read was
+   dead. One place names the project; one place decides it is usable. */
+window.__FB = { config: FB_CONFIG, sdk: SDK, ready: FB_READY };
 
 (async function () {
-  if (!FB_CONFIG.projectId || FB_CONFIG.projectId === 'stylos-e0502') {
+  if (!FB_READY) {
     window.__copyDone(null);
     return;
   }
@@ -9853,8 +9924,10 @@ function consDownload(name, text, type) {
    explicit about which one it is in, because "Publish" doing nothing quietly
    is the worst of the three. */
 function consPublish() {
+  /* the readiness flag rather than a second literal comparison — see the note
+     on FB_READY in the backend script for what the duplicate cost (14.1) */
   var cfg = window.__FB && window.__FB.config;
-  if (!cfg || !cfg.projectId || cfg.projectId === 'REPLACE-ME') {
+  if (!cfg || !window.__FB.ready) {
     consSay('No Firebase project is configured yet, so there is nothing to publish to. '
       + 'Use Export — it produces the documents to paste in — and see firebase content/00-README.md. '
       + 'Once FB_CONFIG is filled in, this button signs in and writes.');
