@@ -64,7 +64,7 @@
 <link rel="preconnect" href="https://res.cloudinary.com">
 <link rel="preload" as="image" href="https://res.cloudinary.com/dp3g7dyx9/image/upload/v1785523034/stylus_clean_uoiaor.png" fetchpriority="high">
 <link rel="preload" as="image" href="https://res.cloudinary.com/dp3g7dyx9/image/upload/v1785702960/tablet_new_clean_Small_gwi7uj.png" fetchpriority="high">
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,100..900&amp;family=EB+Garamond:ital,wght@0,400..600;1,400..500&amp;family=Noto+Sans+Mono:wght@400..600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,100..900&amp;family=EB+Garamond:ital,wght@0,400..600;1,400..500&amp;family=Azeret+Mono:wght@400..600&amp;display=swap" rel="stylesheet">
 <style>
 /* ==========================================================================
    STYLOS
@@ -76,6 +76,128 @@
 
    One self-contained file, no build step. The figure is generated in the
    browser; the two introductory plates come from Cloudinary.
+   ---------------------------------------------------------------------------
+   REVISION 15 — A NEW HEADER, ADDRESSES OF ITS OWN, A PALETTE CONTROL THAT IS
+   A CONTROL, AND THE TOOL PUT BACK TO WORK.
+
+   A whole number because the deck's own names and its order have changed, and
+   because the address scheme underneath them is a different mechanism. The one
+   number to reach for is named in each case.
+
+     THE SIX NAMES      Practice · What we do · Work · Studio · Contact became
+                        STUDIO · SCOPE · PROJECTS · ABOUT · COMMISSION ·
+                        CONTACT. The labels are copy and live in a NEW site
+                        document, `site/header` — new rather than edited, and
+                        the long note over it in COPY says why: the old
+                        `site/nav` keys changed meaning under this revision and
+                        applyRemote merges key by key, so editing it in place
+                        would have let a stale published label supply a word
+                        for a key that now means something else.
+
+     THE ORDER          ABOUT before COMMISSION, so the reader meets the person
+                        before the procedure. Two sections swapped in the
+                        markup and KEY[10]/KEY[11] swapped with them. Nothing
+                        in either room's composition moved; what moved is its
+                        NEIGHBOURS, which is why the `write` column had to be
+                        read as a column — see below.
+
+     THE ADDRESSES      data-addr on the section. Until now a room's address
+                        WAS its element id, and the id is also its Firestore
+                        document id and what every data-copy path resolves
+                        against — so #method could not be made to read
+                        #commission without renaming a document. It is a
+                        separate string now: not one document is renamed, not
+                        one data-copy path moves, and the reader sees #studio,
+                        #scope, #projects, #about, #commission, #contact.
+                        data-alias and LEGACY carry the old ones so a link
+                        already sent still lands. The whole account is over 3b.
+
+     EACH KIND OF WORK  #scope/academic, #scope/3d, #scope/creative. The three
+                        SCOPE rooms had no id at all and answered collectively
+                        to #registers, so one kind of commission could not be
+                        sent to a client on its own.
+
+     THE INK PICKER     Three 22x13 rectangles with no names became a named
+                        control: a disclosure in the nav (see .ink and 5c), a
+                        44px segmented row in the compact menu, and a third
+                        presentation standing in the studio room beside the
+                        sentence that is about it (.ink-try). One handler, one
+                        sync function, delegated — which is also the fix for a
+                        live defect: the {ink|…} token's listener was attached
+                        at script time to an element renderCopy had not yet
+                        created, so that control had never worked at all.
+
+     THE TOOL WRITES    KEY 6, 7 and 8. The three rooms that say what the
+                        studio does had the stylus at work 0.44-0.62 — holding
+                        a pen over a blank screen — for the whole of the
+                        argument. work 1.00, a timed pass in each, and the line
+                        ACCUMULATES across the three (0.40, 0.72, 1.00) so no
+                        seam un-writes what the reader has just watched. Read
+                        the `write` column top to bottom or the next edit to
+                        one room will undo another. Measured across every seam:
+                        6->7 and 7->8 flat, 8->9 dips 0.14 behind a fading
+                        leaf, 9->10 flat, 10->11 the deliberate wipe onto
+                        paper.
+
+     THE THIRD FACE     Noto Sans Mono -> Azeret Mono. The mono carries about
+                        forty tracked-out uppercase labels and Noto is drawn to
+                        have no opinion; Azeret is a squared rationalist mono,
+                        a drafting face rather than a code face. It is ~6% wider
+                        at the same size, which is what the two nav rules
+                        between 901 and 1120px are paying for. --font-m.
+
+     THE READING SIZE   .body-w 16.5 -> 17.6px, and the per-room overrides with
+                        it; 16.8 on a phone, where the trade is different. The
+                        measure caps at 52ch, so a larger size shortens the
+                        line in pixels rather than lengthening it — in every
+                        room here that is away from the drawing.
+
+     THE PLATE AND THE  The about room's photograph is set to the height of the
+     COPY               copy column beside it, measured (syncPortrait) because
+                        CSS will not hand one sibling another's height, and
+                        given back whatever the room overruns by. The note at
+                        .portrait has the argument for why it cannot be a rule.
+
+     THE MOSAIC         The showroom seam is the one that was asked to be
+                        bigger: the band is 56vh rather than 40, each seam
+                        declares how far up it may reach (SEAMS), and the field
+                        is handed the giant word's own box and thins to a tenth
+                        inside it — which is what made a bigger band possible
+                        at all, because the word is carried on a striped mask
+                        and two grids interfering is neither of them.
+
+     THE SCRIM'S ENDS   Masked top and bottom. Every scrim is a horizontal
+                        gradient over a box one room tall, so its own ends were
+                        a hard rule drawn across the viewport at every seam
+                        where one room has a scrim and its neighbour does not —
+                        which is exactly the showroom seam.
+
+     ONE TAP, EARNED    The compact disclosure was offering a tap for as little
+                        as forty characters. It is inserted only where the
+                        asides come to MORE_MIN or more, and it says how many
+                        paragraphs are behind it. On the copy as it stands that
+                        is one control on the site instead of four.
+
+     AN EMPTY LIST      fillTags/Steps/Creds/Foot/Rich took an empty array as
+                        "leave it alone", so the console could not empty a list
+                        and a `tags: []` published to Firestore printed a rule
+                        across the copy with nothing under it. They clear and
+                        hide now, which is what the one !important in the
+                        stylesheet is for.
+
+     TWO PARAGRAPHS     practice.lede carries a blank line in Firestore and the
+                        slot filled it with textContent, which collapses it.
+                        fillRich takes a string now and splits it.
+
+     THE SEED           Synced to what is actually published, with seven
+                        mechanical corrections listed in the handoff. The file
+                        and the backend agreed at 2026-09-20 and will drift
+                        again the moment either is edited — Publish then Export
+                        is the only order in which they agree.
+
+   WHAT IS NOT DONE HERE, and is the backend's to do: `site/header` has to be
+   created and published, and `site/nav` deleted. Until then the six labels
+   come from the seed, which is why the seed is complete.
    ---------------------------------------------------------------------------
    REVISION 14.1 — THE BACKEND READ WAS NEVER MADE.
 
@@ -837,7 +959,29 @@
 
   --font-d: 'Archivo', system-ui, sans-serif;
   --font-s: 'EB Garamond', Georgia, serif;
-  --font-m: 'Noto Sans Mono', ui-monospace, monospace;
+  /* THE THIRD FACE WAS THE DEFAULT ONE, AND IT SHOWED (15).
+
+     Noto Sans Mono is the most neutral monospace there is — that is what Noto
+     is FOR — and this site spends its mono on about forty small tracked-out
+     uppercase labels: the eyebrows, the register numerals' caption, the tags,
+     the six nav links, the works counter, the credit table, the footer
+     headings and the whole of the console. At 10-12px in capitals the
+     monospacing itself is invisible, so what the face is actually contributing
+     is the shape of its capitals, and Noto's are drawn to have no opinion.
+
+     Azeret Mono has one. It is a squared-off rationalist mono with flat
+     terminals and a tall x-height — a drafting-table face rather than a code
+     face — which is the right register for a page whose whole conceit is a
+     tool cutting letters into a surface. It is also a variable weight (400 to
+     600) like the one it replaces, so the two weights the page asks for cost
+     one file, and its latin range carries the arrows the footer and the
+     console use (U+2191, U+2193).
+
+     ONE THING TO KNOW IF IT IS EVER CHANGED AGAIN: it is wider than Noto at
+     the same size, by roughly six per cent on a tracked-out capital. The nav
+     pill and the works counter are the two places with no slack, and the
+     sizes at .nav-link and .counter were taken down a notch to pay for it. */
+  --font-m: 'Azeret Mono', ui-monospace, monospace;
 
   --gutter: clamp(22px, 4.4vw, 68px);
   --maxw:   1520px;
@@ -1014,6 +1158,41 @@
      taken down to where it will still carry a line of text. */
   --warm:        #ab412a;
 
+  /* AND THE TWO QUIET TONES WITH IT (15), FOR EXACTLY THE SAME REASON.
+
+     --fg-soft and --fg-faint are 72% and 42% of the ink, mixed toward
+     transparent, and those two numbers were chosen against a DARK ground —
+     where a pale ink at 42% still stands well clear of the field. Turn the
+     page over and the arithmetic turns with it: 42% of a dark ink over a pale
+     wax composites to (144,154,142), which is 2.3:1 against the ground. That
+     is the tag rows, the credit table, the plate's caption, the availability
+     line and the counter — every one of them set between 9.5 and 11.5px.
+
+     The ramp is also COMPRESSED on this theme, which is the part that is easy
+     to miss: the same eighteen points of mix buy far less separation over a
+     light field than over a dark one. So both tones move, not just the faint
+     one, or the hierarchy they exist to express collapses into one grey.
+
+     82% / 64%. Measured by compositing each token over the theme's own ground
+     on a canvas and running the WCAG relative-luminance formula over the
+     result — not by eye, because this is the one thing an eye is reliably
+     wrong about: it adapts to the surrounding field, and the field is the
+     thing that changed.
+
+       theme   --fg-soft   --fg-faint
+       blue      7.68        3.54
+       green     7.66        3.54
+       wax       6.81        3.70   (was 4.9 and 2.3)
+
+     So the light theme is no longer the odd one out; it is now the same
+     instrument as the other two. The dark themes are untouched, and their own
+     faint tone at 3.54 is the next thing to look at — it is under 4.5:1 and it
+     carries the tag rows and the credit table. That is a decision about the
+     page's tonal hierarchy rather than a defect in one theme, which is why it
+     is not taken here. */
+  --fg-soft:  color-mix(in srgb, var(--bone) 82%, transparent);
+  --fg-faint: color-mix(in srgb, var(--bone) 64%, transparent);
+
   /* THE PLATES INVERT.  On the dark themes the mask lifts the photograph into
      the ground's own hue and leaves it pale; here it has to leave it DARK, so
      the inversion goes in before the tint and the exposure comes down after
@@ -1150,6 +1329,14 @@ body {
   -webkit-font-smoothing: antialiased;
   transition: color 620ms linear;
 }
+/* THE ONE !important IN THE STYLESHEET, AND IT EARNS IT.  `hidden` is a
+   presence attribute, not a style, and the UA sheet expresses it as
+   `display: none` at the lowest possible specificity — so ANY class that sets
+   display beats it. Four containers here do (.tags and .creds are flex, the
+   steps and the footer are grids), and renderCopy hides them when the list
+   behind them is empty. Without this line the attribute is set, the element
+   is announced as hidden to a screen reader, and it is still drawn. */
+[hidden] { display: none !important; }
 ::selection { background: var(--accent); color: var(--ground); }
 a { color: inherit; }
 img { display: block; max-width: 100%; }
@@ -1208,7 +1395,18 @@ body.on-paper .invert { opacity: 1; }
   position: fixed; left: 0; right: 0; bottom: 0; z-index: 2;
   /* nearly half again as tall as it was: the band has to be wide enough to
      read as the ground breaking up rather than as a decorated edge */
-  height: clamp(210px, 40vh, 480px);
+  /* AND HALF AGAIN ONCE MORE (15), BUT NOT FOR EVERY SEAM.
+
+     Asked for as "the mosaic from the showroom to the landing should be more
+     visible, more extensive". The canvas is the same canvas for both seams,
+     so raising the height raises both — and the works seam was tuned against
+     40vh and has a carousel under it. The height therefore goes to 56vh and
+     each seam declares how far UP that band it is allowed to reach: see
+     SEAMS in createMosaic. The showroom seam takes the whole of it; the works
+     seam takes the bottom 0.70, which is 39vh, which is where it already was.
+     Tile DENSITY falls off toward the top of the band as it always has, so
+     the extra height is a thinning edge rather than a taller slab. */
+  height: clamp(260px, 56vh, 640px);
   pointer-events: none; opacity: 1; transition: opacity 420ms linear;
 }
 .mosaic.mute { opacity: 0; }
@@ -1269,7 +1467,18 @@ body.on-paper .invert { opacity: 1; }
   line-height: 1.06; letter-spacing: -.021em;
   max-width: 18ch; margin: 20px 0 24px;
 }
-.body-w { max-width: 52ch; color: var(--fg-soft); font-size: 16.5px; }
+/* THE READING SIZE, ONE NOTCH UP (15).
+
+   16.5px of Archivo at 1.66 on a dark ground is small for body copy that is
+   sometimes three paragraphs long, and it was the same 16.5 whether the
+   paragraph had a whole room to itself or was sharing one with a drawing. The
+   evidence is the measure rather than taste: .body-w caps at 52ch, so raising
+   the size does not lengthen the line, it shortens it in pixels and takes the
+   room's copy column IN — which in every room here is away from the figure.
+   17.6px, with the per-room overrides below moved with it. The one face that
+   does not change is the practice room's serif lede, which is a different
+   register and is already large. */
+.body-w { max-width: 52ch; color: var(--fg-soft); font-size: 17.6px; }
 .body-w p + p { margin-top: .85em; }
 .tags {
   margin-top: 24px; padding-top: 15px; border-top: 1px solid var(--rule-soft);
@@ -1291,9 +1500,27 @@ body.on-paper .invert { opacity: 1; }
 
 /* a soft scrim on the side the copy occupies, so type never has to fight the
    lattice behind it. Nothing else darkens the field. */
+/* AND IT ENDS WHERE THE ROOM ENDS, WHICH IS A STRAIGHT LINE ACROSS THE PAGE.
+
+   Every scrim here is a HORIZONTAL gradient — left to right, or radial — laid
+   over a box that is exactly one room tall. So its own top and bottom edges
+   are hard, and a reader moving between a room that has a scrim and one that
+   does not sees a rule drawn across the viewport at the seam. It is most
+   visible at the showroom giving way to the first prose room, because the
+   three showroom rooms carry no scrim at all (there is no type in them) and
+   the edge therefore arrives on open ground, under the mosaic, at exactly the
+   moment the reader is being asked to look at something else.
+
+   A mask on the two ends answers it and costs nothing else: 5% at the top and
+   4% at the bottom of a 900px room is 45px and 36px, and the smallest padding
+   any room declares is 92px at the top and 48px at the bottom — so the fade
+   runs out well before the first or last line of any copy it is there to
+   protect. */
 .screen[data-scrim]::before {
   content: ""; position: absolute; inset: -1px; z-index: 0; pointer-events: none;
   opacity: 0; transition: opacity 700ms var(--ease);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 5%, #000 96%, transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, #000 5%, #000 96%, transparent 100%);
 }
 .screen.live[data-scrim]::before { opacity: 1; }
 .screen[data-scrim="left"]::before {
@@ -1618,7 +1845,24 @@ body.on-paper .nav::before { background: linear-gradient(to bottom, color-mix(in
   background: color-mix(in srgb, var(--ground) 72%, transparent);
   -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
 }
-body.on-paper .nav-pill { border-color: color-mix(in srgb, var(--paper-ink) 18%, transparent); }
+/* AND THE PILL'S GROUND TURNS OVER WITH THE ROOM, which it had never done.
+
+   The pill carries a ground so the six destinations are never read through
+   the lattice — and that ground was --ground at 72%, unconditionally. In the
+   one inverted room the type is --paper-ink, which IS --ground, so what stood
+   in the bar was dark green lettering on a dark green slab: measured at
+   1.6:1 on the green theme, against the 4.5:1 an 11px face needs. The labels
+   were not dim, they were gone.
+
+   It is the oldest kind of theming bug — a component that was given the page's
+   colours as literals rather than as roles — and it survived because the
+   inverted room is one room in thirteen and the reader is usually arriving at
+   it rather than looking up. Six labels rather than five made it impossible
+   to miss. On paper the ground is the paper; 9.9:1. */
+body.on-paper .nav-pill {
+  border-color: color-mix(in srgb, var(--paper-ink) 18%, transparent);
+  background: color-mix(in srgb, var(--paper) 74%, transparent);
+}
 .nav-link {
   font-family: var(--font-m); font-size: 11px; letter-spacing: .15em; text-transform: uppercase;
   text-decoration: none; opacity: .68; padding: 5px 9px; margin: -5px 0; white-space: nowrap;
@@ -1640,28 +1884,141 @@ body.on-paper .nav-pill { border-color: color-mix(in srgb, var(--paper-ink) 18%,
 }
 body.on-paper .nav-link[aria-current="true"]::after { background: var(--paper-ink); }
 
-/* the palette pair */
-.swatches { justify-self: end; display: flex; align-items: center; gap: 8px; }
-.swatches .lab { font-family: var(--font-m); font-size: 9.5px; letter-spacing: .2em; text-transform: uppercase; color: var(--fg-faint); }
-.sw {
-  width: 22px; height: 13px; padding: 0; border-radius: 1px;
-  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--bone) 26%, transparent);
-  transition: box-shadow 240ms, transform 240ms;
+/* ------------------------------------------------ 8d · the ink picker
+   THE CHIP IS THE ONE PIECE THE TWO PRESENTATIONS SHARE.  Everything else
+   about the nav's disclosure and the segmented row differs, because a bar with
+   six destinations in it has no room for three named options and a sheet a
+   thumb is working has no business hiding them. The colours are literals and
+   have to be: they are the grounds themselves, and a token would resolve to
+   whichever theme is currently on, so all three chips would be the same. */
+/* THE RING IS WHAT MAKES A DARK CHIP READ AS A SWATCH.  Two of the three
+   grounds are dark and one of those is whichever theme is currently on, so
+   without an edge the chip is a hole in the panel rather than a sample of
+   something. 38% of the ink is enough to draw the square and not so much that
+   the row reads as three outlined boxes with colour in them. */
+.ink-chip {
+  width: 16px; height: 16px; flex: 0 0 auto; border-radius: 2px;
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--bone) 38%, transparent);
 }
-.sw:hover { transform: translateY(-1px); }
-.sw[aria-pressed="true"] { box-shadow: inset 0 0 0 1px var(--accent), 0 0 0 1px var(--accent); }
 .sw-blue  { background: #07264c; }
 .sw-green { background: #092c2a; }
-/* the third chip is the only pale one in the row, which is the whole of what
-   it has to say: this is the ground turned over */
+/* the only pale chip in the row, which is the whole of what it has to say:
+   this is the ground turned over */
 .sw-wax   { background: #ece6d6; }
-body.on-paper .swatches .lab { color: color-mix(in srgb, var(--paper-ink) 55%, transparent); }
+
+/* ---- the nav's disclosure ------------------------------------------- */
+.ink { justify-self: end; position: relative; }
+.ink-btn {
+  display: inline-flex; align-items: center; gap: 9px;
+  padding: 6px 9px 6px 8px; min-height: 32px;
+  border: 1px solid var(--rule-soft);
+  background: color-mix(in srgb, var(--ground) 72%, transparent);
+  -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+  transition: border-color 260ms, background-color 300ms;
+}
+.ink-btn:hover { border-color: var(--rule); }
+.ink-btn-lab { display: inline-flex; align-items: baseline; gap: 7px; font-family: var(--font-m); }
+.ink-btn-key { font-size: 9.5px; letter-spacing: .2em; text-transform: uppercase; color: var(--fg-faint); }
+.ink-btn-now { font-size: 11px; letter-spacing: .13em; text-transform: uppercase; color: var(--fg); }
+.ink-caret { color: var(--fg-faint); transition: transform 260ms var(--ease); }
+.ink-btn[aria-expanded="true"] .ink-caret { transform: rotate(180deg); }
+.ink-btn[aria-expanded="true"] { border-color: var(--rule); }
+body.on-paper .ink-btn { background: color-mix(in srgb, var(--paper) 70%, transparent); border-color: color-mix(in srgb, var(--paper-ink) 18%, transparent); }
+body.on-paper .ink-btn-key { color: color-mix(in srgb, var(--paper-ink) 55%, transparent); }
+body.on-paper .ink-btn-now { color: var(--paper-ink); }
+
+/* THE MENU IS `hidden` WHEN IT IS SHUT, not merely transparent. A popover
+   left in the document at opacity 0 is still in the tab order and still
+   announced, which is the commonest defect in a hand-rolled one. The attribute
+   is removed a frame before the class goes on so the transition still runs. */
+.ink-menu {
+  position: absolute; top: calc(100% + 9px); right: 0; z-index: 2;
+  min-width: 232px; padding: 5px;
+  background: color-mix(in srgb, var(--ground-deep) 96%, transparent);
+  -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+  border: 1px solid var(--rule-soft);
+  box-shadow: 0 14px 40px color-mix(in srgb, #000 34%, transparent);
+  opacity: 0; transform: translateY(-6px);
+  transition: opacity 200ms var(--ease), transform 240ms var(--ease);
+}
+.ink-menu[hidden] { display: none; }
+.ink-menu.open { opacity: 1; transform: none; }
+body.on-paper .ink-menu { background: color-mix(in srgb, var(--paper) 97%, transparent); border-color: color-mix(in srgb, var(--paper-ink) 18%, transparent); }
+.ink-opt {
+  display: flex; align-items: center; gap: 11px; width: 100%;
+  padding: 9px 10px; min-height: 42px; text-align: left;
+  transition: background-color 200ms;
+}
+.ink-opt:hover, .ink-opt:focus-visible { background: color-mix(in srgb, var(--bone) 8%, transparent); }
+.ink-opt-t { display: flex; flex-direction: column; gap: 1px; min-width: 0; }
+.ink-opt-t b {
+  font-family: var(--font-m); font-weight: 500; font-size: 11px;
+  letter-spacing: .13em; text-transform: uppercase; color: var(--fg);
+}
+.ink-opt-t i { font-style: normal; font-size: 11.5px; color: var(--fg-faint); letter-spacing: 0; }
+body.on-paper .ink-opt-t b { color: var(--paper-ink); }
+body.on-paper .ink-opt-t i { color: color-mix(in srgb, var(--paper-ink) 58%, transparent); }
+body.on-paper .ink-opt:hover, body.on-paper .ink-opt:focus-visible { background: color-mix(in srgb, var(--paper-ink) 8%, transparent); }
+/* the mark is a tick and not an outline. An outline round the current chip is
+   what the old row used and it cannot be told apart from the chip's own ring
+   at a glance; a tick is read rather than compared.
+
+   IT IS DRAWN, NOT TYPED.  U+2713 is outside both webfonts' subsets, so a
+   character would be served by whatever the system happens to have — a
+   different weight and a different size on every machine, in a mark whose
+   whole job is to be unambiguous. Two borders and a rotation are the same
+   shape everywhere. */
+.ink-opt[aria-checked="true"] { background: color-mix(in srgb, var(--bone) 7%, transparent); }
+.ink-opt[aria-checked="true"]::after {
+  content: ""; margin-left: auto; flex: 0 0 auto;
+  width: 10px; height: 5px; margin-bottom: 3px;
+  border-left: 1.4px solid var(--accent); border-bottom: 1.4px solid var(--accent);
+  transform: rotate(-45deg);
+}
+body.on-paper .ink-opt[aria-checked="true"]::after { border-color: var(--paper-ink); }
+@media (prefers-reduced-motion: reduce) { .ink-menu, .ink-caret { transition: none; } }
+
+/* ---- the segmented row: the sheet, and the studio room --------------- */
+.ink-seg-row {
+  display: inline-flex; gap: 3px; padding: 3px;
+  border: 1px solid var(--rule-soft);
+}
+.ink-seg-b {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 7px 13px; min-height: 34px;
+  font-family: var(--font-m); font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--fg-faint); white-space: nowrap;
+  transition: color 240ms, background-color 260ms;
+}
+.ink-seg-b:hover { color: var(--fg); background: color-mix(in srgb, var(--bone) 6%, transparent); }
+.ink-seg-b[aria-checked="true"] { color: var(--fg); background: color-mix(in srgb, var(--bone) 11%, transparent); }
+.ink-seg-b[aria-checked="true"] .ink-chip { box-shadow: inset 0 0 0 1px var(--accent), 0 0 0 1px var(--accent); }
+.ink-seg-lab { font-family: var(--font-m); font-size: 9.5px; letter-spacing: .2em; text-transform: uppercase; color: var(--fg-faint); }
+.sheet-seg { display: flex; align-items: center; gap: 14px; }
+.sheet-seg .ink-seg-row { flex: 1 1 auto; }
+.sheet-seg .ink-seg-b { flex: 1 1 0; min-height: 44px; }
 
 /* ------------------------------------------------ 8c · the compact menu */
+/* THE TWO BARS WERE NINETEEN PIXELS APART AND THE CROSS MOVES THEM THREE AND
+   A HALF, so the close state has never actually closed.
+
+   `place-items: center` sets align-ITEMS and justify-items; it says nothing
+   about align-CONTENT, which stays `normal` — and for a grid that is stretch.
+   So the two implicit rows each took half of the 46px button instead of the
+   1px their content needs, and the bars sat about 19px apart (measured: their
+   centres at y 19 and y 38 inside a 46px box). The open-state transform
+   translates each one 3.5px toward the other and rotates it 45 degrees, which
+   is exactly right for bars 7px apart and produces two diagonals that never
+   meet for bars 19px apart. It rendered as a chevron.
+
+   align-content: center packs the rows to their content — 1px, 6px of gap,
+   1px — so the centres are 7px apart and the 3.5px translate lands them on
+   each other. The resting icon is tighter too, which is the proportion a
+   two-bar mark wants anyway. */
 .burger {
   display: none; justify-self: end;
   width: 46px; height: 46px; margin: -8px -10px -8px 0;
-  place-items: center; gap: 6px; grid-auto-flow: row;
+  place-items: center; align-content: center; gap: 6px; grid-auto-flow: row;
   -webkit-tap-highlight-color: transparent;
 }
 .burger span {
@@ -1735,7 +2092,6 @@ html.sheet-open .nav { z-index: 490; }
   display: flex; justify-content: space-between; align-items: center;
   gap: 18px; flex-wrap: wrap; margin-top: clamp(22px, 4vh, 40px);
 }
-.sheet-sw .sw { width: 30px; height: 18px; }
 .sheet-mail {
   font-family: var(--font-m); font-size: 12px; letter-spacing: .1em;
   color: var(--fg-soft); text-decoration: none; border-bottom: 1px solid var(--rule);
@@ -1896,7 +2252,7 @@ html:not(.js) .o-pass { opacity: 1; transform: none; }
   line-height: 1.42; color: var(--fg);
 }
 .motto-la em { font-style: italic; }
-.motto-en { margin-top: 9px; font-size: 14.5px; line-height: 1.55; color: var(--fg-soft); }
+.motto-en { margin-top: 9px; font-size: 15.2px; line-height: 1.55; color: var(--fg-soft); }
 .motto cite {
   display: block; margin-top: 12px; font-style: normal;
   font-family: var(--font-m); font-size: 10px; letter-spacing: .16em;
@@ -1916,11 +2272,52 @@ html:not(.js) .o-pass { opacity: 1; transform: none; }
 }
 .ink-nudge:hover, .ink-nudge:focus-visible { border-bottom-color: var(--accent); }
 
+/* THE THREE INKS, STANDING IN THE ROOM THAT TALKS ABOUT THEM.
+   Named, in the open, and inside the copy measure rather than beside it — the
+   row is part of the paragraph's argument, so it takes the paragraph's left
+   edge and the rule above it that the tags below already use. */
+.ink-try {
+  display: flex; align-items: center; gap: 15px; flex-wrap: wrap;
+  margin-top: clamp(16px, 2.4vh, 26px);
+}
+.ink-try-lab { color: var(--fg-faint); }
+/* THE TOKEN BRINGS THE EYE HERE, and this is what it does when it arrives: a
+   ring drawn round the row for a beat and then let go. It is one animation and
+   it is not a loop — a control that goes on pulsing after it has been found is
+   a control asking to be pressed, and this one is an offer. */
+.ink-try.asked .ink-seg-row {
+  animation: inkAsk 1500ms var(--ease) 1;
+  border-color: var(--accent);
+}
+@keyframes inkAsk {
+  0%   { box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 52%, transparent); }
+  38%  { box-shadow: 0 0 0 5px color-mix(in srgb, var(--accent) 18%, transparent); }
+  100% { box-shadow: 0 0 0 9px transparent; }
+}
+@media (prefers-reduced-motion: reduce) { .ink-try.asked .ink-seg-row { animation: none; } }
+
+/* THE ONE ROOM SET IN THE SERIF, AND IT STAYS THAT WAY.
+
+   Raised in 15: the landing's copy is in EB Garamond while every other room
+   is in Archivo, and is that deliberate or is it drift? It is deliberate, and
+   the argument is two rooms down rather than in this rule. The Horace sits
+   directly under this paragraph in the same face — the studio's motto, in
+   Latin, with a citation — and a serif lede over a serif quotation is one
+   voice saying two things. Set this in the grotesque and the motto becomes an
+   inset quotation in a different typeface from everything round it, which is
+   the arrangement this replaced and it read as an afterthought.
+
+   The register is also right on its own terms. This is the one room whose
+   copy is not information — it is the name of the practice being explained —
+   and the site has exactly one other place it lets the serif speak. Two is a
+   pairing; three would be a second body face. */
 .practice-lede {
   margin-top: clamp(24px, 4.6vh, 56px); max-width: min(560px, 46vw);
   font-family: var(--font-s); font-weight: 400;
   font-size: clamp(1.24rem, 1.95vw, 1.74rem); line-height: 1.48;
 }
+/* the field carries a blank line and now means it — see fillRich */
+.practice-lede p + p { margin-top: .56em; }
 /* THE ROOM THE DEFORMATION HAPPENS IN.  The copy used to run to 66vw and the
    figure was framed at 0.74 of the viewport from a centre pushed only a fifth
    of the way right, so the two overlapped across the middle third of the
@@ -1965,13 +2362,53 @@ html:not(.js) .o-pass { opacity: 1; transform: none; }
 .reg-card { align-self: center; }
 .reg-card[data-place="left"]  { grid-column: 1; grid-row: 2; }
 .reg-card[data-place="right"] { grid-column: 2; grid-row: 2; }
+/* THE CARD HEADING HAD NO MEASURE, and it was the widest ink in the room.
+
+   Everything else in this card is held to something — the body to 52ch, the
+   tags to whatever they are — and the heading simply took the column, which
+   at 1440 is 660px. So "Project websites, databases, archives" set at 32px
+   ran to x 615 on one line while the paragraph under it stopped at 569, and
+   the thing the drawing had to clear was the heading rather than the reading.
+   Two costs, one rule: a 36-character line at 2rem is a long line for a
+   heading by any measure, and it was pushing the figure a hundred pixels
+   further out of the room than the copy needed.
+
+   28ch is about 475px here, which wraps each of the three to two lines and
+   leaves the BODY as the widest thing in the card — which is the right
+   quantity for the figure to be solved against. See the fill/px note in KEY. */
 .reg-card h3 {
   font-variation-settings: 'wdth' 104, 'wght' 600;
   font-size: clamp(1.36rem, 2.2vw, 2rem);
   line-height: 1.08; letter-spacing: -.02em; margin: 12px 0 12px;
+  max-width: min(28ch, 32vw);
 }
-.reg-card .body-w { max-width: 52ch; font-size: 16px; line-height: 1.64; }
-.reg-card .tags { margin-top: 16px; padding-top: 13px; font-size: 10.5px; }
+/* AND THE MEASURE IS BOUNDED IN vw AS WELL AS IN ch, WHICH IS THE WHOLE
+   REASON THE FIGURE STAYED CLEAR AT 1440 AND DID NOT AT 1180.
+
+   The figure's `px` is a fraction of the VIEWPORT WIDTH and its size is bound
+   by fill against the same width — so as the window narrows, the drawing
+   walks in from the right in proportion. The copy did not: 52ch is a multiple
+   of the font size, which does not move with the window at all, so the gap
+   between the last character and the first mark closed as the window
+   narrowed. Measured with the ch-only measure: 47px of clearance at 1440x900
+   and MINUS 55 at 1180x860, in the same room, with nothing changed but the
+   window. That is the same class of error as the studio room's fillY — two
+   quantities that have to be compared expressed in units that do not scale
+   together.
+
+   32vw makes the copy a fraction of the width like everything it has to stay
+   clear of. It binds at both sizes (461px at 1440, 378px at 1180 — 47 and 44
+   characters at this size, both inside the 45-75 band a single column wants),
+   and the clearance now holds at all three of the window sizes recorded in
+   the KEY note, none of them by less than 52px. The h3 above and the tag row
+   below are capped the same way, for the same reason. */
+.reg-card .body-w { max-width: min(52ch, 32vw); font-size: 17px; line-height: 1.62; }
+/* the tag row is bounded too, and it was the widest ink in the card once the
+   heading and the body had been. A flex row with no measure takes the column:
+   at 1180 "scholarly archives" ended 87px past the last line of the paragraph
+   above it, and it was the tags, not the reading, that the drawing was being
+   solved against. Same bound as the body, so the three wrap together. */
+.reg-card .tags { margin-top: 16px; padding-top: 13px; font-size: 10.5px; max-width: min(52ch, 32vw); }
 .reg-num { color: var(--fg-faint); display: block; margin-top: 4px; }
 /* THE NUMERAL, MOVED.  It used to run down the showcase rooms, where it was
    counting camera angles. It counts the three kinds of commission now, which
@@ -2164,7 +2601,15 @@ html:not(.js) .shot .scan { opacity: .9; }
 /* ------------------------------------------------ 13 · method (inverted) */
 .method .inner { display: grid; grid-template-columns: minmax(0, 1.06fr) minmax(0, .94fr); gap: clamp(22px, 3.4vw, 62px); align-items: center; }
 .method .h2 { margin: 16px 0 0; }
-.method-steps { display: grid; gap: clamp(8px, 1.4vh, 16px); margin-top: 18px; }
+/* THE ROOM HAS TO FIT, AND THE LIVE COPY IS LONGER THAN THE SEED'S.
+   Step II in Firestore runs to sixty words against the seed's twenty, and at
+   a 50ch measure inside a 660px column that is four lines where the room has
+   room for three. The measure is widened rather than the type made smaller:
+   there is 150px of unclaimed column here and none of it is the drawing's —
+   the figure stands in the OTHER track (KEY[11].px is positive). Measured at
+   1440x900 the room came to 908 against a 900 viewport and now comes to 872;
+   at 1024x768, where the short-viewport block below also applies, 806 -> 762. */
+.method-steps { display: grid; gap: clamp(7px, 1.2vh, 14px); margin-top: 16px; }
 .step {
   display: grid; grid-template-columns: 44px 1fr; gap: 18px; align-items: baseline;
   padding-top: 11px; border-top: 1px solid color-mix(in srgb, var(--paper-ink) 26%, transparent);
@@ -2177,7 +2622,7 @@ html:not(.js) .step { opacity: 1; transform: none; }
   font-variation-settings: 'wdth' 102, 'wght' 600;
   font-size: clamp(1.02rem, 1.45vw, 1.24rem); letter-spacing: .002em; margin-bottom: 4px;
 }
-.step p { font-size: 14.5px; line-height: 1.56; color: color-mix(in srgb, var(--paper-ink) 78%, transparent); max-width: 50ch; }
+.step p { font-size: 15.4px; line-height: 1.52; color: color-mix(in srgb, var(--paper-ink) 80%, transparent); max-width: 56ch; }
 
 /* ------------------------------------------------ 14 · studio */
 /* The plate went too far the other way last revision: at 1.18fr and 80svh it
@@ -2230,7 +2675,7 @@ html:not(.js) .step { opacity: 1; transform: none; }
 /* 52ch, not 56: the measure gives up four characters so the lane can exist,
    and at 15.5px that is 35px of column back. It is still inside the 45-75
    band a single column of prose wants to be in. */
-.studio .body-w { font-size: 15.5px; line-height: 1.62; max-width: 52ch; }
+.studio .body-w { font-size: 16.4px; line-height: 1.6; max-width: 52ch; }
 .studio .h2 { margin: 14px 0 18px; max-width: 22ch; }
 /* THE SCRIM HAS TO RUN OUT WHERE THE COPY DOES.
    data-scrim="left" is 88% of --ground-deep at the left edge, 62% at a third
@@ -2303,7 +2748,35 @@ html:not(.js) .step { opacity: 1; transform: none; }
      bottom edge on a 880px laptop. The width above is what buys the face back,
      not the height — a squarer crop at 520px is a bigger head than a taller
      one at 430px, and it costs the room a hundred pixels less. */
-  aspect-ratio: 5 / 6; width: 100%; max-height: min(44svh, 600px);
+  /* THE PLATE IS SET TO THE COPY'S HEIGHT (15), AND IT HAS TO BE MEASURED.
+
+     Asked for as "the photo should be height-aligned with the text on the
+     left", and it is the right instinct: the two columns start on the same
+     line and ended on different ones, by 18px at 1440x900 and by a hundred at
+     1024x768, which is the kind of near-miss that reads as carelessness
+     rather than as a decision.
+
+     IT CANNOT BE DONE IN CSS, and it is worth being clear why rather than
+     leaving the next person to try. align-items: stretch makes the row as
+     tall as its TALLEST item, so the plate would drive the row and the copy
+     would stretch to it — the wrong way round. Sizing the plate off the row
+     instead means the row's height must not depend on the plate, which means
+     the plate leaves the flow, which loses the caption and the credit table
+     the space they stand in. The copy's height is simply not a quantity CSS
+     will hand to a sibling.
+
+     So it is measured: syncPortrait() in the deck script reads the copy
+     column and writes --portrait-h here, clamped to [260px, min(52svh,
+     660px)] so a very short copy cannot produce a stamp and a very long one
+     cannot push the credit table off the screen. The fallback is the shipped
+     5:6 crop, which is what stands with the script off and on a phone, where
+     the grid is one column and there is nothing to align to.
+
+     object-fit is `cover`, so what changes with the height is the CROP and
+     not the proportions of the face. object-position is 50% 34%, which keeps
+     the head in frame as the box gets shorter. */
+  aspect-ratio: 5 / 6; width: 100%;
+  height: var(--portrait-h, auto); max-height: min(52svh, 660px);
   cursor: pointer;
 }
 .portrait img {
@@ -2379,7 +2852,7 @@ html:not(.js) .cred { opacity: 1; transform: none; }
    the studio's own address and email, which is the single most consequential
    line in the footer. It goes to full ink. Everything that is genuinely
    secondary down here is already carrying --fg-faint by name. */
-.foot-col p, .foot-col a { color: var(--fg); font-size: 14px; text-decoration: none; line-height: 1.7; }
+.foot-col p, .foot-col a { color: var(--fg); font-size: 14.6px; text-decoration: none; line-height: 1.7; }
 .foot-col a:hover { color: var(--accent); }
 .foot-bottom {
   display: flex; justify-content: space-between; align-items: center; gap: 18px; flex-wrap: wrap;
@@ -2547,7 +3020,7 @@ html:not(.js) .cred { opacity: 1; transform: none; }
 /* ------------------------------------------------ 17 · responsive */
 @media (max-width: 1180px) {
   .practice-lede { max-width: 48vw; }
-  .reg-card .body-w { font-size: 15px; }
+  .reg-card .body-w { font-size: 16px; }
   /* THE THREE STUDIO TRACKS ARE NOT RE-PROPORTIONED HERE, AND THAT IS A RULE
      RATHER THAN AN OMISSION.
 
@@ -2569,11 +3042,22 @@ html:not(.js) .cred { opacity: 1; transform: none; }
      So the measure is bought out of the type size, which costs the geometry
      nothing. 14.4px holds ~43 characters at 1024x768, which is the real window
      in this band — a tablet in landscape. */
-  .studio .body-w { font-size: 14.4px; }
+  .studio .body-w { font-size: 15.3px; }
+}
+/* THE COMMISSION ROOM IS THE TIGHTEST ON THE SITE and the live copy's second
+   step is sixty words. Between 901 and 1180 the column has lost a fifth of
+   its width and has not yet gained the short-viewport block's savings below,
+   so it is the one band where the room ran over (70px at 940x820). The steps
+   give it back and nothing else in the room moves. */
+@media (max-width: 1180px) and (min-width: 901px) {
+  .method-steps { gap: clamp(6px, 1vh, 11px); margin-top: 12px; }
+  .step { padding-top: 9px; }
+  .step p { font-size: 14.6px; line-height: 1.48; max-width: 60ch; }
+  .method .h2 { font-size: clamp(1.5rem, 2.8vw, 2.2rem); }
 }
 @media (max-height: 800px) and (min-width: 901px) {
   .studio .h2 { font-size: clamp(1.65rem, 2.8vw, 2.3rem); margin: 12px 0 14px; }
-  .studio .body-w { font-size: 14.8px; line-height: 1.56; }
+  .studio .body-w { font-size: 15.6px; line-height: 1.54; }
   /* a short viewport takes it out of the plate, not out of the column: the
      credentials have to stay on one line each or they cost more than the
      picture does. */
@@ -2586,8 +3070,23 @@ html:not(.js) .cred { opacity: 1; transform: none; }
      takes its space out of the PLATE (above), which is the same decision this
      block already took about the credit table. */
   .creds { margin-top: 12px; }
-  .method-steps { margin-top: 12px; }
-  .step p { font-size: 14px; }
+  .method-steps { margin-top: 10px; gap: 6px; }
+  .step { padding-top: 8px; }
+  .step p { font-size: 14.6px; line-height: 1.46; }
+  .step h3 { margin-bottom: 2px; }
+  .method .h2 { font-size: clamp(1.5rem, 2.6vw, 2.2rem); }
+}
+/* THE SIX DESTINATIONS ARE TIGHT AT THE BOTTOM OF THE WIDE LAYOUT.  Five
+   labels became six in 15 and the mono is a wider face than the one it
+   replaced, so at 901px the pill and the ink picker close to within about a
+   dozen pixels of each other. A notch off the tracking and the padding buys
+   sixty pixels back and is invisible at this size; the alternative was
+   dropping a destination, and all six of them are sections. */
+@media (max-width: 1120px) and (min-width: 901px) {
+  .nav-pill { gap: 6px; padding: 8px 12px; }
+  .nav-link { font-size: 10.5px; letter-spacing: .1em; padding: 5px 7px; }
+  .ink-btn { gap: 7px; padding: 6px 8px; }
+  .ink-btn-key { display: none; }
 }
 @media (max-width: 900px), (max-height: 600px) {
   .screen { min-height: 0; scroll-snap-align: none; padding-block: clamp(74px, 12vh, 120px) clamp(56px, 9vh, 100px); }
@@ -2637,7 +3136,7 @@ html:not(.js) .cred { opacity: 1; transform: none; }
   /* on a phone every room scrolls under the nav rather than snapping past it,
      so the scrim is not a scroll state -- it is permanent furniture */
   .nav::before { opacity: 1; }
-  .nav .swatches { display: none; }          /* they live in the sheet now */
+  .nav .ink { display: none; }               /* it lives in the sheet now */
   .burger { display: grid; }
 
   /* THE FIGURE'S BAND, AND THE READING UNDER IT.
@@ -2653,6 +3152,14 @@ html:not(.js) .cred { opacity: 1; transform: none; }
   .screen[data-fig] { padding-top: calc(42svh + 20px); }
   .overture { padding-top: clamp(74px, 12vh, 120px); }
   .practice-lede, .practice-2 .inner, .body-w, .contact-body, .motto { max-width: none; }
+  /* AND THE REGISTER CARD'S THREE, WHICH ARE MORE SPECIFIC AND WIN OTHERWISE.
+     The heading, the body and the tag row are bounded in vw at the wide
+     layout so the drawing has something to be solved against (see them). A vw
+     cap on a phone is the wrong instruction entirely — 32vw of 375px is
+     120px, which set the register heading one word to a line and pushed all
+     three rooms past the viewport. There is no drawing beside them here:
+     figM is 0 in these rooms on a phone, so the column is the whole width. */
+  .reg-card h3, .reg-card .body-w, .reg-card .tags { max-width: none; }
   .o-cue { bottom: calc(clamp(22px, 4vh, 44px) + env(safe-area-inset-bottom)); }
   /* the pass link comes off the right edge and stands above the cue, where a
      thumb reaches it without covering the name */
@@ -2722,7 +3229,22 @@ html:not(.js) .cred { opacity: 1; transform: none; }
   .screen.told .aside-more { color: var(--fg-soft); }
   .screen.told .aside-more::after { width: 7px; }
   .screen.inverted .aside-more { color: color-mix(in srgb, var(--paper-ink) 62%, transparent); }
-  .studio .body-w { font-size: 15.5px; }
+  /* THE READING SIZE ON A PHONE IS A DIFFERENT TRADE FROM THE DESKTOP'S (15).
+     17.6px is the right size for a column of Archivo on a laptop and it is
+     about six per cent of room height on a phone, where four rooms are
+     already taller than the screen. 16.8 is still a notch above the 16.5 this
+     revision inherited — the request was legibility, and on a phone the
+     measure is already short, which is most of legibility — and it gives the
+     height back. Measured at 441x956: practice2 came in 38px over and is now
+     under, and the commission room went from 47 over to 4. */
+  .body-w { font-size: 16.8px; }
+  .studio .body-w { font-size: 16.2px; }
+  .step p { font-size: 15.4px; line-height: 1.5; }
+  .method-steps { gap: clamp(8px, 1.4vh, 14px); }
+  /* the ink row takes the room's own gutter rather than a desktop gap, and
+     the three names stay on one line at 360px of column */
+  .ink-try { margin-top: 15px; gap: 11px; }
+  .ink-try .ink-seg-b { padding: 8px 10px; min-height: 40px; font-size: 10px; letter-spacing: .1em; }
   .practice-lede { font-size: clamp(1.16rem, 5vw, 1.42rem); }
   /* the tag rules are a footnote, not a section: they can sit closer */
   .tags { margin-top: 16px; padding-top: 12px; gap: 5px 16px; }
@@ -2737,7 +3259,7 @@ html:not(.js) .cred { opacity: 1; transform: none; }
   /* thumbs, not cursors: nothing interactive under 44px */
   .disc { width: 46px; height: 46px; }
   .case-x { width: 46px; height: 46px; }
-  .sw { width: 30px; height: 18px; }
+  .ink-seg-b { min-height: 44px; }
   .foot-bottom button { padding: 8px 0; }
   a, button { -webkit-tap-highlight-color: transparent; }
 
@@ -3332,21 +3854,71 @@ window.__FB = { config: FB_CONFIG, sdk: SDK, ready: FB_READY };
 
 <nav class="nav" id="nav" aria-label="Main">
   <a href="#top" class="wordmark">Stylos</a>
-  <!-- the five labels are copy; the five destinations are not. data-nav is the
-       key into site/nav AND the key enterRoom() sets aria-current from, so a
-       renamed label cannot break the highlighting. -->
+  <!-- THE SIX LABELS ARE COPY; THE SIX DESTINATIONS ARE NOT.  data-nav is the
+       key into site/header AND the key enterRoom() sets aria-current from, so
+       a renamed label cannot break the highlighting. The href is the public
+       ADDRESS (data-addr on the room), which since 15 is a separate string
+       from the room's element id — see the note over 3b. -->
   <div class="nav-pill">
-    <a class="nav-link" href="#practice" data-nav="practice"><span data-copy="site.nav.practice"></span></a>
-    <a class="nav-link" href="#registers" data-nav="registers"><span data-copy="site.nav.registers"></span></a>
-    <a class="nav-link" href="#works" data-nav="works"><span data-copy="site.nav.works"></span></a>
-    <a class="nav-link" href="#method" data-nav="studio"><span data-copy="site.nav.studio"></span></a>
-    <a class="nav-link" href="#contact" data-nav="contact"><span data-copy="site.nav.contact"></span></a>
+    <a class="nav-link" href="#studio" data-nav="studio"><span data-copy="site.header.studio"></span></a>
+    <a class="nav-link" href="#scope" data-nav="scope"><span data-copy="site.header.scope"></span></a>
+    <a class="nav-link" href="#projects" data-nav="projects"><span data-copy="site.header.projects"></span></a>
+    <a class="nav-link" href="#about" data-nav="about"><span data-copy="site.header.about"></span></a>
+    <a class="nav-link" href="#commission" data-nav="commission"><span data-copy="site.header.commission"></span></a>
+    <a class="nav-link" href="#contact" data-nav="contact"><span data-copy="site.header.contact"></span></a>
   </div>
-  <div class="swatches">
-    <span class="lab" aria-hidden="true">Ink</span>
-    <button class="sw sw-blue" data-theme="blue" aria-pressed="false" aria-label="Blue ground"></button>
-    <button class="sw sw-green" data-theme="green" aria-pressed="true" aria-label="Green ground"></button>
-    <button class="sw sw-wax" data-theme="wax" aria-pressed="false" aria-label="Wax ground, light"></button>
+  <!-- ==================================================== the ink picker
+       THREE BARE CHIPS ARE NOT A CONTROL, and that is what this replaces.
+
+       What stood here were three 22x13 rectangles with a four-letter label
+       over them. Three things were wrong with that and only the first is
+       cosmetic. They were a third of the 24x24 a pointer target is supposed to
+       be and a sixth of what a thumb wants. Nothing said what they DID — a row
+       of coloured rectangles in the corner of a page reads as decoration, and
+       the one reader who is certain to want them is the one reading in
+       daylight who needs the pale ground and has no way of knowing it exists.
+       And nothing said what each one WAS: the names — blue, green, wax — are
+       the whole of the idea, and they were in the aria-label only, which is to
+       say available to a screen reader and to nobody else.
+
+       So: a compact disclosure that shows the ink you are ON, and opens a
+       named list. One control at rest, three named choices when asked, real
+       targets at both sizes, and the current one marked rather than merely
+       outlined. It is a menu of radio items because that is what it is —
+       aria-checked, arrow keys, Home/End, Escape, and the focus handed back
+       to the trigger when it closes.
+
+       THE SEGMENTED VERSION LIVES IN THE STUDIO ROOM, not here. The sentence
+       there says the inks are a working control rather than a demonstration,
+       and a sentence that says "press one" wants the three of them standing
+       in the open next to it. Two presentations of one control, each right
+       where it is: see .ink-try. -->
+  <div class="ink" id="ink">
+    <!-- NO CHIP ON THE TRIGGER.  It carried one and it was a swatch of the
+         ground it was standing on, so on two of the three themes it printed
+         as an empty outlined box in the corner of the bar — a control whose
+         only visible state is "hole". The NAME is the state; the chips belong
+         in the menu, where three of them stand together and comparing them is
+         the whole point. -->
+    <button class="ink-btn" id="inkBtn" type="button"
+            aria-expanded="false" aria-haspopup="true" aria-controls="inkMenu">
+      <span class="ink-btn-lab"><span class="ink-btn-key" aria-hidden="true">Ink</span><span class="ink-btn-now" id="inkNow">Green</span></span>
+      <svg class="ink-caret" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1.5 5 5 9 1.5" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="ink-menu" id="inkMenu" role="menu" aria-label="Ink" hidden>
+      <button class="ink-opt" type="button" role="menuitemradio" aria-checked="false" data-theme="blue">
+        <span class="ink-chip sw-blue" aria-hidden="true"></span>
+        <span class="ink-opt-t"><b>Blue</b><i>deep navy ground</i></span>
+      </button>
+      <button class="ink-opt" type="button" role="menuitemradio" aria-checked="true" data-theme="green">
+        <span class="ink-chip sw-green" aria-hidden="true"></span>
+        <span class="ink-opt-t"><b>Green</b><i>bottle green ground</i></span>
+      </button>
+      <button class="ink-opt" type="button" role="menuitemradio" aria-checked="false" data-theme="wax">
+        <span class="ink-chip sw-wax" aria-hidden="true"></span>
+        <span class="ink-opt-t"><b>Wax</b><i>pale ground, for daylight</i></span>
+      </button>
+    </div>
   </div>
   <button class="burger" id="burger" aria-expanded="false" aria-controls="sheet" aria-label="Open menu">
     <span aria-hidden="true"></span><span aria-hidden="true"></span>
@@ -3364,18 +3936,27 @@ window.__FB = { config: FB_CONFIG, sdk: SDK, ready: FB_READY };
          carries an idea; a menu is a list of destinations, and borrowing the
          numbering for it would spend the device on furniture. -->
     <nav class="sheet-nav" aria-label="Sections">
-      <a href="#practice" data-nav="practice"><span class="i" aria-hidden="true"></span><span data-copy="site.nav.practice"></span></a>
-      <a href="#registers" data-nav="registers"><span class="i" aria-hidden="true"></span><span data-copy="site.nav.registers"></span></a>
-      <a href="#works" data-nav="works"><span class="i" aria-hidden="true"></span><span data-copy="site.nav.works"></span></a>
-      <a href="#method" data-nav="studio"><span class="i" aria-hidden="true"></span><span data-copy="site.nav.studio"></span></a>
-      <a href="#contact" data-nav="contact"><span class="i" aria-hidden="true"></span><span data-copy="site.nav.contact"></span></a>
+      <a href="#studio" data-nav="studio"><span class="i" aria-hidden="true"></span><span data-copy="site.header.studio"></span></a>
+      <a href="#scope" data-nav="scope"><span class="i" aria-hidden="true"></span><span data-copy="site.header.scope"></span></a>
+      <a href="#projects" data-nav="projects"><span class="i" aria-hidden="true"></span><span data-copy="site.header.projects"></span></a>
+      <a href="#about" data-nav="about"><span class="i" aria-hidden="true"></span><span data-copy="site.header.about"></span></a>
+      <a href="#commission" data-nav="commission"><span class="i" aria-hidden="true"></span><span data-copy="site.header.commission"></span></a>
+      <a href="#contact" data-nav="contact"><span class="i" aria-hidden="true"></span><span data-copy="site.header.contact"></span></a>
     </nav>
     <div class="sheet-foot">
-      <div class="swatches sheet-sw">
-        <span class="lab" aria-hidden="true">Ink</span>
-        <button class="sw sw-blue" data-theme="blue" aria-pressed="false" aria-label="Blue ground"></button>
-        <button class="sw sw-green" data-theme="green" aria-pressed="true" aria-label="Green ground"></button>
-        <button class="sw sw-wax" data-theme="wax" aria-pressed="false" aria-label="Wax ground, light"></button>
+      <!-- NOT A DISCLOSURE HERE.  The menu is already a sheet the reader has
+           opened on purpose and there is room in it; a second popover inside a
+           dialog is a worse thing to hand a thumb than three rows. So the
+           phone gets the SEGMENTED presentation — named, 44px tall, the
+           current one marked — and the nav's compact one is spent only where
+           the bar is short of room. Same control, same handler. -->
+      <div class="ink-seg sheet-seg" role="radiogroup" aria-label="Ink">
+        <span class="ink-seg-lab" aria-hidden="true">Ink</span>
+        <div class="ink-seg-row">
+          <button class="ink-seg-b" type="button" role="radio" aria-checked="false" data-theme="blue"><span class="ink-chip sw-blue" aria-hidden="true"></span><span>Blue</span></button>
+          <button class="ink-seg-b" type="button" role="radio" aria-checked="true" data-theme="green"><span class="ink-chip sw-green" aria-hidden="true"></span><span>Green</span></button>
+          <button class="ink-seg-b" type="button" role="radio" aria-checked="false" data-theme="wax"><span class="ink-chip sw-wax" aria-hidden="true"></span><span>Wax</span></button>
+        </div>
       </div>
       <a class="sheet-mail" href="#" data-copy="site.contact.email" data-copy-mail></a>
     </div>
@@ -3408,7 +3989,7 @@ window.__FB = { config: FB_CONFIG, sdk: SDK, ready: FB_READY };
        prose, which is a long time to ask of somebody who has arrived from a
        link with a question. This is the answer to that question: quiet, at the
        foot of the landing, and it goes to the first room that talks. -->
-  <a class="o-pass mono rv" style="--d:1700ms" href="#practice">Straight to the practice</a>
+  <a class="o-pass mono rv" style="--d:1700ms" href="#studio">Straight to the studio</a>
 </section>
 
 <!-- ==================================================== 1-3 · THE SHOWROOM
@@ -3445,13 +4026,15 @@ window.__FB = { config: FB_CONFIG, sdk: SDK, ready: FB_READY };
 </div>
 
 <!-- ==================================================== 4 · the name -->
-<section class="screen practice" id="practice" data-room="4" data-nav="practice" data-scrim="left" data-fig>
+<section class="screen practice" id="practice" data-room="4" data-nav="studio" data-addr="studio" data-scrim="left" data-fig>
   <div class="inner">
     <span class="gigaword rv-wipe" aria-hidden="true">Stylos</span>
   </div>
   <div class="inner">
     <span class="mono cap cap-rule rv" style="--d:140ms" data-copy="practice.eyebrow"></span>
-    <p class="practice-lede rv" style="--d:430ms" data-copy="practice.lede"></p>
+    <!-- a rich slot, not a plain one: the field is two paragraphs and a
+         textContent fill would run them together. See fillRich. -->
+    <div class="practice-lede rv" style="--d:430ms" data-copy="practice.lede" data-copy-rich></div>
     <!-- Horace, moved here from the showroom, where it was set over a moving
          figure at a size nobody could read. It is the studio's motto and it
          deserves a line of its own, a translation, and a proper citation.
@@ -3473,7 +4056,7 @@ window.__FB = { config: FB_CONFIG, sdk: SDK, ready: FB_READY };
      illustrates: the surface is the thing that changes, and the structure
      under it does not. The reader is reading "then the surface" while the
      surface is being changed behind the line. -->
-<section class="screen practice-2" id="practice2" data-room="5" data-nav="practice" data-scrim="left" data-fig>
+<section class="screen practice-2" id="practice2" data-room="5" data-nav="studio" data-scrim="left" data-fig>
   <div class="inner">
     <span class="mono cap cap-rule rv" data-copy="practice2.eyebrow"></span>
     <h2 class="h2 rv-wipe" style="--d:140ms" data-copy="practice2.heading"></h2>
@@ -3485,7 +4068,38 @@ window.__FB = { config: FB_CONFIG, sdk: SDK, ready: FB_READY };
          screen and inside the menu on a phone and the sentence has to be true
          in both. -->
     <div class="body-w rv" style="--d:430ms" data-copy="practice2.body" data-copy-rich></div>
-    <div class="tags mono rv" style="--d:640ms" data-copy="practice2.tags" data-copy-tags></div>
+    <!-- ==================================================== the ink, tried
+         THE SENTENCE ABOVE IS ABOUT A CONTROL, SO THE CONTROL STANDS IN IT.
+
+         It used to be a token inside the copy — {ink|press one} — expanded by
+         fillRich into one inline button that advanced to the next ink. Two
+         things were wrong with that and the second is why this is markup now.
+
+         A blind ADVANCE is not a choice. "Press one" and then being given
+         whichever ink happens to be next is the one interaction on the page
+         that does not do what it says; a reader who wants the pale ground has
+         to press it twice and watch the blue go past.
+
+         And a control that lives in a backend string is a control that can be
+         deleted by an edit. That is not hypothetical: the sentence in
+         Firestore reads "(You already get to choose the palette!)" and carries
+         no token at all, so from the day that was published the room has been
+         telling the reader about a control that was not in it.
+
+         So the three inks stand here, named and in the open, as markup — the
+         same handler as the nav's picker, a different presentation of it. The
+         {ink|…} token still works and still expands, and what it does now is
+         bring the reader's eye to THIS row rather than cycling behind their
+         back: see TOKENS and the inkNudge handler in 5 · chrome. -->
+    <div class="ink-try rv" style="--d:560ms" role="radiogroup" aria-label="Ink" id="inkTry">
+      <span class="ink-try-lab mono" aria-hidden="true">Ink</span>
+      <div class="ink-seg-row">
+        <button class="ink-seg-b" type="button" role="radio" aria-checked="false" data-theme="blue"><span class="ink-chip sw-blue" aria-hidden="true"></span><span>Blue</span></button>
+        <button class="ink-seg-b" type="button" role="radio" aria-checked="true" data-theme="green"><span class="ink-chip sw-green" aria-hidden="true"></span><span>Green</span></button>
+        <button class="ink-seg-b" type="button" role="radio" aria-checked="false" data-theme="wax"><span class="ink-chip sw-wax" aria-hidden="true"></span><span>Wax</span></button>
+      </div>
+    </div>
+    <div class="tags mono rv" style="--d:700ms" data-copy="practice2.tags" data-copy-tags></div>
   </div>
 </section>
 
@@ -3495,7 +4109,7 @@ window.__FB = { config: FB_CONFIG, sdk: SDK, ready: FB_READY };
      room that is nothing but reading the band is half a screen of nothing —
      the figure is not the subject of these rooms and is faded out of them by
      the deck script (KEY[].figM). -->
-<section class="screen reg" id="registers" data-room="6" data-nav="registers" data-scrim="left">
+<section class="screen reg" id="registers" data-room="6" data-nav="scope" data-addr="scope" data-alias="scope/academic" data-scrim="left">
   <div class="inner">
     <div class="reg-title">
       <span class="mono cap cap-rule rv" data-copy="registers.eyebrow"></span>
@@ -3514,7 +4128,7 @@ window.__FB = { config: FB_CONFIG, sdk: SDK, ready: FB_READY };
 </section>
 
 <!-- ==================================================== 7 · register two -->
-<section class="screen reg" data-room="7" data-nav="registers" data-scrim="right">
+<section class="screen reg" data-room="7" data-nav="scope" data-addr="scope/3d" data-scrim="right">
   <div class="inner">
     <div class="reg-card" data-place="right">
       <span class="reg-fig rv" aria-hidden="true">02</span>
@@ -3527,7 +4141,7 @@ window.__FB = { config: FB_CONFIG, sdk: SDK, ready: FB_READY };
 </section>
 
 <!-- ==================================================== 8 · register three -->
-<section class="screen reg" data-room="8" data-nav="registers" data-scrim="left">
+<section class="screen reg" data-room="8" data-nav="scope" data-addr="scope/creative" data-scrim="left">
   <div class="inner">
     <div class="reg-card" data-place="left">
       <span class="reg-fig rv" aria-hidden="true">03</span>
@@ -3541,7 +4155,7 @@ window.__FB = { config: FB_CONFIG, sdk: SDK, ready: FB_READY };
 </section>
 
 <!-- ==================================================== 9 · works -->
-<section class="screen works" id="works" data-room="9" data-nav="works" data-scrim="bottom">
+<section class="screen works" id="works" data-room="9" data-nav="projects" data-addr="projects" data-scrim="bottom">
   <div class="works-head">
     <div>
       <span class="mono cap cap-rule rv" data-copy="works.eyebrow"></span>
@@ -3561,34 +4175,11 @@ window.__FB = { config: FB_CONFIG, sdk: SDK, ready: FB_READY };
   </div>
 </section>
 
-<!-- ==================================================== 10 · method -->
-<section class="screen method inverted" id="method" data-room="10" data-nav="studio" data-scrim="left">
-  <div class="inner">
-    <div>
-      <span class="mono cap cap-rule rv" data-copy="method.eyebrow"></span>
-      <h2 class="h2 rv-wipe" style="--d:140ms" data-copy="method.heading"></h2>
-      <!-- THE FOUR STEPS ARE BUILT, NOT WRITTEN.  They were four hand-kept
-           blocks with a numeral, a heading and a sentence apiece, and the
-           numeral had to be kept in step with the position by hand. The
-           backend supplies { n, h, p } and renderCopy writes the rest, so a
-           fifth step is one document field and nothing else — including
-           data-step, which runMethod() reads to light them in order.
-
-           The four words here are also the four the glass carries: CODE in
-           the figure script is ['read','structure','draw','keep']. If these
-           change, that changes with them, and nine characters is the ceiling
-           for any line on the glass. -->
-      <div class="method-steps" id="methodSteps" data-copy="method.steps" data-copy-steps></div>
-    </div>
-    <div aria-hidden="true"></div>
-  </div>
-</section>
-
-<!-- ==================================================== 11 · studio -->
+<!-- ==================================================== 10 · about -->
 <!-- data-scrim is `left`, not `full`. A radial scrim lifts the middle of the
      field and leaves the edges, which is the wrong shape for a room whose copy
      is a single tall left column — the paragraphs sat outside the lift. -->
-<section class="screen studio" id="studio" data-room="11" data-nav="studio" data-scrim="left">
+<section class="screen studio" id="studio" data-room="10" data-nav="about" data-addr="about" data-scrim="left">
   <div class="inner">
     <span class="mono cap cap-rule rv" data-copy="studio.eyebrow"></span>
     <h2 class="h2 rv-wipe" style="--d:140ms" data-copy="studio.heading"></h2>
@@ -3612,8 +4203,31 @@ window.__FB = { config: FB_CONFIG, sdk: SDK, ready: FB_READY };
   </div>
 </section>
 
+<!-- ==================================================== 11 · commission -->
+<section class="screen method inverted" id="method" data-room="11" data-nav="commission" data-addr="commission" data-scrim="left">
+  <div class="inner">
+    <div>
+      <span class="mono cap cap-rule rv" data-copy="method.eyebrow"></span>
+      <h2 class="h2 rv-wipe" style="--d:140ms" data-copy="method.heading"></h2>
+      <!-- THE FOUR STEPS ARE BUILT, NOT WRITTEN.  They were four hand-kept
+           blocks with a numeral, a heading and a sentence apiece, and the
+           numeral had to be kept in step with the position by hand. The
+           backend supplies { n, h, p } and renderCopy writes the rest, so a
+           fifth step is one document field and nothing else — including
+           data-step, which runMethod() reads to light them in order.
+
+           The four words here are also the four the glass carries: CODE in
+           the figure script is ['read','structure','draw','keep']. If these
+           change, that changes with them, and nine characters is the ceiling
+           for any line on the glass. -->
+      <div class="method-steps" id="methodSteps" data-copy="method.steps" data-copy-steps></div>
+    </div>
+    <div aria-hidden="true"></div>
+  </div>
+</section>
+
 <!-- ==================================================== 12 · contact -->
-<section class="screen contact" id="contact" data-room="12" data-nav="contact" data-scrim="left" data-fig>
+<section class="screen contact" id="contact" data-room="12" data-nav="contact" data-addr="contact" data-scrim="left" data-fig>
   <div class="inner">
     <div class="contact-body">
       <span class="mono cap cap-rule rv" data-copy="contact.eyebrow"></span>
@@ -4438,66 +5052,128 @@ var KEY = [
     dig: 0.36, dens: 0.56, ink: 0.82, figM: 1,
     morphTo: 1, actMs: 11000 },
 
-  /* 6 · register 01 — copy left, figure right, the screen turned up */
-  { open: 1.00, morph: 1, write: 0.12, erase: 0, flip: 0, work: 0.62,
-    yaw: 0.34, pit: 0.66, roll: 0.00, turn: TURN1, fill: 0.66, px: 0.24, py: 0.02,
-    dig: 0.42, dens: 0.60, ink: 0.90, figM: 0 },
+  /* ---- 6-8 · SCOPE, AND THE THREE ROOMS WHERE THE TOOL WENT IDLE ------
+     THE PEN WAS BEING CARRIED, NOT USED, THROUGH THE WHOLE OF THE ARGUMENT.
 
-  /* 7 · register 02 — the mirror of it */
-  { open: 1.00, morph: 1, write: 0.18, erase: 0, flip: 0, work: 0.54,
-    yaw: -0.34, pit: 0.80, roll: 0.00, turn: TURN1, fill: 0.66, px: -0.24, py: 0.02,
-    dig: 0.42, dens: 0.60, ink: 0.90, figM: 0 },
+     Reported in 15 and it is the right report. The deformation finishes in
+     room 5 and the object is glass from there on; these three rooms are where
+     the reader is told what the studio actually does — and the tool sat at
+     work 0.44-0.62, which is half way between lying beside the tablet and
+     writing on it, with `write` pinned near nought. So the one object on the
+     page was holding a pen over a blank screen for three rooms, in the three
+     rooms whose subject is work being done.
 
-  /* 8 · register 03 — the cover folded most of the way back, seen low */
-  { open: 0.60, morph: 1, write: 0.08, erase: 0, flip: 0, work: 0.44,
-    yaw: 0.21, pit: 0.40, roll: 0.03, turn: TURN1, fill: 0.74, px: 0.20, py: 0.06,
-    dig: 0.40, dens: 0.58, ink: 0.88, figM: 0 },
+     Three things change and they belong together.
+
+     WORK GOES TO 1.00 in all three. Below 1 the point is not on the surface —
+     the pos blend in poseFor is a straight lerp between the tool's resting
+     place and its point on the glass, so 0.62 stands it a third of the way
+     back, which is the defect the five writing rooms were taken to 1.00 for
+     in 14. A room that is watched writing has to be at 1.00. It is now eight
+     rooms rather than five (0, 3, 4, 6, 7, 8, 11, 12); the ones that merely
+     carry the tool — 1, 2, 5, 9, 10 — are untouched and still say so.
+
+     THE LINE ACCUMULATES ACROSS THE THREE rather than each room writing its
+     own from nothing. Each room's `write` baseline is the one before it's
+     `writeTo`, so the four words are cut in three sittings — 0.40, 0.72, 1.00
+     — and moving between the rooms neither erases nor jumps. That is the
+     whole reason the numbers have to be read as a column rather than a room
+     at a time: set any of them independently and the seam between two rooms
+     un-writes what the reader just watched being written, which looks like a
+     fault and not like a wipe. The room after them (works) carries 1.00 for
+     the same reason, though nothing is drawn there — see the note in it.
+
+     AND EACH ROOM KEEPS ITS OWN ATTITUDE, which is what makes the three
+     readable as three. The camera arc is 0.72 -> 0.84 -> 0.54 in pitch and
+     0.34 -> -0.34 -> 0.26 in yaw: over the shoulder, then almost overhead
+     from the other side, then dropped to a low three-quarter with the screen
+     folded back. `spin` at 0.18 is a sway of about five degrees over half a
+     minute — the assembly breathing while it is held, which is what these
+     rooms lacked and the showroom has had since 12. It is a quarter of the
+     showroom's, because there is prose beside it here.
+
+     AND fill / px HAD TO MOVE WITH THE ATTITUDE, because the drawing was
+     standing on the reading and had been for three revisions.
+
+     A higher camera shows more of the leaf, so the same `fill` prints a wider
+     object — and these three were already overlapping the copy before this
+     revision touched them. Measured at 1440x900, the drawing's own box
+     against the copy's, as shipped in 14.1: register 01 ran 33px INTO the
+     measure, register 02 ran 151px into it, and register 03 cleared by 134.
+     The second of those is the worst overlap anywhere on the deck — a column
+     of 17px prose read through the densest part of a lattice, with only a
+     right-hand scrim between them.
+
+     Solved the same way the studio room's lane was, by measuring rather than
+     nudging — and measured at THREE window sizes, because one is a
+     coincidence and two is a line (see the note over KEY[11].fillY). The
+     drawing's own box against the card's own ink, in CSS pixels:
+
+       1440x900   110   73   161
+       1180x860    56   60    84
+       1024x768    53   52    59
+
+     The three pairs are:
+
+       6   px 0.24 -> 0.25   fill 0.66 -> 0.60
+       7   px -0.24 -> -0.31  fill 0.66 -> 0.58
+       8   px 0.20 -> 0.26   fill 0.74 -> 0.68
+
+     Room 7 gets the largest correction because its copy is in the RIGHT
+     column of a 1.05fr / 0.95fr grid, so it starts at x 780 while room 6's
+     ends at 570 — the figure has ninety fewer pixels to stand in and the old
+     numbers were the mirror of room 6's as if it had the same room. */
+
+  /* 6 · SCOPE 01 — copy left, the object right, seen over the shoulder and
+         turned up to the hand. The first of the three sittings. */
+  { open: 1.00, morph: 1, write: 0.06, erase: 0, flip: 0, work: 1.00,
+    yaw: 0.34, pit: 0.72, roll: 0.00, turn: TURN1, fill: 0.60, px: 0.25, py: 0.02,
+    dig: 0.42, dens: 0.64, ink: 0.92, spin: 0.18, figM: 0,
+    writeTo: 0.40, actMs: 9000 },
+
+  /* 7 · SCOPE 02 — the mirror of it, and the highest camera of the three:
+         almost straight down onto the glass, which is the view that shows the
+         writing rather than the hand. */
+  { open: 1.00, morph: 1, write: 0.40, erase: 0, flip: 0, work: 1.00,
+    yaw: -0.34, pit: 0.84, roll: 0.00, turn: TURN1, fill: 0.56, px: -0.34, py: 0.02,
+    dig: 0.42, dens: 0.64, ink: 0.92, spin: 0.18, figM: 0,
+    writeTo: 0.72, actMs: 8500 },
+
+  /* 8 · SCOPE 03 — the cover folded back and the camera dropped, so the
+         object is read as a thing standing on a surface rather than as a plan.
+         open 0.60 -> 0.74 and pit 0.40 -> 0.54 go together and neither is
+         taste: at 0.60/0.40 the writing surface was within twenty degrees of
+         edge-on to the camera and the line the pen had just cut projected to
+         about a fifth of its length. There has to be a surface to write on
+         before there is any point in writing on it. */
+  { open: 0.74, morph: 1, write: 0.72, erase: 0, flip: 0, work: 1.00,
+    yaw: 0.26, pit: 0.54, roll: 0.03, turn: TURN1, fill: 0.68, px: 0.26, py: 0.06,
+    dig: 0.40, dens: 0.62, ink: 0.90, spin: 0.18, figM: 0,
+    writeTo: 1.00, actMs: 8000 },
 
   /* 9 · works — the tablet goes; the stylus stays and becomes the needle.
          figM 0: on a phone the needle indexes a row that has been stacked into
-         a column, so there is nothing left for it to point at. */
-  { open: 1.00, morph: 1, write: 0.06, erase: 0, flip: 0, work: 0.30,
+         a column, so there is nothing left for it to point at.
+
+         WRITE 1.00 AND NOTHING IS WRITTEN HERE.  The leaves go out on the
+         `hand` ramp, so for most of the walk in there is still a glass to see
+         and it must not be seen un-writing what room 8 has just finished. The
+         value is inherited rather than chosen: it is room 8's writeTo, and it
+         moves with it. */
+  { open: 1.00, morph: 1, write: 1.00, erase: 0, flip: 0, work: 0.30,
     yaw: 0.30, pit: 0.70, roll: 0.00, turn: TURN1, fill: 0.60, px: 0.00, py: 0.00,
     dig: 0.34, dens: 0.68, ink: 0.72, hand: 1, figM: 0 },
 
-  /* 10 · method — on paper.
+  /* 10 · ABOUT — the bio room, and it is room TEN from 15. It used to sit
+          after the commission room; the two were swapped so the reader meets
+          the person before the procedure. Nothing in the composition below
+          changes with the move — the room is the same room — but its
+          NEIGHBOURS do, so the arcs into and out of it are now works -> about
+          -> commission rather than works -> commission -> about. The channel
+          that felt it is `hand`: the needle is 1 in the works room and has to
+          be back at 0 by the room after it, which is this one.
 
-          IT USED TO HURRY, AND IT USED TO FIDGET.  Writing and erasing were
-          both packed into thirteen seconds, which meant the pen crossed the
-          slab six times in the time it takes to read four short steps, and the
-          flip in the middle of it threw the stylus end over end. The erase has
-          gone: what the room does now is write, once, slowly, over twenty
-          seconds — the same gentle single pass the contact room makes — and
-          what it writes is legible and says what the four steps say. The text
-          is CODE, at the top of the figure script.
-
-          AND IT WAS THE DARKEST ROOM ON THE SITE, WHICH IS THE ONE THING IT
-          CANNOT AFFORD TO BE.  ink 0.80 and dens 0.58 are a room standing back
-          — correct where the figure is furniture beside a heading, and wrong
-          here, because this is the only room whose figure is DOING what the
-          copy says. It writes the four steps onto the glass while the reader
-          reads them, and at four fifths of the ink through a difference layer
-          the writing was a rumour. On the wax theme, where the inversion turns
-          the field to night, it was not even that (see --invert-c).
-
-          0.96 / 0.70 / 0.40. Nothing moves and nothing grows: the same object
-          in the same place, printed at nearly full ink and with two thirds of
-          its cells claimed rather than a little over half, and enough of the
-          grain left as numerals to keep it the same drawing as the rest of the
-          page. Raise `fill` instead and it crosses the measure — the copy
-          column ends at about 56% of the width and 0.72 already reaches it.
-
-          AND THE POINT WAS NOT ON THE GLASS.  work 0.92 put it 27px below and
-          16px left of the character it was writing, measured at 1440x900 — in
-          the one room whose whole argument is that the tool is doing what the
-          four steps say. 1.00, with the reasoning at the pos blend in
-          poseFor. */
-  { open: 1.00, morph: 1, write: 0.00, erase: 0, flip: 0, work: 1.00,
-    yaw: 0.02, pit: 0.94, roll: 0.02, turn: TURN1, fill: 0.72, px: 0.24, py: 0.02,
-    dig: 0.40, dens: 0.70, ink: 0.96, figM: 0,
-    writeTo: 1.00, actMs: 20000 },
-
-  /* 11 · studio — AND IT WAS STANDING IN THE MIDDLE OF THE READING.
+          AND IT WAS STANDING IN THE MIDDLE OF THE READING.
 
           px -0.31 puts the object a third of the way left of centre. The
           studio grid is copy-left, portrait-right — so a third left of centre
@@ -4626,10 +5302,59 @@ var KEY = [
           far edge. That is the trap 13 fell into at the other side of this
           room and the note is repeated at .screen.studio[data-scrim] rather
           than only here, because that is where the number is. */
-  { open: 0.86, morph: 1, write: 0.24, erase: 0, flip: 0, work: 0.30,
+  /* write 0.24 -> 1.00 (15): the object comes back out of the needle in this
+     room, and it comes back carrying the line the three SCOPE rooms cut into
+     it. At 0.24 the walk out of works un-wrote three quarters of it while the
+     leaves were fading back in, which is the seam that reads as a fault. The
+     room after this one is paper and starts blank on purpose — that wipe is
+     legible because the whole field turns over with it. */
+  { open: 0.86, morph: 1, write: 1.00, erase: 0, flip: 0, work: 0.30,
     yaw: 1.05, pit: 0.62, roll: 0.00, turn: TURN1,
     fill: 0.205, fillY: 0.62, px: 0.010, py: 0.065,
     dig: 0.36, dens: 0.68, ink: 0.86, spin: 1, figM: 0 },
+
+  /* 11 · COMMISSION — on paper, and it is room ELEVEN from 15.
+
+          The document is still `method` and so is the element id; what moved
+          is the room, from tenth to eleventh, and the address, to #commission.
+          See the note over 3b for why those are three different strings now.
+
+          ON PAPER.
+
+          IT USED TO HURRY, AND IT USED TO FIDGET.  Writing and erasing were
+          both packed into thirteen seconds, which meant the pen crossed the
+          slab six times in the time it takes to read four short steps, and the
+          flip in the middle of it threw the stylus end over end. The erase has
+          gone: what the room does now is write, once, slowly, over twenty
+          seconds — the same gentle single pass the contact room makes — and
+          what it writes is legible and says what the four steps say. The text
+          is CODE, at the top of the figure script.
+
+          AND IT WAS THE DARKEST ROOM ON THE SITE, WHICH IS THE ONE THING IT
+          CANNOT AFFORD TO BE.  ink 0.80 and dens 0.58 are a room standing back
+          — correct where the figure is furniture beside a heading, and wrong
+          here, because this is the only room whose figure is DOING what the
+          copy says. It writes the four steps onto the glass while the reader
+          reads them, and at four fifths of the ink through a difference layer
+          the writing was a rumour. On the wax theme, where the inversion turns
+          the field to night, it was not even that (see --invert-c).
+
+          0.96 / 0.70 / 0.40. Nothing moves and nothing grows: the same object
+          in the same place, printed at nearly full ink and with two thirds of
+          its cells claimed rather than a little over half, and enough of the
+          grain left as numerals to keep it the same drawing as the rest of the
+          page. Raise `fill` instead and it crosses the measure — the copy
+          column ends at about 56% of the width and 0.72 already reaches it.
+
+          AND THE POINT WAS NOT ON THE GLASS.  work 0.92 put it 27px below and
+          16px left of the character it was writing, measured at 1440x900 — in
+          the one room whose whole argument is that the tool is doing what the
+          four steps say. 1.00, with the reasoning at the pos blend in
+          poseFor. */
+  { open: 1.00, morph: 1, write: 0.00, erase: 0, flip: 0, work: 1.00,
+    yaw: 0.02, pit: 0.94, roll: 0.02, turn: TURN1, fill: 0.72, px: 0.24, py: 0.02,
+    dig: 0.40, dens: 0.70, ink: 0.96, figM: 0,
+    writeTo: 1.00, actMs: 20000 },
 
   /* 12 · contact — OPEN, turned toward the reader, the stylus down on the
           glass and the caret blinking under it. */
@@ -6496,15 +7221,20 @@ function s01(t) { return t <= 0 ? 0 : t >= 1 ? 1 : t * t * (3 - 2 * t); }
 
    A `data-copy` path is resolved against COPY.rooms first and then against
    the root, which is why a room slot is "studio.heading" and a site slot is
-   "site.nav.practice". Rooms are the common case and get the short path.
+   "site.header.studio". Rooms are the common case and get the short path.
    ========================================================================== */
 var COPY = {
 
   rooms: {
-    /* ---- 4 · the name ------------------------------------------------- */
+    /* ---- 4 · THE NAME — the first room of STUDIO ---------------------- */
     practice: {
       eyebrow: 'The name',
-      lede: 'A stylus is a plain tool. One end cuts the letter into the wax; turn it over and the flat end wipes it away. Write, read, change your mind, write it again — that is most of the job.',
+      /* TWO PARAGRAPHS IN ONE FIELD, AND THE SLOT NOW KNOWS IT.  The blank
+         line is the author's and it means what a blank line means. Until 15
+         this slot was filled with textContent, which collapses it to a space
+         and ran the two sentences together — see fillRich, which takes a
+         string as well as an array and splits it on blank lines. */
+      lede: 'Stylos is simple and reliable, precise and versatile. It brings together antiquity and modern day, creativity and precision.\n\nWe build websites for academic and heritage projects, creative professionals and businesses.',
       mottoLa: 'Saepe stilum uertas, iterum quae digna legi sint scripturus.',
       mottoEn: 'Turn the stylus often, if you mean to write something worth a second reading.',
       citeAuthor: 'Horace,',
@@ -6512,88 +7242,102 @@ var COPY = {
       citeRef: '1.10.72–73'
     },
 
-    /* ---- 5 · the work ------------------------------------------------- */
+    /* ---- 5 · the second room of STUDIO, and the deformation ----------- */
     practice2: {
-      eyebrow: 'The work',
-      heading: 'Structure first. Then the surface.',
+      eyebrow: 'What we do',
+      heading: 'Agility and precision—delivered reliably and with style',
+      /* THE FOURTH BLOCK USED TO BE EMPTY.  { cls: 'hand-over', t: '' } was
+         published to Firestore and fillRich duly wrote an empty <p> for it,
+         which is a paragraph of blank space in the middle of the room with
+         nothing in the markup to explain it. Dropped here, and fillRich now
+         skips an empty block whatever tree it arrives in — a backend that can
+         produce one should not be able to put a hole in a room. */
       body: [
-        'We make websites for people whose material is complicated — a collection, an archive, a research programme, a body of work built up over years.',
-        { cls: 'aside', t: 'That means settling the structure before anything is styled: what the thing is, who has to read it, and how it is meant to last. The design follows from that, and is the better for it.' },
-        { cls: 'hand-over', t: 'And then it is handed over properly. Whatever ought to be yours to change ends up yours to change — including how the thing looks.' },
-        { cls: 'hand-over aside', t: 'The three inks on this page are not a demonstration: {ink|press one} and the whole site turns, drawing and all. Every commission leaves with controls of its own.' }
+        'We build bespoke websites, relational databases, and mobile applications.',
+        { cls: 'hand-over', t: 'Whether you have an evolving research programme, an intricate archive, an exhibition of artwork, or a specific audience you need to reach—we match your pace, adapt to the brief, and deliver.' },
+        { cls: 'hand-over aside', t: '(You already get to choose the palette!)' }
       ],
-      tags: ['Structure before decoration', 'Multilingual by default', 'Built to be kept']
+      tags: []
     },
 
-    /* ---- 6-8 · the three registers ------------------------------------ */
+    /* ---- 6-8 · SCOPE, the three kinds of commission -------------------
+       Each of the three now has an address of its own — #scope/academic,
+       #scope/3d, #scope/creative — so one kind of work can be sent to a
+       client without sending them the whole section. The addresses are on
+       the sections (data-addr), not here: a slug in a copy field is a slug
+       an edit can break. See 3b. */
     registers: {
       eyebrow: 'What we do',
       heading: 'Three kinds of commission.',
       label: 'Research & humanities',
-      cardHeading: 'Project sites, archives and databases',
-      body: ['Grant outputs, structured databases, digital editions and project platforms — built to be cited, and to hold up under scholarly scrutiny. Designed from inside research: what a work package, an advisory board and a funder each need to see, and how a database earns a reader’s trust.'],
-      tags: ['Grant platforms', 'Databases', 'Digital editions']
+      cardHeading: 'Project websites, databases, archives',
+      body: ['Grant outputs, relational databases and project platforms—built to be used and cited, and to hold up under scholarly scrutiny. Designed from inside research, by an active academic who understands what a fellow researcher, a student, or an advisory board expects to see'],
+      tags: ['academic projects', 'SQL Databases', 'scholarly archives']
     },
     reg2: {
-      label: 'Heritage & visualisation',
-      cardHeading: '3D models, photogrammetry and digital exhibitions',
-      body: ['Photogrammetric models of ancient structures, annotated and embedded; visual archives and spatial evidence made legible for scholars, funders and the public. Drawn from years of archaeological visualisation and current work with Oxford galleries, libraries, archives and museums.'],
-      tags: ['Photogrammetry', '3D embedding', 'GLAM interfaces']
+      label: 'Heritage & archaeology',
+      cardHeading: '3D models, photogrammetry, outreach visualisations',
+      body: ['3D models of ancient objects and structures—created from scratch through photogrammetry or supplied by you, annotated, embedded. Storyboards and visual archives made legible for scholars, funders and the public. Built from first-hand experience of archaeological practice and collaborations with museums'],
+      tags: ['3D visualisation', 'photogrammetry', 'storyboards']
     },
     reg3: {
       label: 'Creative & independent',
-      cardHeading: 'Portfolios, studios and small institutions',
-      body: ['Editorial sites for artists, performers, schools and independent professionals — design that catches the tone of a practice, with working machinery underneath: content systems, back offices, payments, and images handled with care.'],
-      tags: ['Editorial design', 'Motion', 'Back office', 'Payments'],
-      note: 'The surface keeps changing. The tool barely has.'
+      cardHeading: 'Portfolios & personal webpages for creative businesses',
+      body: ['Editorial websites for creative professionals and businesses. Design that catches the tone of a practice: bespoke style, and branding, engaging user interfaces complete with back offices and online payment systems'],
+      tags: ['Editorial design', 'Engagement', 'Back office', 'Payments'],
+      note: 'What you do may range. What we do is reliably good'
     },
 
-    /* ---- 9 · works ---------------------------------------------------- */
+    /* ---- 9 · PROJECTS ------------------------------------------------- */
     works: {
-      eyebrow: 'Selected work',
-      heading: 'Sites, platforms and digital environments.',
-      note: 'Made for cultural, educational and independent projects. Much of the work is commissioned privately or waits on an institutional launch, so each item is shown as far as its status allows.'
+      eyebrow: 'Selected projects',
+      heading: 'Websites, databases, portfolios',
+      note: 'A selection of Stylos\u2019 projects. They range from research outputs to 3D visualisations and to independent creatives. Much of the work is commissioned privately or expects an institutional launch, so items are shown as far as their status allows.'
     },
 
-    /* ---- 10 · method -------------------------------------------------- */
+    /* ---- 11 · COMMISSION (was `method`, and is still that document) ----
+       The document id is unchanged and so is every data-copy path under it.
+       What changed in 15 is where the room stands in the deck — after ABOUT
+       rather than before it — and the address it answers to, #commission.
+       Neither of those is a copy field and neither is in this object. */
     method: {
-      eyebrow: 'Method',
-      heading: 'How a commission runs.',
+      eyebrow: 'Commission progression',
+      heading: 'How Stylos goes about work',
       steps: [
-        { n: 'I',   h: 'Read',      p: 'It starts with your material: the sources, the audiences, and what the institution or the stage actually requires.' },
-        { n: 'II',  h: 'Structure', p: 'Architecture before decoration. Data models, provenance and navigation that will still make sense in ten years.' },
-        { n: 'III', h: 'Draw',      p: 'Typography, colour, pace and atmosphere, set to the register of the work — scholarly, civic or theatrical.' },
-        { n: 'IV',  h: 'Keep',      p: 'Documentation, handover, hosting advice and quiet maintenance. Sites built to be kept, not rebuilt.' }
+        { n: 'I',   h: 'Read',      p: 'It starts with your material: the goal and audiences, your data and insights, and where you would like to go with it' },
+        { n: 'II',  h: 'Structure', p: 'Architecture before decoration: we discuss and approve the scope of the project, timeline, implementation and revisions: you will know what to expect and when, and the date your website or app can be launched. Once the offer is accepted, the work starts in agreed stages' },
+        { n: 'III', h: 'Draw',      p: 'Aesthetic choices—typography, palette, pace and atmosphere, set to the register of the work—scholarly, creative or commercial. The discussion can be as technical as you would like, or a turnkey solution can be offered' },
+        { n: 'IV',  h: 'Keep',      p: 'Full documentation is offered on handover, alongside hosting advice and maintenance options. Sites built to work sustainably and to age well' }
       ]
     },
 
-    /* ---- 11 · studio -------------------------------------------------- */
+    /* ---- 10 · ABOUT (was `studio`, and is still that document) -------- */
     studio: {
       eyebrow: 'Studio',
       heading: 'A practice rooted in classics, built for the present.',
       body: [
-        'Stylos is a one-person practice led by {b|Arkadiy Avdokhin}, a classicist and archaeologist at the University of Oxford and Wolfson College — a doctorate in Classics from King’s College London, a Marie Skłodowska-Curie Fellowship at the Oxford Faculty of Classics, and current work towards a digital 3D and visualisation lab with the Ashmolean Museum.',
-        { cls: 'aside', t: 'The design work grew out of the research: a public platform for the inscriptions and 3D-modelled structures of late antique Aphrodisias, and a scholarly database for a Vienna-based project on Roman-era papyri. The same habits — structure, provenance, longevity, multilingual and accessible by default — shape every site, whether it serves a grant or a stage.' },
-        { cls: 'studio-tail aside', t: 'Engagements are small and scoped — comfortable with grant timelines and work-package deliverables, and corresponding by email.' }
+        'Stylos is a one-person practice led by {b|Arkadiy (Arik) Avdokhin}, a historian and archaeologist at the University of Oxford and Wolfson College—PhD (King\u2019s College London), a recent Marie Skłodowska-Curie Fellow at the Faculty of Classics, with ongoing projects in 3D visualisations in archaeology of Asia Minor and the Near East.',
+        { cls: 'aside', t: 'The web design work grew naturally out of the research and archaeological practice. The same habits—structure, provenance, longevity, multilingual and accessible by default—shape every website, whether it serves a research grant a creative or a business project.' },
+        { cls: 'studio-tail aside', t: 'Informed by Arik\u2019s experience with grant timelines and work-package deliverables, engagements are targeted and individually scoped.' }
       ],
-      plateName: 'Arkadiy Avdokhin',
+      plateName: 'Arkadiy (Arik) Avdokhin',
       creds: [
-        { b: 'Ph.D, Classics',     v: 'King’s College London' },
-        { b: 'MSCA Fellow',        v: 'Faculty of Classics, Oxford' },
-        { b: 'Fellow',             v: 'Wolfson College, Oxford' },
-        { b: '3D & visualisation', v: 'Photogrammetry · GLAM' }
+        { b: 'Ph.D, Classics',                v: 'King\u2019s College London' },
+        { b: 'Marie Skłodowska-Curie Fellow', v: 'Faculty of Classics, Oxford' },
+        { b: 'Fellow',                        v: 'Wolfson College, Oxford' },
+        { b: '3D & visualisation',            v: 'Photogrammetry · GLAM' }
       ]
     },
 
     /* ---- 12 · contact ------------------------------------------------- */
     contact: {
       eyebrow: 'Correspondence',
-      heading: 'Start a commission.',
-      body: ['Write a few lines about the project — what it is, who it is for, and where it stands. A reply follows within a few days.']
+      heading: 'Start a commission, or simply get a conversation going.',
+      body: ['Write a few lines about the project—what it is, who it is for; Stylos will write back swiftly.']
     }
   },
 
-  /* ---- the four singletons -------------------------------------------- */
+  /* ---- the singletons -------------------------------------------------- */
   site: {
     /* the document's own title and description. They are set on <head> as
        well as being seeded there, so a change here reaches the tab and the
@@ -6603,9 +7347,39 @@ var COPY = {
       title: 'Stylos — web design studio, Oxford',
       description: 'Stylos is a one-person web design studio in Oxford. Websites, research platforms, digital exhibitions and portfolios for research, heritage and creative practice.'
     },
-    nav: {
-      practice: 'Practice', registers: 'What we do', works: 'Work',
-      studio: 'Studio', contact: 'Contact'
+    /* THE HEADER IS A NEW DOCUMENT, AND IT IS NEW ON PURPOSE (15).
+
+       It replaces `site/nav`, which had five keys — practice, registers,
+       works, studio, contact — whose MEANINGS changed under this revision:
+       `studio` used to label the bio room and now labels the first prose
+       room, and there are six destinations rather than five. Editing the old
+       document in place would have been the obvious thing and it is the wrong
+       one, because applyRemote merges a live document over the seed key by
+       key: the copy published to Firestore before 15 would have gone on
+       supplying "Our studio" for a key that now means something else, and the
+       page would have shipped with one label quietly wrong and no way to see
+       why.
+
+       A document the backend does not have yet cannot do that. `site/header`
+       is absent from Firestore, so the seed below stands whole until it is
+       published, and the moment it is published it is published complete.
+
+       WHAT TO DO IN THE BACKEND: create `site/header` with these six fields
+       (Console → site → header, or Firebase directly), publish, and then
+       DELETE `site/nav`, which nothing reads any more. Leaving it costs a
+       document read at load and nothing else, so it is tidiness rather than
+       urgency.
+
+       The keys are the ADDRESSES the six links point at, which is also what
+       data-nav carries, so a label and the room it belongs to cannot drift
+       apart. Renaming a label is free. */
+    header: {
+      studio:     'Studio',
+      scope:      'Scope',
+      projects:   'Projects',
+      about:      'About',
+      commission: 'Commission',
+      contact:    'Contact'
     },
     /* CONFIRM BEFORE PUBLISHING — see OPEN-ITEMS A4. The address is written
        into three places on the page from this one field. */
@@ -6613,13 +7387,27 @@ var COPY = {
       email: 'office@stylos.co',
       availability: 'Commissions open for 2026'
     },
+    /* THE FOOTER HAS ALWAYS BEEN ONE DOCUMENT AND IS FULLY EDITABLE.  Raised
+       as a request in 15 and it turned out to be already true: the console's
+       form is generated by classifying values, so `columns` is an array the
+       panel gives ↑ ↓ ✕ and + Add to, each column is an object with a heading
+       and either `lines` (an array of strings) or `links` (an array of
+       { label, href }), and every one of those is a field in the panel. The
+       address, the Are.na and ORCID links, the register list and the
+       copyright line are all edited there and published with everything else.
+       What was missing was not machinery, it was the two real URLs — see A4,
+       and the note on the hrefs below. */
     footer: {
       columns: [
         { h: 'Studio',    lines: ['Beaumont Street', 'Oxford OX1 2LZ', 'United Kingdom'] },
         { h: 'Inquiries', links: [{ label: 'office@stylos.co', href: 'mailto:office@stylos.co' }] },
-        /* PLACEHOLDER HREFS — real URLs needed, or drop the column (A4) */
+        /* PLACEHOLDER HREFS — real URLs needed, or drop the column (A4). They
+           are '#' rather than a guess at the profile, because a link that goes
+           nowhere is a defect a reader can see and a link to the wrong Are.na
+           account is one they cannot. safeHref allows http(s), mailto, # and
+           a root-relative path, and rejects everything else. */
         { h: 'Elsewhere', links: [{ label: 'Are.na', href: '#' }, { label: 'ORCID', href: '#' }] },
-        { h: 'Registers', lines: ['Research & humanities', 'Heritage & visualisation', 'Creative & independent'] }
+        { h: 'Registers', lines: ['Research & humanities', 'Heritage & archaeology', 'Creative & independent'] }
       ],
       copyright: '© 2026 Stylos — Oxford',
       toTop: 'Top ↑'
@@ -6673,7 +7461,7 @@ function safeHref(h) {
 
 /* ---------------------------------------------------------------- 0c · rendering it
    A path is resolved against COPY.rooms first and against the root second, so
-   a room slot is "studio.heading" and a site slot is "site.nav.practice".
+   a room slot is "studio.heading" and a site slot is "site.header.studio".
    Rooms are the common case and get the short path. */
 function copyAt(path, src) {
   var parts = String(path).split('.'), i, node;
@@ -6691,51 +7479,92 @@ function copyAt(path, src) {
    phone and .hand-over decides what is set tight to the line above. Those are
    editorial decisions about a paragraph and they belong beside it. */
 function fillRich(el, blocks) {
-  if (!blocks || !blocks.length) return;
+  /* A STRING IS A ONE-COLUMN VERSION OF THE SAME THING (15).  Some fields are
+     genuinely a paragraph or two and have no editorial classes to carry —
+     practice.lede is one — and making those an array would be asking the
+     author to type structure they do not need. A blank line is what a blank
+     line means anywhere else: a paragraph break. Anything else in the string
+     is left alone, so a single sentence is a single <p> and nothing changes.
+
+     This is also the fix for the lede running its two sentences together:
+     the slot used to be filled with textContent, which collapses \n\n to a
+     space, so the paragraph break published to Firestore was invisible. */
+  if (typeof blocks === 'string') blocks = blocks.split(/\n\s*\n/);
+  if (!blocks || !blocks.length) { el.innerHTML = ''; el.hidden = true; return; }
   var html = '';
   blocks.forEach(function (b) {
     var t = (typeof b === 'string') ? b : (b && b.t);
-    if (t == null) return;
+    /* AND AN EMPTY BLOCK IS NOT A PARAGRAPH.  { cls: 'hand-over', t: '' } was
+       live in Firestore and printed as a paragraph of blank space in the
+       middle of the studio room. A backend that can produce an empty field
+       should not be able to put a hole in a room, so the guard is here rather
+       than only in the seed. */
+    if (t == null || !String(t).trim()) return;
     var cls = (b && b.cls) ? ' class="' + esc(b.cls) + '"' : '';
     html += '<p' + cls + '>' + expand(t) + '</p>';
   });
   el.innerHTML = html;
+  el.hidden = !html;
+}
+/* AN EMPTY LIST IS NOT "LEAVE IT ALONE", AND BOTH HALVES OF THAT WERE WRONG.
+
+   Found in 15 while measuring the compact layout. Every fill below began
+   `if (!arr || !arr.length) return;`, which does two bad things.
+
+   IT LEAVES THE OLD CONTENT STANDING.  These run again on the console's Apply,
+   so emptying a list in the back office and pressing Apply left the previous
+   items on the page with nothing to say why. The panel said the list was
+   empty and the page disagreed with it.
+
+   AND AN EMPTY CONTAINER IS NOT NOTHING.  `.tags` carries `border-top` and
+   29px of margin, so a room whose tags had been emptied in Firestore — which
+   is the live state of the studio room, `tags: []` — printed a horizontal
+   rule across the copy with nothing under it, and cost the room 29px it did
+   not have on a phone. `.creds` is the same shape, and `.foot-grid` and
+   `.method-steps` would simply have held stale rows.
+
+   So: clear it, and hide the container when there is nothing to put in it.
+   `hidden` needs the reset in section 2 to beat the display rules these
+   containers carry — that is what the one !important in the stylesheet is
+   for, and it is there rather than here because it is true of every element
+   with the attribute and not only of these four. */
+function fillList(el, arr, make) {
+  var has = !!(arr && arr.length);
+  el.innerHTML = has ? arr.map(make).join('') : '';
+  el.hidden = !has;
+  return has;
 }
 function fillTags(el, arr) {
-  if (!arr || !arr.length) return;
-  el.innerHTML = arr.map(function (s) { return '<span>' + esc(s) + '</span>'; }).join('');
+  fillList(el, arr, function (s) { return '<span>' + esc(s) + '</span>'; });
 }
 /* data-step is written from the position, not stored: runMethod() reads it to
    light the steps in order, and a stored index that disagreed with the order
    would light them out of sequence with no way to see why */
 function fillSteps(el, steps) {
-  if (!steps || !steps.length) return;
-  el.innerHTML = steps.map(function (s, i) {
+  fillList(el, steps, function (s, i) {
     return '<div class="step" data-step="' + i + '">'
          + '<span class="n mono">' + esc(s.n) + '</span>'
          + '<div><h3>' + esc(s.h) + '</h3><p>' + esc(s.p) + '</p></div></div>';
-  }).join('');
+  });
 }
 /* the --ci stagger is written with the rows for the same reason: it is a
    position, and a fifth qualification should arrive in step without anybody
    having to type 440ms */
 function fillCreds(el, rows) {
-  if (!rows || !rows.length) return;
-  el.innerHTML = rows.map(function (r, i) {
+  fillList(el, rows, function (r, i) {
     return '<div class="cred mono" style="--ci:' + (i * 110) + 'ms">'
          + '<b>' + esc(r.b) + '</b><span>' + esc(r.v) + '</span></div>';
-  }).join('');
+  });
 }
 function fillFoot(el, cols) {
-  if (!cols || !cols.length) return;
-  el.innerHTML = cols.map(function (c) {
+  fillList(el, cols, function (c) {
     var inner = (c.links && c.links.length)
       ? c.links.map(function (l) {
           return '<a href="' + esc(safeHref(l.href)) + '">' + esc(l.label) + '</a>';
         }).join('<br>')
       : (c.lines || []).map(esc).join('<br>');
     return '<div class="foot-col"><h4 class="mono cap">' + esc(c.h) + '</h4><p>' + inner + '</p></div>';
-  }).join('');
+  });
 }
 
 function renderCopy(src) {
@@ -7869,19 +8698,48 @@ function pageCase(d) {
    show a prospective client one project was to tell them to scroll to the
    works room and click the fourth plate. That is the gap this closes.
 
-   THE SHAPE.  #<room-id> for a room, #work/<slug> for a project. The prefix is
-   not decoration: room ids are also Firestore document ids (see the copy
-   layer), so a bare project slug could one day collide with a room's, and a
-   namespace makes that impossible rather than unlikely. It also means the
+   THE SHAPE.  #<address> for a room, #work/<slug> for a project. The prefix is
+   not decoration: a bare project slug could one day collide with a room's, and
+   a namespace makes that impossible rather than unlikely. It also means the
    delegated anchor handler below can tell the two apart without a lookup.
 
-   WHY THE ROOM IDS ARE NOT PRETTIER.  #method rather than #how-a-commission-
-   runs, #practice rather than #the-name. The id of a `.screen` is the id of
-   its document in the `rooms` collection and it is what data-copy paths
-   resolve against; renaming one to read better in an address bar would rename
-   a document in a backend, and the address is the least important of the three
-   jobs that string is doing. If they are ever to be human-readable it wants a
-   deliberate migration, not a nicety bolted on here.
+   THE ADDRESS IS NO LONGER THE ELEMENT ID, AND THAT IS THE WHOLE OF 15's
+   CHANGE HERE.
+
+   Until now a room's address WAS its id — #method, #practice — and 14's note
+   in this place said so, and said that making them read better would mean
+   renaming documents in a backend, because a `.screen`'s id is also the id of
+   its document in the `rooms` collection and is what every data-copy path
+   resolves against. That was correct, and it was the wrong conclusion: the
+   answer is not to leave the addresses ugly, it is to stop making one string
+   do three jobs.
+
+   So the room carries `data-addr`, and that is the public address. The id
+   stays exactly as it was — `practice`, `registers`, `method`, `studio` — so
+   not one Firestore document is renamed and not one data-copy path moves,
+   while the reader sees #studio, #scope, #projects, #about, #commission. The
+   two are free to differ and they now do: the room whose ELEMENT id is
+   `studio` answers to #about, and the room whose element id is `practice`
+   answers to #studio. Nothing in the copy layer can tell.
+
+   THREE RULES FOR data-addr:
+
+     · a room with no data-addr inherits the last one that had it, which is how
+       practice2 shares #studio with practice and how the three wordless
+       showroom rooms have no address at all;
+     · `data-alias` is a comma-separated list of addresses that resolve to the
+       same room but are never WRITTEN. #scope/academic is one: the first
+       register room's canonical address is #scope, because the section's own
+       heading is in it, but the three kinds of commission want symmetrical
+       addresses and a reader who has been sent #scope/3d will guess it;
+     · LEGACY, below, is the same mechanism spent on the addresses this file
+       used to answer to, so a link sent before 15 still lands.
+
+   AND ONE COLLISION, DELIBERATELY RESOLVED IN FAVOUR OF THE NEW SCHEME.
+   #studio used to mean the bio room and now means the first prose room. There
+   is no way to have both; the site is not published yet, so the cost is links
+   sent from a local preview. It is recorded here because it is exactly the
+   class of thing OPEN-ITEMS A8 says an address is a promise about.
 
    FOUR RULES IT KEEPS, and they are the ones that are usually got wrong:
 
@@ -7971,14 +8829,50 @@ function pushWork(i) { setHash(WORK_PREFIX + workSlug(i), 'push'); }
    they are one section of the argument with room 6 — so they answer to
    #registers, which is the nearest address that is true. A room with no id
    inherits the last one that had it. */
-var roomAddr = null;
+/* THE ADDRESSES THIS FILE USED TO ANSWER TO.  Not decoration and not
+   politeness: a link is a promise (OPEN-ITEMS A8) and four of these have been
+   in the page's own nav for three revisions. They resolve; they are never
+   written back, so the address bar always shows the current name. */
+var LEGACY = {
+  practice: 'studio', practice2: 'studio',
+  registers: 'scope', reg2: 'scope/3d', reg3: 'scope/creative',
+  works: 'projects', method: 'commission'
+  /* `studio` is NOT here: it is a live address now and it means a different
+     room than it used to. See the note over this section. */
+};
+
+var roomAddr = null, addrMap = null;
 function buildRoomAddrs() {
-  roomAddr = [];
-  var last = '';
-  for (var i = 0; i < screens.length; i++) {
-    if (screens[i].id) last = screens[i].id;
+  roomAddr = []; addrMap = {};
+  var last = '', i, j, al;
+  for (i = 0; i < screens.length; i++) {
+    var a = (screens[i].dataset.addr || '').trim();
+    if (a) { last = a; addrMap[a.toLowerCase()] = i; }
     roomAddr[i] = (i === 0) ? '' : last;
+    al = (screens[i].dataset.alias || '').split(',');
+    for (j = 0; j < al.length; j++) {
+      var t = al[j].trim().toLowerCase();
+      if (t && addrMap[t] === undefined) addrMap[t] = i;
+    }
   }
+  /* the element ids come last and only where they do not shadow a real
+     address, so #top still works and #studio does not resolve to two rooms */
+  for (i = 0; i < screens.length; i++) {
+    var id = (screens[i].id || '').toLowerCase();
+    if (id && addrMap[id] === undefined) addrMap[id] = i;
+  }
+}
+/* -1 for an address that names no room. The legacy table is consulted once
+   and only once — a legacy name that maps to another legacy name would be a
+   chain nobody could reason about. */
+function roomIndex(h) {
+  if (!roomAddr) buildRoomAddrs();
+  h = String(h == null ? '' : h).trim().toLowerCase().replace(/^#/, '').replace(/\/+$/, '');
+  if (!h) return -1;
+  if (addrMap[h] !== undefined) return addrMap[h];
+  var leg = LEGACY[h];
+  if (leg && addrMap[leg] !== undefined) return addrMap[leg];
+  return -1;
 }
 function syncAddress(i) {
   if (!history.replaceState) return;
@@ -8016,8 +8910,7 @@ function deepLinked() {
     return workIndex(h.slice(WORK_PREFIX.length)) >= 0;
   }
   if (h === 'top') return false;
-  var el = $(h);
-  return !!(el && el.classList.contains('screen'));
+  return roomIndex(h) > 0;
 }
 
 /* The whole router. `how` is 'auto' on arrival and on Back, 'smooth' when the
@@ -8036,11 +8929,11 @@ function applyHash(how) {
       openCase(wi, 'route');
       return true;
     }
-    h = 'works';                       /* rule 4 */
+    h = 'projects';                    /* rule 4 */
   }
   closeCase('route');
-  var el = h && $(h);
-  if (el && el.classList.contains('screen')) { goRoom(el, how); return true; }
+  var ri = roomIndex(h);
+  if (ri >= 0) { goRoom(screens[ri], how); return true; }
   return false;
 }
 
@@ -8126,6 +9019,45 @@ function measure() {
   measureVH();
   tops = screens.map(function (s) { return s.getBoundingClientRect().top + window.scrollY; });
   hts = screens.map(function (s) { return s.offsetHeight; });
+  measureGiga();
+}
+
+/* WHERE THE GIANT WORD IS, SO THE TILE FIELD CAN GET OUT OF ITS WAY.
+
+   Measured here, with everything else, and never again: the pose loop needs
+   this rectangle once a frame during one transition, and a getBoundingClientRect
+   in a frame that has already written styles is the layout thrash the note over
+   onScroll is about. What the loop does with it is arithmetic on tops[] and
+   the scroll position, which is the same discipline.
+
+   IT IS THE TEXT'S BOX AND NOT THE ELEMENT'S, and that is the point of the
+   Range. .gigaword is a block the full width of .inner with the word centred
+   in it, so the element's rectangle is 1300px wide at a desktop size and
+   clearing it would clear the whole band. The range round its contents is the
+   ~760px the six letters actually occupy. clip-path is what the reveal
+   animates, so the box is the same before and after it has run — a transform
+   would have made this reading depend on when it was taken. */
+var gigaBox = null;
+function measureGiga() {
+  gigaBox = null;
+  var g = document.querySelector('.practice .gigaword');
+  if (!g || !document.createRange) return;
+  var sec = g.closest ? g.closest('.screen') : null;
+  var i = sec ? screens.indexOf(sec) : -1;
+  if (i < 0) return;
+  var rng = document.createRange();
+  rng.selectNodeContents(g);
+  var b = rng.getBoundingClientRect();
+  if (!b.width || !b.height) return;
+  gigaBox = { room: i, top: b.top + window.scrollY - tops[i], h: b.height, x0: b.left, x1: b.right };
+}
+/* null everywhere but the walk into and out of the room, so the mosaic's
+   cache key does not churn on a rectangle nothing is looking at */
+function gigaClear() {
+  if (!gigaBox) return null;
+  if (poseP < gigaBox.room - 1.06 || poseP > gigaBox.room + 0.55) return null;
+  var y0 = tops[gigaBox.room] + gigaBox.top - window.scrollY;
+  return { x0: gigaBox.x0, x1: gigaBox.x1, y0: y0, y1: y0 + gigaBox.h };
 }
 function deckPos() {
   var y = window.scrollY + vhRef * 0.5;
@@ -8547,7 +9479,7 @@ function poseLoop() {
   backplateAt(poseP);
   overtureAt(poseP);
   showIndexAt(poseP);
-  if (mosaic) mosaic.update(poseP);
+  if (mosaic) { mosaic.setClear(gigaClear()); mosaic.update(poseP); }
 }
 
 /* THE READING PASSES THROUGH THE BAND, and no amount of padding can stop it.
@@ -8701,7 +9633,15 @@ document.addEventListener('click', function (e) {
   var id = a.getAttribute('href').slice(1);
   if (!id) return;
   var isWork = id.slice(0, WORK_PREFIX.length).toLowerCase() === WORK_PREFIX;
-  if (!isWork && !$(id)) return;      /* not ours: let the browser have it */
+  /* ASK THE ROUTER, NOT THE DOCUMENT (15).  This read `!$(id)` — is there an
+     element with that id — which was the same question as "is that an
+     address" only for as long as the two strings were the same string. From
+     15 they are not: #scope, #projects, #about and #commission are addresses
+     and none of them is an element id, so the test sent every one of the six
+     nav links to the browser, which looked for an element that does not
+     exist, did nothing, and left the hash in the bar. The test has to be the
+     one applyHash will use or the handler is guessing. */
+  if (!isWork && roomIndex(id) < 0) return;   /* not ours: let the browser have it */
   e.preventDefault();
   setHash(id, 'push');
   if (sheetOpen) {
@@ -9010,10 +9950,10 @@ function createMosaic(el) {
     for (var ry = 0; ry < rows; ry++) {
       for (var rx = 0; rx < cols; rx++) {
         var fy = (ry + 0.5) / rows;                 /* 0 at the top of the band */
-        if (Math.random() > 0.12 + 0.82 * fy * fy) continue;
+        if (Math.random() > 0.10 + 0.84 * fy * fy) continue;
         var gap = unit * 0.16;
         tiles.push({
-          x: rx * unit, y: ry * unit,
+          x: rx * unit, y: ry * unit, fy: fy,
           w: (Math.random() < 0.22 ? 2 : 1) * unit - gap,
           h: (Math.random() < 0.10 ? 2 : 1) * unit - gap,
           /* the stagger is compressed (0.58 -> 0.34) so more of the field is
@@ -9027,17 +9967,55 @@ function createMosaic(el) {
     lastKey = -9;
   }
 
-  function paint(frac, env) {
-    var key = Math.round(frac * 240) + Math.round(env * 240) * 512;
+  /* THE CLEARING, AND IT IS THE WHOLE OF WHY THE BAND COULD BE MADE BIGGER.
+
+     The showroom seam ends on the room whose first mark is STYLOS set at up
+     to 200px, and that word is carried on a striped mask — so the tiles show
+     THROUGH the letterforms as well as round them. At 40vh the two met for
+     about a third of the transition and it was already busy; at 56vh they
+     would meet for most of it, and what the reader would be looking at is two
+     rectangular grids interfering, which is neither the word nor the field.
+
+     So the field is told where the word is and gets out of its way. `clear`
+     is a rectangle in this canvas's own CSS pixels, handed down once a frame
+     by the deck (see gigaClear in the pose loop) and computed there by
+     arithmetic rather than by reading layout. A tile inside it is drawn at
+     0.10 of its alpha; the falloff is over 64px on every side, so the word
+     stands in a soft hole in the field rather than in a cut-out of one —
+     a cut-out would simply be a second rectangle.
+
+     It is deliberately NOT a hard skip. At zero the word gets a clean halo
+     and the halo itself becomes the shape you notice. */
+  var clear = null, CLEAR_FADE = 64;
+
+  function clearAt(x, y) {
+    if (!clear) return 1;
+    var dx = Math.max(clear.x0 - x, x - clear.x1, 0);
+    var dy = Math.max(clear.y0 - y, y - clear.y1, 0);
+    var d = Math.max(dx, dy);
+    if (d >= CLEAR_FADE) return 1;
+    return 0.10 + 0.90 * sm(d / CLEAR_FADE);
+  }
+
+  function paint(frac, env, reach) {
+    var ck = clear ? (Math.round(clear.y0) * 7919 + Math.round(clear.x0)) : 0;
+    var key = Math.round(frac * 240) + Math.round(env * 240) * 512 + Math.round(reach * 20) * 262144 + ck * 8388608;
     if (key === lastKey) return;
     lastKey = key;
     mctx.clearRect(0, 0, Wp, Hp);
     if (env < 0.012) { blank = true; return; }
     blank = false;
+    /* how far up the band this seam reaches. The edge is soft over a fifth of
+       the band, or the limit itself prints as a horizontal line — which is
+       exactly the defect the scrim mask in section 5 answers one layer up. */
+    var lo = 1 - reach;
     for (var i = 0; i < tiles.length; i++) {
       var tl = tiles[i];
       var a = sm((frac - tl.thr) / 0.11) * (1 - sm((frac - tl.thr - 0.62) / 0.26));
       a *= env;
+      if (reach < 0.999) a *= sm((tl.fy - lo) / 0.20);
+      if (a < 0.022) continue;
+      a *= clearAt((tl.x + tl.w / 2) / MDPR, (tl.y + tl.h / 2) / MDPR);
       if (a < 0.022) continue;
       mctx.globalAlpha = a * 0.9;
       mctx.fillStyle = tl.acc ? warm : bone;
@@ -9084,28 +10062,54 @@ function createMosaic(el) {
      in the bottom two fifths of it, which is the only place this device can
      be used without standing on the reading. If the band is ever to appear
      more often it needs to be shorter first. */
-  var MARKS = [3, 8];
+  /* A TABLE RATHER THAN A LIST (15), because the two seams are no longer the
+     same size. Each entry is the index of the room being LEFT:
+
+       w      how strong the field gets at its plateau
+       reach  how far up the 56vh band it is allowed to come, 1 being all of
+              it. The works seam keeps 0.70, which is 39vh — the height the
+              whole band used to be, so that seam is unchanged by this
+              revision on purpose: it has a carousel under it and it was
+              tuned against that.
+       in/out where the plateau starts and ends, as a fraction of the move.
+
+     Add or remove an entry and nothing else has to change; an empty table
+     switches the mosaic off without removing it. */
+  var SEAMS = { 3: { w: 1.00, reach: 1.00, in: 0.13, out: 0.84 },
+                8: { w: 0.90, reach: 0.70, in: 0.17, out: 0.80 } };
   /* Compact keeps only the first of them. The deck position between two rooms
      is measured centre to centre, and the works room stacked for a phone is
      three screens tall — so the 8 -> 9 seam is spread over about nine hundred
      pixels of scrolling and the band, which is meant to be a punctuation mark,
      would stand across the bottom of the screen for most of a swipe. The
      showroom seam is between two rooms that both fit, and reads correctly. */
-  var MARKS_C = [3];
+  var SEAMS_C = { 3: { w: 0.94, reach: 0.78, in: 0.15, out: 0.82 } };
+
+  /* the deck hands this over in VIEWPORT pixels, because that is the only
+     frame both of them share; the band converts to its own. It is done here
+     rather than there so that the band's height — which is a CSS clamp and
+     changes at the compact breakpoint — is only known in one place. */
+  function setClear(r) {
+    if (!r) { clear = null; return; }
+    var off = window.innerHeight - Hp / MDPR;
+    clear = { x0: r.x0, x1: r.x1, y0: r.y0 - off, y1: r.y1 - off };
+  }
 
   function update(p) {
     var room = Math.floor(p);
     var frac = p - room;
-    var env = 0;
-    if ((STACKED.matches ? MARKS_C : MARKS).indexOf(room) >= 0) {
+    var sk = (STACKED.matches ? SEAMS_C : SEAMS)[room];
+    var env = 0, reach = 1;
+    if (sk) {
       /* a plateau, not a spike. The old sine peaked in the middle of the
          transition and was gone either side of it, so the band was properly
          visible for about a fifth of the scroll; this is up by a sixth of the
          way in, held flat across the middle, and down over the last fifth. */
-      env = sm(frac / 0.17) * (1 - sm((frac - 0.80) / 0.20)) * 0.96;
+      env = sm(frac / sk.in) * (1 - sm((frac - sk.out) / (1 - sk.out))) * sk.w;
+      reach = sk.reach;
     }
     if (env < 0.012 && blank) return;
-    paint(frac, env);
+    paint(frac, env, reach);
   }
 
   function recolour() {
@@ -9115,11 +10119,68 @@ function createMosaic(el) {
   }
 
   build(); recolour();
-  return { build: build, update: update, recolour: recolour };
+  return { build: build, update: update, recolour: recolour, setClear: setClear };
 }
 
 var mosaicEl = $('mosaic');
 var mosaic = (mosaicEl && !REDUCED) ? createMosaic(mosaicEl) : null;
+
+/* ---------------------------------------------------------------- 4e · the plate's height
+   THE ABOUT ROOM'S TWO COLUMNS NOW END ON THE SAME LINE.
+
+   See the long note at .portrait for why this is a measurement and not a
+   rule. Three things about it worth keeping:
+
+     · it runs only where there is something to align to. Below 901px the grid
+       is one column and the plate is simply the room's picture, so the
+       property is cleared and the shipped 5:6 crop stands;
+     · it is clamped at both ends. A short copy cannot make a postage stamp of
+       the photograph and a long one cannot push the credit table off the
+       bottom of the room, which is the failure the 44svh cap was there to
+       prevent and still is;
+     · it is called BEFORE the dither, never after. The dither is a canvas
+       sized to the element, so a plate that changes height after it has been
+       drawn is a plate with a stretched lattice on it. Every caller below
+       either precedes dressPortrait() or is followed by Portrait.redraw(). */
+function syncPortrait() {
+  var grid = document.querySelector('.studio-grid');
+  if (!grid) return;
+  var media = grid.querySelector('.studio-media');
+  var copy = grid.querySelector('.body-w');
+  if (!media || !copy) return;
+  if (STACKED.matches) { media.style.removeProperty('--portrait-h'); return; }
+  var h = copy.getBoundingClientRect().height;
+  if (!h) { media.style.removeProperty('--portrait-h'); return; }
+  var want = Math.round(clamp(h, 260, Math.min(vhRef * 0.52, 660)));
+  media.style.setProperty('--portrait-h', want + 'px');
+
+  /* AND THE ROOM STILL HAS TO FIT, WHICH BEATS THE ALIGNMENT.
+
+     The plate is not alone in its column: the caption and the four credits
+     stand under it, so a plate set to the copy's height makes the column
+     about 135px TALLER than the copy and the room grows by that much. At
+     1440x900 there is slack for it; at 940x820 there was not, and the room
+     ran 77px past the viewport — which is the defect the 44svh cap existed to
+     prevent, reintroduced by the thing that replaced it.
+
+     The ceiling cannot be written as a constant, because what is left for the
+     plate depends on the heading above the grid and the credit table below
+     it, both of which are copy and both of which change. So it is measured:
+     set the height, ask the room how tall it came out, and give back exactly
+     the overflow. One extra layout pass in a function that runs on load, on
+     resize and on an Apply — not in a frame loop.
+
+     The floor is 260px and it wins over fitting: below that the plate is a
+     thumbnail and the room would be better off without it. If a room is still
+     over after that, the copy is what is too long and the plate is not the
+     thing to take it out of. */
+  var room = grid.closest ? grid.closest('.screen') : null;
+  if (!room) return;
+  var over = room.scrollHeight - vhRef;
+  if (over > 1) {
+    media.style.setProperty('--portrait-h', Math.max(260, want - over) + 'px');
+  }
+}
 
 /* ---------------------------------------------------------------- 4b · the reveals
    The markup stays plain — a heading is a heading, and it is a heading in
@@ -9181,24 +10242,67 @@ function numberMoves() {
    once and styled out of the wide layout by the stylesheet.
 
    Opening a room changes its height, so the deck's measurements are retaken —
-   without that the settle would go on aiming at where the rooms used to be. */
+   without that the settle would go on aiming at where the rooms used to be.
+
+   IT IS NOT WORTH A TAP FOR ONE LINE, AND IT WAS ASKING FOR FOUR (15).
+
+   Reported as: the control invites a tap and what it reveals is next to
+   nothing. It was right. Four rooms carried asides and the amount hidden
+   behind the control was, in characters: the studio's two paragraphs, 420; the
+   name room's motto, 170; the register card's closing line, 47; and the
+   palette sentence, 40. Three of those four are one short block, and a
+   disclosure over one short block is strictly worse than no disclosure — the
+   reader spends a tap and a room-height reflow to be shown a sentence that
+   would have cost them a thumb's width of scrolling.
+
+   So the control is earned rather than assumed. A room whose asides come to
+   less than MORE_MIN characters is simply told in full — the same `told` class
+   the button sets, put on at dress time and never taken off, so the stylesheet
+   needs no second rule for it. On the copy as it stands that leaves exactly one
+   disclosure on the site, in the room that has 420 characters behind it.
+
+   AND THE LABEL SAYS WHAT IS BEHIND IT.  "More" is the least informative word
+   available for a control whose whole problem was that nobody could tell
+   whether it was worth pressing. It now counts the blocks it will open.
+
+   THE PALETTE SENTENCE IS A SEPARATE ARGUMENT for the same answer: from 15
+   there is a control standing under it (.ink-try), and a control folded away
+   behind another control is not a control. The threshold happens to cover it;
+   if the copy in that room ever grows past MORE_MIN, the row stays out anyway
+   because it is not marked .aside. */
+var MORE_MIN = 180;
+var NUMBERS = ['', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight'];
+
 function dressAsides() {
   screens.forEach(function (sc) {
     var asides = sc.querySelectorAll('.aside');
     if (!asides.length) return;
-    var last = asides[asides.length - 1];
+
+    var chars = 0, i;
+    for (i = 0; i < asides.length; i++) chars += (asides[i].textContent || '').trim().length;
+    if (chars < MORE_MIN) { sc.classList.add('told'); return; }
+
+    var n = asides.length;
+    var shut = 'More — ' + (NUMBERS[n] || n) + (n === 1 ? ' paragraph' : ' paragraphs');
+    var last = asides[n - 1];
     var b = document.createElement('button');
     b.type = 'button';
     b.className = 'aside-more';
     b.setAttribute('aria-expanded', 'false');
-    b.textContent = 'More';
+    b.textContent = shut;
     b.addEventListener('click', function () {
       var on = !sc.classList.contains('told');
       sc.classList.toggle('told', on);
       b.setAttribute('aria-expanded', String(on));
-      b.textContent = on ? 'Less' : 'More';
+      b.textContent = on ? 'Less' : shut;
       measure();
       onScroll();
+      /* the plate in the studio room is set to the copy column's height and
+         the copy column has just changed height. It is a no-op above 901px
+         and on a phone, where the grid is one column — but the disclosure is
+         also what a tablet in portrait uses, and there it is not. */
+      syncPortrait();
+      if (Portrait) Portrait.redraw();
     });
     last.parentNode.insertBefore(b, last.nextSibling);
   });
@@ -9273,26 +10377,6 @@ if (burger && sheetEl) {
 /* ---------------------------------------------------------------- 5 · chrome */
 $('toTop').addEventListener('click', function () { goTo(screens[0]); });
 
-/* The sentence in the practice room says the inks are a working control rather
-   than a demonstration; this is what makes that sentence true from inside the
-   sentence.
-
-   With two grounds it could simply press the one that was not pressed. With
-   three that is no longer a well-formed instruction — "the other one" is two
-   of them — so it advances to the NEXT ink in the row and wraps. Pressing it
-   three times therefore walks the whole palette and comes home, which is a
-   better answer to "press one" than jumping to whichever swatch the DOM
-   happened to list first. */
-(function () {
-  var nudge = $('inkNudge');
-  if (!nudge) return;
-  nudge.addEventListener('click', function () {
-    var order = Object.keys(THEMES);
-    var i = order.indexOf(currentTheme());
-    setTheme(order[(i + 1) % order.length]);
-  });
-})();
-
 /* THE INK PAIR IS A TRIO NOW, and the switch had to stop being a toggle.
 
    It was `classList.toggle('t-green', k === 'green')`, which says "green or
@@ -9307,14 +10391,17 @@ $('toTop').addEventListener('click', function () { goTo(screens[0]); });
    its two inks, the portrait's dither is a canvas of resolved colours, and the
    browser chrome takes a colour of its own. */
 var THEMES = { blue: '#07264c', green: '#092c2a', wax: '#ece6d6' };
+/* THE NAMES ARE HERE AND NOT IN THE COPY TREE, deliberately. They are the
+   labels on a control, they are read back out of the DOM by syncInk, and an
+   ink whose name in Firestore stopped matching the class in the stylesheet
+   would be a control that lies about what it is about to do. Three words. */
+var INK_NAMES = { blue: 'Blue', green: 'Green', wax: 'Wax' };
 
 function setTheme(k) {
   if (!THEMES[k]) return;
   root.classList.remove('t-green', 't-wax');
   if (k !== 'blue') root.classList.add('t-' + k);
-  Array.prototype.forEach.call(document.querySelectorAll('.sw'), function (o) {
-    o.setAttribute('aria-pressed', String(o.dataset.theme === k));
-  });
+  syncInk(k);
   if (window.FIGURE) window.FIGURE.setTheme(k);
   if (mosaic) mosaic.recolour();
   if (Portrait) Portrait.redraw();
@@ -9335,8 +10422,116 @@ function currentTheme() {
        : root.classList.contains('t-green') ? 'green' : 'blue';
 }
 
-Array.prototype.forEach.call(document.querySelectorAll('.sw'), function (b) {
-  b.addEventListener('click', function () { setTheme(b.dataset.theme); });
+/* ---------------------------------------------------------------- 5c · the ink picker
+   ONE CONTROL IN THREE PLACES, AND ONE HANDLER FOR ALL OF THEM.
+
+   The nav carries a disclosure, the compact menu carries a segmented row, and
+   the studio room carries a second segmented row inside the paragraph that
+   talks about it. They are three presentations of the same value and they are
+   kept in step by ONE function — syncInk — which reads nothing and is told
+   everything, so there is no order in which they can disagree. Anything that
+   sets a theme goes through setTheme, and setTheme calls it.
+
+   The delegation is not a flourish either. Every button below is either
+   written by renderCopy (the {ink|…} token) or re-written by the console's
+   Apply, so a handler bound to an element at parse time is a handler bound to
+   an element that is about to be replaced. THAT WAS A LIVE DEFECT: the token's
+   listener was attached in an IIFE at script time, and renderCopy does not run
+   until the copy promise resolves — so #inkNudge did not exist yet, the
+   listener was never attached, and the one control the practice room is
+   ABOUT had done nothing since the day it was written. One delegated listener
+   on the document cannot have that bug. */
+function syncInk(k) {
+  Array.prototype.forEach.call(document.querySelectorAll('[data-theme]'), function (o) {
+    if (o.hasAttribute('role')) o.setAttribute('aria-checked', String(o.dataset.theme === k));
+  });
+  /* the trigger says the ink's NAME and shows no chip of its own — the note
+     over it in the markup says why. There is nothing else to keep in step. */
+  var now = $('inkNow');
+  if (now) now.textContent = INK_NAMES[k] || k;
+}
+
+var inkEl = $('ink'), inkBtn = $('inkBtn'), inkMenu = $('inkMenu'), inkOpen = false;
+
+function setInkMenu(on) {
+  if (!inkBtn || !inkMenu || on === inkOpen) return;
+  inkOpen = on;
+  inkBtn.setAttribute('aria-expanded', String(on));
+  if (on) {
+    inkMenu.hidden = false;
+    /* the attribute has to go a frame before the class, or the transition has
+       nothing to transition FROM: display:none suppresses the starting style */
+    requestAnimationFrame(function () { inkMenu.classList.add('open'); });
+    var cur = inkMenu.querySelector('[aria-checked="true"]') || inkMenu.querySelector('.ink-opt');
+    if (cur) cur.focus({ preventScroll: true });
+  } else {
+    inkMenu.classList.remove('open');
+    var hide = function () { if (!inkOpen) inkMenu.hidden = true; };
+    if (REDUCED) hide(); else setTimeout(hide, 220);
+  }
+}
+
+if (inkBtn && inkMenu) {
+  inkBtn.addEventListener('click', function () { setInkMenu(!inkOpen); });
+  /* ROVING THE LIST.  Up/Down wrap, Home/End jump, Escape shuts it and hands
+     the focus back — a menu the keyboard can open and cannot leave is worse
+     than no menu. Tab is deliberately allowed to fall out of it and close it:
+     this is a menu, not a modal, and trapping the focus in a colour picker is
+     a thing only the picker's author would expect. */
+  inkMenu.addEventListener('keydown', function (e) {
+    var opts = Array.prototype.slice.call(inkMenu.querySelectorAll('.ink-opt'));
+    var i = opts.indexOf(document.activeElement);
+    if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+      e.preventDefault();
+      var n = opts.length;
+      var j = i < 0 ? 0 : (i + (e.key === 'ArrowDown' ? 1 : n - 1)) % n;
+      opts[j].focus();
+    } else if (e.key === 'Home') { e.preventDefault(); opts[0].focus(); }
+    else if (e.key === 'End') { e.preventDefault(); opts[opts.length - 1].focus(); }
+    else if (e.key === 'Escape') { e.preventDefault(); setInkMenu(false); inkBtn.focus(); }
+    else if (e.key === 'Tab') { setInkMenu(false); }
+  });
+  inkBtn.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowDown' || e.key === 'ArrowUp') { e.preventDefault(); setInkMenu(true); }
+    else if (e.key === 'Escape' && inkOpen) { e.preventDefault(); setInkMenu(false); }
+  });
+  document.addEventListener('pointerdown', function (e) {
+    if (inkOpen && inkEl && !inkEl.contains(e.target)) setInkMenu(false);
+  }, true);
+  /* a room change under an open menu leaves a popover floating over copy it
+     has nothing to do with */
+  window.addEventListener('scroll', function () { if (inkOpen) setInkMenu(false); }, { passive: true });
+}
+
+/* every ink control on the page, however and whenever it was written */
+document.addEventListener('click', function (e) {
+  var b = e.target.closest ? e.target.closest('[data-theme]') : null;
+  if (b && b.dataset.theme && THEMES[b.dataset.theme]) {
+    setTheme(b.dataset.theme);
+    if (inkOpen) { setInkMenu(false); if (inkBtn) inkBtn.focus({ preventScroll: true }); }
+    return;
+  }
+  /* THE TOKEN IN THE COPY.  It used to advance to the next ink, which is the
+     one interaction on the page that did not do what its own sentence said:
+     "press one" and then being handed whichever ink came next. It now brings
+     the reader to the three that are standing in the same room, marks the row
+     for a beat and puts the keyboard on the current one — an offer rather than
+     a change made on the reader's behalf. If the row is somehow not in the
+     document (a copy tree with the token and no room for it), the nav's own
+     picker is opened instead, which is the same offer in the other place. */
+  if (e.target.closest && e.target.closest('.ink-nudge')) {
+    var row = $('inkTry');
+    if (row) {
+      row.classList.remove('asked');
+      void row.offsetWidth;                    /* restart the animation */
+      row.classList.add('asked');
+      setTimeout(function () { row.classList.remove('asked'); }, 1600);
+      var cur = row.querySelector('[aria-checked="true"]') || row.querySelector('.ink-seg-b');
+      if (cur) cur.focus({ preventScroll: true });
+    } else if (inkBtn) {
+      setInkMenu(true);
+    }
+  }
 });
 
 /* The pointer does two things to the figure and neither of them is a control:
@@ -9411,6 +10606,7 @@ window.addEventListener('resize', function () {
     } : null);
     measure(); buildHit(); auditFit();
     if (mosaic) mosaic.build();
+    syncPortrait();
     if (Portrait) Portrait.redraw();
     if (window.FIGURE && window.FIGURE.ready) window.FIGURE.resize();
     onScroll();
@@ -9872,6 +11068,11 @@ function consApply() {
   });
   dressAsides();
   numberMoves();
+  /* the copy column may be a different height now, and the plate is set to it */
+  syncPortrait();
+  if (Portrait) Portrait.redraw();
+  /* and the ink row in the studio room was just rebuilt with the copy round it */
+  syncInk(currentTheme());
 
   /* a room the reader has already walked past keeps its revealed state: the
      reveals are one-way, and copy replaced under them would otherwise sit at
@@ -10109,6 +11310,10 @@ function initialise() {
   dressReveals();
   dressAsides();
   numberMoves();
+  /* measureVH() first: syncPortrait's ceiling is in svh and vhRef is not
+     written until the rooms are measured, which happens further down */
+  measureVH();
+  syncPortrait();
   Portrait = dressPortrait();
   syncLanding();
 
@@ -10134,15 +11339,15 @@ function initialise() {
     /* The document declares its theme in the html element — set in the markup,
        and possibly overwritten by the restore in the head — so there is never
        a flash. Everything else has to be told once, by hand: the figure paints
-       its own ground, and the swatches have to show which of the three is
-       pressed, which the restore deliberately did not do (it runs before the
-       markup for them exists). */
+       its own ground, and the three ink controls have to show which of the
+       three is on, which the restore deliberately did not do (it runs before
+       the markup for them exists). */
     window.FIGURE.setTheme(currentTheme());
     window.FIGURE.setPose(0, 0);
   }
-  Array.prototype.forEach.call(document.querySelectorAll('.sw'), function (o) {
-    o.setAttribute('aria-pressed', String(o.dataset.theme === currentTheme()));
-  });
+  /* after renderCopy, because the studio room's row is inside a room whose
+     copy has just been written and the console's Apply re-runs this order */
+  syncInk(currentTheme());
   poseLoop();
 
   /* the hero's copy waits for the hand-over to be well under way */
@@ -10186,7 +11391,13 @@ function initialise() {
        guessed at: STYLOS.addresses() in the console */
     addresses: function () {
       var out = { rooms: [], works: [] };
-      screens.forEach(function (s) { if (s.id) out.rooms.push('#' + s.id); });
+      if (!roomAddr) buildRoomAddrs();
+      screens.forEach(function (sc, i) {
+        var a = (sc.dataset.addr || '').trim();
+        if (!a) return;
+        var al = (sc.dataset.alias || '').split(',').map(function (t) { return t.trim(); }).filter(Boolean);
+        out.rooms.push('#' + a + (al.length ? '   (also ' + al.map(function (t) { return '#' + t; }).join(', ') + ')' : ''));
+      });
       P.forEach(function (p, i) { out.works.push('#' + WORK_PREFIX + workSlug(i) + '  —  ' + p.title); });
       return out;
     },
