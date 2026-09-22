@@ -1,0 +1,32 @@
+# Stylos
+
+> Stylos is a one-person web design studio in Oxford, founded by classicist and archaeologist Arkadiy Avdokhin. The studio creates websites, research platforms, digital exhibitions, and portfolios for research, heritage, and creative practice.
+
+Canonical website: https://stylos.co/
+
+Contact: office@stylos.co
+
+## Services
+
+- Research websites and public-facing grant platforms
+- Digital exhibitions and cultural-heritage interfaces
+- 3D visualisation and photogrammetry integration
+- Portfolios for artists and independent practitioners
+- Frontend design, Firebase-backed content systems, and lightweight back offices
+
+## Selected work
+
+- Aphrodisias 3D Epigraphy: a public platform combining interactive 3D models with scholarly object records
+- Festivals & Society: a research website and Firebase database for a Vienna-based project on Roman-era papyri
+- Anna Connolly: a proposal-stage portfolio for a performance storyteller
+- Russian Lyceum: a parent-facing website system for a private school in Oxford
+- Sofia Sharomazova: an artist website centred on painting, motion, and a managed image pipeline
+
+## Primary sections
+
+- Studio: https://stylos.co/#studio
+- Scope: https://stylos.co/#scope
+- Projects: https://stylos.co/#projects
+- About: https://stylos.co/#about
+- Commission: https://stylos.co/#commission
+- Contact: https://stylos.co/#contact
