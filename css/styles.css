@@ -246,11 +246,13 @@ body.on-paper .invert { opacity: 1; }
 
 .screen {
   position: relative; z-index: 3;
+  overflow-x: clip;
   min-height: 100svh;
   padding: clamp(92px, 12.5vh, 148px) var(--gutter) clamp(48px, 7vh, 88px);
   display: flex; flex-direction: column; justify-content: center;
 }
 .screen > .inner { width: 100%; max-width: var(--maxw); margin: 0 auto; position: relative; z-index: 2; }
+.works > div, .foot { position: relative; z-index: 2; }
 
 .screen[data-scrim]::before {
   content: ""; position: absolute; inset: -1px; z-index: 0; pointer-events: none;
@@ -688,7 +690,8 @@ html.sheet-open .nav { z-index: 490; }
   color: var(--fg-faint); letter-spacing: .26em;
 }
 .o-cue {
-  position: absolute; left: 50%; bottom: clamp(30px, 5vh, 64px); transform: translateX(-50%);
+  position: absolute; left: 0; right: 0; margin-inline: auto; width: max-content;
+  bottom: clamp(30px, 5vh, 64px);
   display: inline-flex; flex-direction: column; align-items: center; gap: 10px;
   color: var(--fg-faint); white-space: nowrap;
 }
@@ -968,7 +971,7 @@ html:not(.js) .step { opacity: 1; transform: none; }
 
 .studio-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(150px, 25.5vw) minmax(260px, 31vw);
+  grid-template-columns: minmax(0, 1fr) minmax(150px, min(25.5vw, 422px)) minmax(260px, min(31vw, 513px));
   gap: 0;
   align-items: start;
 }
@@ -1212,6 +1215,7 @@ html:not(.js) .cred { opacity: 1; transform: none; }
   .screen { min-height: 0; scroll-snap-align: none; padding-block: clamp(74px, 12vh, 120px) clamp(56px, 9vh, 100px); }
 
   .overture, .show { min-height: 100svh; }
+  .contact .foot { margin-top: clamp(40px, 7vh, 64px); }
 }
 
 @media (max-width: 900px) {
@@ -1244,14 +1248,15 @@ html:not(.js) .cred { opacity: 1; transform: none; }
   .o-cue { bottom: calc(clamp(22px, 4vh, 44px) + env(safe-area-inset-bottom)); }
 
   .o-pass {
-    left: 50%; right: auto; transform: translateX(-50%);
+    left: 0; right: 0; margin-inline: auto; width: max-content;
     bottom: calc(clamp(22px, 4vh, 44px) + 66px + env(safe-area-inset-bottom));
     font-size: 10px;
   }
 
   .show-index { display: none; }
 
-  .h2 { font-size: clamp(1.7rem, 6.6vw, 2.4rem); max-width: 20ch; }
+  .h2 { font-size: clamp(1.7rem, 6.6vw, 2.4rem); max-width: 20ch; text-wrap: balance; }
+  .practice-2 .h2, .reg-title .h2, .works-head .h2 { font-size: clamp(1.7rem, 6.6vw, 2.4rem); max-width: 20ch; }
   .o-mark { font-size: clamp(52px, 18vw, 150px); }
   .gigaword { font-size: clamp(48px, 17vw, 140px); }
 
@@ -1318,7 +1323,7 @@ html:not(.js) .cred { opacity: 1; transform: none; }
   .portrait { max-height: 40svh; }
 
   .creds { display: grid; grid-template-columns: 1fr 1fr; column-gap: 14px; }
-  .cred { grid-template-columns: 1fr; gap: 2px; }
+  .cred { grid-template-columns: 1fr; gap: 2px; align-content: start; }
   .cred span { text-align: left; }
 
   .sheet-close {

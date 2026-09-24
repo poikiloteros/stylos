@@ -1,15 +1,19 @@
 # Stylos production site
 
-This folder is a deployment-ready static website. Serve its root over HTTPS so that `index.html`, `robots.txt`, `sitemap.xml`, and `llms.txt` are available at the site root.
+This folder is a deployment-ready static website. Serve its root over HTTPS so that `index.html`, `favicon.ico`, `site.webmanifest`, `robots.txt`, `sitemap.xml`, and `llms.txt` are available at the site root.
+
+Revision 16 (2026-09-23). What changed from `../refactored/`, and why, is in `CHANGES.md`.
 
 ## Structure
 
 - `index.html` contains semantic markup, metadata, and static JSON-LD.
 - `css/styles.css` contains the complete visual system.
 - `js/` separates critical theme setup, Firebase reading, geometry, rendering, and application behaviour.
-- `assets/` contains the local project screenshots and favicon.
+- `assets/images/` contains the local project screenshots.
+- `assets/icons/` contains the favicon set: `favicon.svg`, `apple-touch-icon.png` (180, full bleed), `icon-192.png` and `icon-512.png` for the manifest. `favicon.ico` (16/32/48) sits at the root.
+- `CHANGES.md` records revision 16 and the reasoning behind each value.
 - `SECURITY-AUDIT.md` records resolved and deployment-level security work.
-- `QA-REPORT.md` records source-preservation and browser-verification results.
+- `QA-REPORT.md` records source-preservation and browser-verification results for the refactor itself (22 September).
 
 ## Deployment checks
 

@@ -1262,13 +1262,43 @@ function backplateAt(p) {
   if (Math.abs(b - backB) > 0.35)  { backB = b; backEl.style.setProperty('--back-blur', b.toFixed(1) + 'px'); }
 }
 
+function bezier(x1, y1, x2, y2) {
+  var cx = 3 * x1, bx = 3 * (x2 - x1) - cx, ax = 1 - cx - bx;
+  var cy = 3 * y1, by = 3 * (y2 - y1) - cy, ay = 1 - cy - by;
+  function sx(t) { return ((ax * t + bx) * t + cx) * t; }
+  function sy(t) { return ((ay * t + by) * t + cy) * t; }
+  function dx(t) { return (3 * ax * t + 2 * bx) * t + cx; }
+  return function (x) {
+    if (x <= 0) return 0;
+    if (x >= 1) return 1;
+    var t = x, i, d, s;
+    for (i = 0; i < 6; i++) {
+      d = sx(t) - x;
+      if (Math.abs(d) < 1e-5) return sy(t);
+      s = dx(t);
+      if (Math.abs(s) < 1e-6) break;
+      t -= d / s;
+    }
+    var lo = 0, hi = 1;
+    t = x;
+    for (i = 0; i < 24; i++) {
+      d = sx(t);
+      if (Math.abs(d - x) < 1e-5) break;
+      if (d < x) lo = t; else hi = t;
+      t = (lo + hi) / 2;
+    }
+    return sy(t);
+  };
+}
+
 var SETTLE = (function () {
-  var IDLE_WHEEL = 460, GLIDE = 780, CARRY = 0.085;
-  var quiet = null, raf = 0, from = 0, dest = 0, t0 = 0;
+  var IDLE_WHEEL = 160, CARRY = 0.085;
+  var GLIDE_MIN = 360, GLIDE_MAX = 760, GLIDE_PX = 0.45;
+  var quiet = null, raf = 0, from = 0, dest = 0, t0 = 0, glide = GLIDE_MAX, destRoom = -1;
   var dir = 0, lastY = 0, suspendUntil = 0, touching = false;
   var coastRaf = 0, coastY = 0, coastStill = 0;
 
-  function easeOut(t) { return 1 - Math.pow(1 - t, 3); }
+  var ease = bezier(0.45, 0.05, 0.16, 1);
   function maxScroll() {
 
     var d = document.documentElement;
@@ -1295,24 +1325,51 @@ var SETTLE = (function () {
   }
 
   function step(now) {
-    var t = clamp((now - t0) / GLIDE, 0, 1);
-    var y = from + (dest - from) * easeOut(t);
+    var t = clamp((now - t0) / glide, 0, 1);
+    var y = from + (dest - from) * ease(t);
     window.scrollTo(0, y);
     var got = window.scrollY;
-    if (t > 0.06 && Math.abs(got - y) > 24) { raf = 0; dir = 0; lastY = got; return; }
+    if (t > 0.06 && Math.abs(got - y) > 24) { raf = 0; dir = 0; destRoom = -1; lastY = got; return; }
     lastY = got;
-    if (t < 1) { raf = requestAnimationFrame(step); } else { raf = 0; dir = 0; }
+    if (t < 1) { raf = requestAnimationFrame(step); } else { raf = 0; dir = 0; destRoom = -1; }
+  }
+
+  function glideTo(y, room) {
+    var at = window.scrollY;
+    dest = clamp(y, 0, maxScroll());
+    if (Math.abs(dest - at) < 2) { dir = 0; destRoom = -1; return; }
+    from = at; t0 = performance.now(); destRoom = room;
+    glide = clamp(GLIDE_MIN + Math.abs(dest - from) * GLIDE_PX, GLIDE_MIN, GLIDE_MAX);
+    stop(); raf = requestAnimationFrame(step);
   }
 
   function settle() {
     quiet = null;
     if (touching || performance.now() < suspendUntil || !tops.length) return;
     if (insideTall()) { dir = 0; return; }
-    var y = window.scrollY;
-    dest = clamp(tops[targetRoom()], 0, maxScroll());
-    if (Math.abs(dest - y) < 2) { dir = 0; return; }
-    from = y; t0 = performance.now();
-    stop(); raf = requestAnimationFrame(step);
+    var r = targetRoom();
+    glideTo(tops[r], r);
+  }
+
+  function page(d) {
+    if (!tops.length || performance.now() < suspendUntil) return false;
+    var y = window.scrollY, vh = vhRef, n = tops.length, c = 0, i;
+    for (i = 0; i < n; i++) if (tops[i] <= y + 2) c = i;
+    var h = hts[c] || 0;
+    if (h > vh + 8) {
+      if (d > 0 && y < tops[c] + h - vh - 8) return false;
+      if (d < 0 && y > tops[c] + 8) return false;
+    }
+    var r = d > 0 ? c + 1 : (y > tops[c] + 8 ? c : c - 1);
+    if (raf && destRoom >= 0 && (dest - from) * d > 0) r = destRoom + d;
+    r = clamp(r, 0, n - 1);
+    var y1 = tops[r];
+    if (d < 0 && r < c && (hts[r] || 0) > vh + 8) y1 = tops[r] + hts[r] - vh;
+    clearTimeout(quiet); quiet = null;
+    if (coastRaf) { cancelAnimationFrame(coastRaf); coastRaf = 0; }
+    dir = d;
+    glideTo(y1, r);
+    return true;
   }
 
   function coast() {
@@ -1331,9 +1388,16 @@ var SETTLE = (function () {
   function poke(d) {
     if (performance.now() < suspendUntil) return;
     if (d) dir = d;
-    stop();
+    stop(); destRoom = -1;
     clearTimeout(quiet);
-    quiet = setTimeout(settle, touching ? 100000 : IDLE_WHEEL);
+    if (coastRaf) { cancelAnimationFrame(coastRaf); coastRaf = 0; }
+    if (!touching) quiet = setTimeout(watchCoast, IDLE_WHEEL);
+  }
+
+  function typing(t, k) {
+    if (!t || !t.closest) return false;
+    if (t.closest('input, textarea, select, [contenteditable], [role="menu"], [role="radiogroup"]')) return true;
+    return k === ' ' && !!t.closest('button, [role="button"]');
   }
 
   if (!REDUCED) {
@@ -1356,10 +1420,17 @@ var SETTLE = (function () {
     }, { passive: true });
 
     window.addEventListener('keydown', function (e) {
-      var k = e.key;
-      if (k === 'ArrowDown' || k === 'PageDown' || k === ' ') poke(1);
-      else if (k === 'ArrowUp' || k === 'PageUp') poke(-1);
-    }, { passive: true });
+      var k = e.key, d = 0;
+      if (k === 'ArrowDown' || k === 'PageDown' || (k === ' ' && !e.shiftKey)) d = 1;
+      else if (k === 'ArrowUp' || k === 'PageUp' || (k === ' ' && e.shiftKey)) d = -1;
+      if (!d || e.defaultPrevented || e.altKey || e.ctrlKey || e.metaKey) return;
+      if (typing(e.target, k)) return;
+      if (root.classList.contains('locked') || root.classList.contains('cons-open') ||
+          root.classList.contains('intro-locked')) return;
+      if (e.repeat && raf) { e.preventDefault(); return; }
+      if (page(d)) { e.preventDefault(); return; }
+      poke(d);
+    });
   }
 
   return {
@@ -1773,6 +1844,24 @@ function syncPortrait() {
   }
 }
 
+var LANE_REF = { w: 0.255, mid: 0.5185 }, laneKey = null;
+function syncStudioLane() {
+  if (!(window.ENG && ENG.KEY)) return;
+  var i = screens.indexOf($('studio')), K = ENG.KEY[i];
+  if (!K) return;
+  if (!laneKey) laneKey = { fill: K.fill, px: K.px };
+  K.fill = laneKey.fill; K.px = laneKey.px;
+  var grid = document.querySelector('.studio-grid');
+  if (!grid || STACKED.matches) return;
+  var cols = getComputedStyle(grid).gridTemplateColumns.split(' ').map(parseFloat);
+  var W = stageBox().w;
+  if (cols.length < 3 || !(cols[1] > 0) || !(W > 0)) return;
+  var laneW = cols[1], laneMid = grid.getBoundingClientRect().left + cols[0] + laneW / 2;
+  var k = laneW / (LANE_REF.w * W);
+  K.fill = laneKey.fill * k;
+  K.px = (laneMid + (laneKey.px + 0.5 - LANE_REF.mid) * W * k - W / 2) / W;
+}
+
 function splitInto(el, mode) {
   if (!el || el.dataset.split === 'done') return;
   var txt = el.textContent;
@@ -2013,25 +2102,27 @@ if (!REDUCED && window.matchMedia('(pointer: fine)').matches) {
   }, { passive: true });
 }
 
-var rzT = null, rzW = window.innerWidth, rzH = window.innerHeight;
+var rzT = null, rzW = window.innerWidth, rzH = window.innerHeight, rzFull = false;
 var CHROME_BAND = 180;
 
 window.addEventListener('resize', function () {
   var w = window.innerWidth, h = window.innerHeight;
-  if (w === rzW && Math.abs(h - rzH) <= CHROME_BAND) {
+  if (!rzFull && w === rzW && Math.abs(h - rzH) <= CHROME_BAND) {
     rzH = h;
     clearTimeout(rzT);
     rzT = setTimeout(function () { measure(); onScroll(); }, 160);
     return;
   }
-  rzW = w; rzH = h;
+  rzW = w; rzH = h; rzFull = true;
   clearTimeout(rzT);
   rzT = setTimeout(function () {
+    rzFull = false;
 
     var mid = root.classList.contains('intro-locked');
     if (mid && window.FIGURE && window.FIGURE.resume) window.FIGURE.resume();
 
     syncLanding();
+    syncStudioLane();
     registerStylusSoon(0, mid ? function () {
       if (window.FIGURE && window.FIGURE.pause) window.FIGURE.pause();
     } : null);
@@ -2599,6 +2690,7 @@ function initialise() {
   syncPortrait();
   Portrait = dressPortrait();
   syncLanding();
+  syncStudioLane();
 
   var cod = $('plateCod');
   if (cod && cod.getAttribute('src')) {

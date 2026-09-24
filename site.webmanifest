@@ -1,0 +1,12 @@
+{
+  "name": "Stylos — web design studio, Oxford",
+  "short_name": "Stylos",
+  "icons": [
+    { "src": "./assets/icons/icon-192.png", "type": "image/png", "sizes": "192x192" },
+    { "src": "./assets/icons/icon-512.png", "type": "image/png", "sizes": "512x512" }
+  ],
+  "start_url": "./",
+  "display": "browser",
+  "background_color": "#092c2a",
+  "theme_color": "#092c2a"
+}
