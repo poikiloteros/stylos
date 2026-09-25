@@ -14,8 +14,7 @@ var COPY = {
   rooms: {
 
     practice: {
-      eyebrow: 'The name',
-
+      eyebrow: 'Studio',
       lede: 'Stylos is simple and reliable, precise and versatile. It brings together antiquity and modern day, creativity and precision.\n\nWe build websites for academic and heritage projects, creative professionals and businesses.',
       mottoLa: 'Saepe stilum uertas, iterum quae digna legi sint scripturus.',
       mottoEn: 'Turn the stylus often, if you mean to write something worth a second reading.',
@@ -25,13 +24,16 @@ var COPY = {
     },
 
     practice2: {
-      eyebrow: 'What we do',
+      eyebrow: 'What Stylos does',
       heading: 'Agility and precision—delivered reliably and with style',
-
       body: [
         'We build bespoke websites, relational databases, and mobile applications.',
-        { cls: 'hand-over', t: 'Whether you have an evolving research programme, an intricate archive, an exhibition of artwork, or a specific audience you need to reach—we match your pace, adapt to the brief, and deliver.' },
-        { cls: 'hand-over aside', t: '(You already get to choose the palette!)' }
+        {
+          cls: 'hand-over',
+          t: 'Whether you have an evolving research programme, an intricate archive, an exhibition of artwork, or a specific audience you need to reach—we match your pace, adapt to the brief, and deliver.'
+        },
+        { cls: 'hand-over', t: '' },
+        { cls: 'hand-over aside', t: '(You already  get to choose the palette)' }
       ],
       tags: []
     },
@@ -41,19 +43,27 @@ var COPY = {
       heading: 'Three kinds of commission.',
       label: 'Research & humanities',
       cardHeading: 'Project websites, databases, archives',
-      body: ['Grant outputs, relational databases and project platforms—built to be used and cited, and to hold up under scholarly scrutiny. Designed from inside research, by an active academic who understands what a fellow researcher, a student, or an advisory board expects to see'],
+      body: [
+        'Grant outputs, relational databases and project platforms—built to be used and cited, and to hold up under scholarly scrutiny. Designed from inside research, by an active academic who understands what a fellow researcher, a student, or an advisory board expects to see'
+      ],
       tags: ['academic projects', 'SQL Databases', 'scholarly archives']
     },
+
     reg2: {
       label: 'Heritage & archaeology',
       cardHeading: '3D models, photogrammetry, outreach visualisations',
-      body: ['3D models of ancient objects and structures—created from scratch through photogrammetry or supplied by you, annotated, embedded. Storyboards and visual archives made legible for scholars, funders and the public. Built from first-hand experience of archaeological practice and collaborations with museums'],
+      body: [
+        '3D models of ancient objects structures—created from scratch through photogrammetry or supplied by you, annotated, embedded. Storyboards and visual archives made legible for scholars, funders and the public. Built from first-hand experience of archaeological practice and collaborations with museums'
+      ],
       tags: ['3D visualisation', 'photogrammetry', 'storyboards']
     },
+
     reg3: {
       label: 'Creative & independent',
       cardHeading: 'Portfolios & personal webpages for creative businesses',
-      body: ['Editorial websites for creative professionals and businesses. Design that catches the tone of a practice: bespoke style, and branding, engaging user interfaces complete with back offices and online payment systems'],
+      body: [
+        'Editorial websites for creative professionals and businesses. Design that catches the tone of a practice: bespoke style, and branding, engaging user interfaces complete with back offices and online payment systems'
+      ],
       tags: ['Editorial design', 'Engagement', 'Back office', 'Payments'],
       note: 'What you do may range. What we do is reliably good'
     },
@@ -61,72 +71,99 @@ var COPY = {
     works: {
       eyebrow: 'Selected projects',
       heading: 'Websites, databases, portfolios',
-      note: 'A selection of Stylos\u2019 projects. They range from research outputs to 3D visualisations and to independent creatives. Much of the work is commissioned privately or expects an institutional launch, so items are shown as far as their status allows.'
+      note: 'A selection of Stylos\' projects. They range from research outputs to 3D visualisations and to independent creatives. Much of the work is commissioned privately or expects an institutional launch, so items are shown as far as its status allows.'
     },
 
     method: {
       eyebrow: 'Commission progression',
       heading: 'How Stylos goes about work',
       steps: [
-        { n: 'I',   h: 'Read',      p: 'It starts with your material: the goal and audiences, your data and insights, and where you would like to go with it' },
-        { n: 'II',  h: 'Structure', p: 'Architecture before decoration: we discuss and approve the scope of the project, timeline, implementation and revisions: you will know what to expect and when, and the date your website or app can be launched. Once the offer is accepted, the work starts in agreed stages' },
-        { n: 'III', h: 'Draw',      p: 'Aesthetic choices—typography, palette, pace and atmosphere, set to the register of the work—scholarly, creative or commercial. The discussion can be as technical as you would like, or a turnkey solution can be offered' },
-        { n: 'IV',  h: 'Keep',      p: 'Full documentation is offered on handover, alongside hosting advice and maintenance options. Sites built to work sustainably and to age well' }
+        {
+          n: 'I',
+          h: 'Read',
+          p: 'It starts with your material: the goal and audiences, your data and and insights, and where you would like to go with it'
+        },
+        {
+          n: 'II',
+          h: 'Structure',
+          p: 'Architecture before decoration: we discuss and approve the scope of the project, timeline, implementation and revisions: you will know what to expect and when, and the date your website or app can be launched. Once the offer is accepted, the work starts in agreed stages'
+        },
+        {
+          n: 'III',
+          h: 'Draw',
+          p: 'Aesthetic choises—typography, palette, pace and atmosphere, set to the register of the work—scholarly, creative or commercial. The discussion can be as technical as you would like, or a turnkey solution can be offered'
+        },
+        {
+          n: 'IV',
+          h: 'Keep',
+          p: 'Full documentation is offered on handover, alongside hosting advice and maintenance options. Sites built to work sustainably and to age well'
+        }
       ]
     },
 
     studio: {
-      eyebrow: 'Studio',
+      eyebrow: 'About',
       heading: 'A practice rooted in classics, built for the present.',
       body: [
-        'Stylos is a one-person practice led by {b|Arkadiy (Arik) Avdokhin}, a historian and archaeologist at the University of Oxford and Wolfson College—PhD (King\u2019s College London), a recent Marie Skłodowska-Curie Fellow at the Faculty of Classics, with ongoing projects in 3D visualisations in archaeology of Asia Minor and the Near East.',
-        { cls: 'aside', t: 'The web design work grew naturally out of the research and archaeological practice. The same habits—structure, provenance, longevity, multilingual and accessible by default—shape every website, whether it serves a research grant a creative or a business project.' },
-        { cls: 'studio-tail aside', t: 'Informed by Arik\u2019s experience with grant timelines and work-package deliverables, engagements are targeted and individually scoped.' }
+        'Stylos is a one-person practice led by {b|Arkadiy (Arik) Avdokhin|https://www.classics.ox.ac.uk/people/dr-arkadiy-avdokhin}, a historian and archaeologist at the University of Oxford and Wolfson College—PhD (King’s College London), a recent Marie Skłodowska-Curie Fellow at the Faculty of Classics, with ongoing projects in 3D visualisations in archaeology of Asia Minor and the Near East.',
+        {
+          cls: 'aside',
+          t: 'The web design work grew naturally out of the research and archaeological practice. The same habits—structure, provenance, longevity, multilingual and accessible by default—shape every website, whether it serves a research grant a creative or a business project.'
+        },
+        {
+          cls: 'studio-tail aside',
+          t: 'Informed by Arik\'s experience with grant timelines and work-package deliverables, engagements are targeted and individually scoped.'
+        }
       ],
       plateName: 'Arkadiy (Arik) Avdokhin',
       creds: [
-        { b: 'Ph.D, Classics',                v: 'King\u2019s College London' },
+        { b: 'Ph.D, Classics', v: 'King’s College London' },
         { b: 'Marie Skłodowska-Curie Fellow', v: 'Faculty of Classics, Oxford' },
-        { b: 'Fellow',                        v: 'Wolfson College, Oxford' },
-        { b: '3D & visualisation',            v: 'Photogrammetry · GLAM' }
+        { b: 'Fellow', v: 'Wolfson College, Oxford' },
+        { b: '3D & visualisation', v: 'Photogrammetry · GLAM' }
       ]
     },
 
     contact: {
       eyebrow: 'Correspondence',
       heading: 'Start a commission, or simply get a conversation going.',
-      body: ['Write a few lines about the project—what it is, who it is for; Stylos will write back swiftly.']
+      body: [
+        'Write a few lines about the project—what it is, who it is for; Stylos will write back swiftly.'
+      ]
     }
   },
 
   site: {
 
     meta: {
-      title: 'Stylos — web design studio, Oxford',
-      description: 'Stylos is a one-person web design studio in Oxford. Websites, research platforms, digital exhibitions and portfolios for research, heritage and creative practice.'
+      title: 'Stylos—web design studio, Oxford',
+      description: 'Stylos is a one-person web design studio in Oxford run by an active academic. Websites, research platforms, digital exhibitions and portfolios for research, heritage and creative practice.'
     },
 
     header: {
-      studio:     'Studio',
-      scope:      'Scope',
-      projects:   'Projects',
-      about:      'About',
+      studio: 'Studio',
+      scope: 'Scope',
+      projects: 'Projects',
+      about: 'About',
       commission: 'Commission',
-      contact:    'Contact'
+      contact: 'Contact'
     },
 
-    contact: {
-      email: 'office@stylos.co',
-      availability: 'Commissions open for 2026'
-    },
+    contact: { email: 'studio@stylos.uk', availability: 'Commissions open for 2026' },
 
     footer: {
       columns: [
-        { h: 'Studio',    lines: ['Beaumont Street', 'Oxford OX1 2LZ', 'United Kingdom'] },
-        { h: 'Inquiries', links: [{ label: 'office@stylos.co', href: 'mailto:office@stylos.co' }] },
-
-        { h: 'Elsewhere', links: [{ label: 'Are.na', href: '#' }, { label: 'ORCID', href: '#' }] },
-        { h: 'Registers', lines: ['Research & humanities', 'Heritage & archaeology', 'Creative & independent'] }
+        { h: 'Studio', lines: ['17  Garford street', 'Oxford OX2  6UY', 'United Kingdom'] },
+        {
+          h: 'Inquiries',
+          links: [
+            { label: 'studio@stylos.uk', href: 'mailto:studio@stylos.uk' }
+          ]
+        },
+        {
+          h: 'Registers',
+          lines: ['Research & humanities', 'Heritage & visualisation', 'Creative & independent']
+        }
       ],
       copyright: '© 2026 Stylos — Oxford',
       toTop: 'Top ↑'
@@ -140,14 +177,64 @@ var TOKENS = {
   ink: function (label) {
     return '<button type="button" class="ink-nudge" id="inkNudge">' + esc(label) + '</button>';
   },
-  b: function (label) { return '<strong>' + esc(label) + '</strong>'; }
+  b: function (label, href) {
+    var s = '<strong>' + esc(label) + '</strong>', h = href ? linkHref(href) : '';
+    return h ? linkHTML(h, s, 'tx-link tx-name') : s;
+  },
+  link: function (label, href) {
+    var h = linkHref(href || label);
+    if (!h) return esc(label);
+    return linkHTML(h, esc(label) + (isExternal(h) ? ARROW : ''), 'tx-link');
+  }
 };
 
+var ARROW = '<span class="tx-arrow" aria-hidden="true">↗</span>';
+var RICH = /\{(\w+)\|([^{}|]*)(?:\|([^{}]*))?\}|((?:https?:\/\/|www\.)[^\s<>"{}]+)/gi;
+
 function expand(text) {
-  return esc(String(text == null ? '' : text))
-    .replace(/\{(\w+)\|([^}]*)\}/g, function (all, name, label) {
-      return TOKENS[name] ? TOKENS[name](label) : all;
-    });
+  var s = String(text == null ? '' : text), out = '', last = 0, m, fn, u, h;
+  RICH.lastIndex = 0;
+  while ((m = RICH.exec(s))) {
+    out += esc(s.slice(last, m.index));
+    if (m[4]) {
+      u = trimUrl(m[4]);
+      h = linkHref(u[0]);
+      out += (h ? linkHTML(h, esc(u[0]) + ARROW, 'tx-link') : esc(u[0])) + esc(u[1]);
+    } else {
+      fn = TOKENS[m[1].toLowerCase()];
+      out += fn ? fn(m[2], m[3]) : esc(m[0]);
+    }
+    last = RICH.lastIndex;
+  }
+  return out + esc(s.slice(last));
+}
+
+function trimUrl(u) {
+  var tail = '', c;
+  while (u.length > 1) {
+    c = u.charAt(u.length - 1);
+    if (/[.,;:!?'"‘’“”]/.test(c) ||
+        (c === ')' && u.split(')').length > u.split('(').length) ||
+        (c === ']' && u.split(']').length > u.split('[').length)) {
+      tail = c + tail; u = u.slice(0, -1);
+    } else break;
+  }
+  return [u, tail];
+}
+
+function linkHref(h) {
+  h = String(h == null ? '' : h).trim();
+  if (/^www\./i.test(h)) h = 'https://' + h;
+  return (h && safeHref(h) === h) ? h : '';
+}
+function isExternal(h) { return /^https?:\/\//i.test(h); }
+function linkHTML(href, inner, cls) {
+  var ext = isExternal(href);
+  return '<a class="' + cls + '" href="' + esc(href) + '"' + (ext ? ' target="_blank" rel="noopener"' : '') + '>'
+       + inner + (ext ? '<span class="sr-only"> (opens in a new tab)</span>' : '') + '</a>';
+}
+function hostOf(h) {
+  return String(h).replace(/^https?:\/\//i, '').replace(/^www\./i, '').replace(/\/$/, '');
 }
 
 function safeHref(h) {
@@ -195,7 +282,7 @@ function fillSteps(el, steps) {
   fillList(el, steps, function (s, i) {
     return '<div class="step" data-step="' + i + '">'
          + '<span class="n mono">' + esc(s.n) + '</span>'
-         + '<div><h3>' + esc(s.h) + '</h3><p>' + esc(s.p) + '</p></div></div>';
+         + '<div><h3>' + esc(s.h) + '</h3><p>' + expand(s.p) + '</p></div></div>';
   });
 }
 
@@ -226,6 +313,7 @@ function renderCopy(src) {
     if ('copySteps' in d) { fillSteps(el, v); return; }
     if ('copyCreds' in d) { fillCreds(el, v); return; }
     if ('copyFoot'  in d) { fillFoot(el, v);  return; }
+    if ('copyInline' in d) { el.innerHTML = expand(v); return; }
 
     if ('copyMail'  in d) { el.textContent = v; el.setAttribute('href', 'mailto:' + v); return; }
     el.textContent = v;
@@ -233,7 +321,7 @@ function renderCopy(src) {
 
   var meta = copyAt('site.meta', src);
   if (meta) {
-    if (meta.title) document.title = meta.title;
+    if (meta.title) { document.title = meta.title; BASE_TITLE = meta.title; }
     var m = document.querySelector('meta[name="description"]');
     if (m && meta.description) m.setAttribute('content', meta.description);
   }
@@ -247,13 +335,14 @@ function syncJSONLD(src) {
   try { data = JSON.parse(el.textContent); } catch (e) { return; }
   var meta = copyAt('site.meta', src), ct = copyAt('site.contact', src);
   var foot = copyAt('site.footer', src);
-  if (meta && meta.description) data.description = meta.description;
-  if (ct && ct.email) data.email = ct.email;
+  function one(s) { return String(s == null ? '' : s).replace(/\s+/g, ' ').trim(); }
+  if (meta && meta.description) data.description = one(meta.description);
+  if (ct && ct.email) data.email = one(ct.email);
 
   var col = foot && foot.columns && foot.columns[0];
   if (col && col.lines && col.lines.length >= 2 && data.address) {
-    var pc = String(col.lines[1]).match(/^(.*?)\s+([A-Z]{1,2}\d[\dA-Z]?\s*\d[A-Z]{2})$/i);
-    data.address.streetAddress = String(col.lines[0]);
+    var pc = one(col.lines[1]).match(/^(.*?)\s+([A-Z]{1,2}\d[\dA-Z]?\s*\d[A-Z]{2})$/i);
+    data.address.streetAddress = one(col.lines[0]);
     if (pc) { data.address.addressLocality = pc[1]; data.address.postalCode = pc[2]; }
   }
   el.textContent = JSON.stringify(data, null, 2);
@@ -283,24 +372,45 @@ function applyRemote(r) {
     var w = r.works.slice().sort(function (a, b) {
       return (a.order === undefined ? 999 : a.order) - (b.order === undefined ? 999 : b.order);
     });
-    P.length = 0; Array.prototype.push.apply(P, w);
-    applyLocalWorkImages();
+    P.length = 0; Array.prototype.push.apply(P, w.map(normWork));
   }
 }
 
+var WORK_FIELDS = ['title', 'slug', 'cat', 'client', 'status', 'register', 'scope', 'live', 'img',
+                   'desc', 'longText', 'quote', 'quoteBy', 'sections', 'roman'];
+
+function normWork(w) {
+  var o = {}, k, i;
+  w = w || {};
+  for (i = 0; i < WORK_FIELDS.length; i++) {
+    k = WORK_FIELDS[i];
+    o[k] = (w[k] !== undefined && w[k] !== null) ? w[k] : (k === 'sections' ? [] : '');
+  }
+  for (k in w) if (Object.prototype.hasOwnProperty.call(w, k) && !(k in o)) o[k] = w[k];
+  return o;
+}
+
 var INTRO = {
-  TOTAL:   5000,
+  TOTAL:   3200,
 
   brief:    620,
-  turn0:   1020,
+  turn0:    800,
 
-  turn:     480,
-  cod:     2620,
-  step0:   3060,
-  step:    1680,
-  word:    3300,
+  turn:     340,
+  cod:     1900,
+  step0:   2220,
+  step:     900,
+  word:    2300,
   fade:     900
 };
+
+var SEEN_KEY = 'stylos-intro';
+function introSeen() {
+  try { return sessionStorage.getItem(SEEN_KEY) === '1'; } catch (e) { return false; }
+}
+function markIntroSeen() {
+  try { sessionStorage.setItem(SEEN_KEY, '1'); } catch (e) {}
+}
 
 var LANDING = { trim: 1.00, dx: 0.03, dy: -0.07, dxM: 0.00, dyM: -0.235 };
 var BOX = { x0: 0, y0: 0, x1: 1, y1: 1, measured: false };
@@ -495,7 +605,9 @@ var Intro = (function () {
     el.style.setProperty('--turn', INTRO.turn + 'ms');
     el.style.setProperty('--shrink', INTRO.step + 'ms');
 
-    if (REDUCED || deepLinked()) {
+    var brief = REDUCED || deepLinked() || introSeen();
+    markIntroSeen();
+    if (brief) {
       el.classList.add('s1', 'q4', 'cod', 'k', 'word');
       at(REDUCED ? 320 : INTRO.brief, function () { finish(done); });
       return;
@@ -542,124 +654,224 @@ var Intro = (function () {
   };
 })();
 
-var LOCAL_WORK_IMAGES = {
-  "aphrodisias-3d-epigraphy": "./assets/images/projects/aphrodisias-3d-epigraphy.png",
-  "festivals-and-society": "./assets/images/projects/festivals-and-society.png",
-  "anna-connolly": "./assets/images/projects/performer.png",
-  "russian-lyceum": "./assets/images/projects/russian-lyceum.png",
-  "sofia-sharomazova": "./assets/images/projects/sofia-sharomazova.png"
-};
-
-function applyLocalWorkImages() {
-  P.forEach(function (project) {
-    if (LOCAL_WORK_IMAGES[project.slug]) project.img = LOCAL_WORK_IMAGES[project.slug];
-  });
-}
-
 var P = [
-  { roman: 'I', cat: 'Research platform', status: 'Awaiting public launch',
+  {
+    title: 'Aphrodisias 3D Epigraphy',
     slug: 'aphrodisias-3d-epigraphy',
-    title: 'Aphrodisias 3D Epigraphy', client: 'Oxford \u00b7 UKRI',
-    desc: 'A public platform for ancient urban spaces, joining interactive 3D models with scholarly object records.',
-    longText: 'A public platform for the epigraphy and archaeology of late antique Aphrodisias, built around interactive 3D models of ancient structures. The site joins scholarly object records, visual material and embedded photogrammetric models under one designed interface, and is to be hosted by the Faculty of Classics, Oxford, once the remaining models are complete.',
-    scope: 'Design \u00b7 Frontend \u00b7 3D embedding', register: 'Research & heritage',
+    cat: 'Archaeology project & 3D',
+    client: 'University of Oxford · UKRI',
+    status: 'Awaiting official launch at University of Oxford domain',
+    register: 'Research & heritage',
+    scope: 'Design · Frontend · 3D modelling & embedding',
+    live: '',
+    img: './assets/images/projects/aphrodisias-3d-epigraphy-1200.webp',
+    desc: 'An online platform for ancient urban spaces, joining interactive 3D models with scholarly object records.',
+    longText: 'Online platform of interactive 3D models of structures and inscriptions from the ancient site of Aphrodisias (Roman province of Caria, modern Turkey). The website makes publicly available the results of a research project at tUniversity of Oxford, that has looked at epigraphy and archaeology of late antique Aphrodisias. The site joins scholarly object records (Greek inscriptions, translations, and commentary), interactive site plans, and embedded photogrammetric models under one designed interface, and is to be hosted by the Faculty of Classics, Oxford (https://3DAph.classics.ox.ac.uk), once the remaining models are complete.',
+    quote: '',
+    quoteBy: '',
     sections: [
-      { h: 'The material', p: [
-        'PLACEHOLDER. Several hundred inscriptions, a site plan, and a growing set of photogrammetric models of standing structures — held until now as folders of files with the argument that joins them living in published articles rather than in the record itself.',
-        'PLACEHOLDER. The first question was not what the site should look like but what an object is: which of the stone, the text, the model and the photograph is the thing being catalogued, and which are its representations.' ] },
-      { h: 'What was built', p: [
-        'PLACEHOLDER. A record structure that lets an inscription, its findspot, its images and its 3D model be one thing with four faces, and an interface in which a reader can move between them without losing their place.',
-        'PLACEHOLDER. Models are embedded rather than linked, at a size that holds up on a laptop over a conference wifi, with annotations that address positions on the model and survive its being re-exported.' ] },
-      { h: 'Where it stands', p: [
-        'PLACEHOLDER. The platform is complete and populated; publication waits on the last of the models and on the Faculty\u2019s hosting arrangements.' ] }
+      {
+        h: 'What was built',
+        p: [
+          'Interactive and animation-driven modern frontend for an academic website using Javascript, CSS, and HTML.',
+          '3D models were produced from scratch through photogrammetric capture during fieldwork in modern Turkey; they were adapted, hosted online, embedded into web interface and tagged with inscriptions\' text and commentary'
+        ]
+      },
+      {
+        h: 'Where it stands',
+        p: [
+          'The platform is complete and nearly populated; publication waits on the last of the models and on the University\'s hosting arrangements.'
+        ]
+      }
     ],
-    img: './assets/images/projects/aphrodisias-3d-epigraphy.png' },
+    roman: 'I'
+  },
 
-  { roman: 'II', cat: 'Academic project', status: 'Launching',
+  {
+    title: 'Festivals & Society',
     slug: 'festivals-and-society',
-    title: 'Festivals & Society', client: 'University of Vienna',
-    desc: 'A grant-facing research project making complex humanities data navigable, structurally sound and visually credible.',
-    longText: 'A public-facing website and research database for a Vienna-based academic project on Roman-era papyri. Stylos designed both the Firebase backend and the public interface \u2014 the landing page, the database structure, and the presentation of project materials \u2014 so that complex humanities data reads as navigable, structurally sound, and visually credible.',
-    scope: 'Firebase \u00b7 Database design \u00b7 Frontend', register: 'Research & humanities',
+    cat: 'Academic project & database',
+    client: 'University of Vienna',
+    status: 'Launched & live',
+    register: 'Research & Humanities',
+    scope: 'Frontend· Database design · Backend',
+    live: '',
+    img: './assets/images/projects/festivals-and-society-1200.webp',
+    desc: 'An open-access database and a public-facing website for a Vienna-based research project making complex humanities data navigable, structurally sound and visually credible.',
+    longText: 'A public-facing website and fully searchable database for an academic project on festivals in Roman-era Egypt as evidenced in papyri. Stylos designed both the backend and the public interface—the landing page, the database structure, the presentation of project materials and the projects\' blog—so that complex humanities data reads as navigable, structurally sound, and visually credible.',
+    quote: '',
+    quoteBy: '',
     sections: [
-      { h: 'The material', p: [
-        'PLACEHOLDER. Roman-era papyri, catalogued by a team across two institutions, with the usual humanities problem underneath: half the fields are certain, half are arguments, and the interface has to be honest about which is which.',
-        'PLACEHOLDER. The project also has two audiences with different needs — specialists who want the apparatus, and a funder who wants to see the shape of the work.' ] },
-      { h: 'What was built', p: [
-        'PLACEHOLDER. A Firebase backend the researchers maintain themselves, a schema that carries provenance and confidence alongside every value, and a public site that presents the same data at two depths without keeping two copies of it.' ] },
-      { h: 'Where it stands', p: [
-        'PLACEHOLDER. In final review with the project team ahead of an institutional launch.' ] }
+      {
+        h: 'The material',
+        p: [
+          'Greek papyri containing evidence for festivals in Roman-era Egypt catalogued, grouped, and made searchable within an ongoing research project.',
+          'The project also has three audiences with different needs—experts who want the apparatus, members of the general public who are curious about Roman Egypt and papyri, and the funder who wants to see outcome of the work.'
+        ]
+      },
+      {
+        h: 'What was built',
+        p: [
+          'Frontend (Javascript, HTML, Three.js) and backend (relational fully searchable database complete with interactive online map) that researchers can update and maintain themselves, a schema that carries provenance and confidence alongside every record value, and a public site that presents the same data at two depths.'
+        ]
+      },
+      {
+        h: 'Where it stands',
+        p: [
+          'Launched and live at https://festivals-egypt.org as the database is being updated and expanded'
+        ]
+      }
     ],
-    img: './assets/images/projects/festivals-and-society.png' },
+    roman: 'II'
+  },
 
-  { roman: 'III', cat: 'Artist website', status: 'Proposal-stage design',
-    slug: 'anna-connolly',
-    title: 'Anna Connolly', client: 'Performance storyteller \u00b7 London',
-    desc: 'A cinematic portfolio structure for an independent performer, balancing dramatic atmosphere and plain biography.',
-    longText: 'A pilot proposal for a London-based performance storyteller: a stylish, editorial, animated portfolio hosted on Vercel, with a functional back office and payment integration. The design balances dramatic atmosphere against plain biography \u2014 a stage presence that still reads as a working professional page.',
-    scope: 'Editorial design \u00b7 Motion \u00b7 Back office \u00b7 Payments', register: 'Creative & independent',
+  {
+    title: 'Portrait painter',
+    slug: 'portrait-painter',
+    cat: 'Artist\' portfolio & website',
+    client: 'Painter · Oxford',
+    status: 'In progress',
+    register: 'Creative & independent',
+    scope: 'Design · Motion · Image pipeline · Back office',
+    live: '',
+    img: './assets/images/projects/portrait-painter-1200.webp',
+    desc: 'A painter’s site built around the work itself: staged reveals, careful colour, and a lightweight artist\'s back office.',
+    longText: 'A portfolio website for an Oxford-based painter working in portraiture and an expressionist register. The design puts the paintings first—staged reveals, restrained typography and colour handling that lets the work set the temperature of the page—with a lightweight artist\'s back office enabling them to update the online catalogue, and a managed image pipeline underneath.',
+    quote: '',
+    quoteBy: '',
     sections: [
-      { h: 'The brief', p: [
-        'PLACEHOLDER. A performer whose work is theatrical and whose website has to be bookable — atmosphere for an audience, plain facts for a producer, and no sense that the two were designed by different people.' ] },
-      { h: 'What was built', p: [
-        'PLACEHOLDER. An editorial structure in which each show is a piece of writing rather than a card, staged reveals timed to reading speed rather than to a scroll position, and a back office in which dates, prices and availability are edited without touching the design.',
-        'PLACEHOLDER. Payment and enquiry flows sit behind the same layer, so a booking never leaves the site.' ] },
-      { h: 'Where it stands', p: [
-        'PLACEHOLDER. Proposal-stage design, shown here as the pilot was presented.' ] }
+      {
+        h: 'The brief',
+        p: [
+          'A painter in an expressionist register, whose canvases carry their own colour temperature—so any page they sit on has to be quiet enough not to argue with them, and consistent enough that the argument is never accidental.'
+        ]
+      },
+      {
+        h: 'What was built',
+        p: [
+          'A dramatic, near-monochrome, animated shell with the paintings as the only colour in it, staged reveals that give a work the beat it needs before the next one arrives, and an image pipeline that keeps colour faithful from studio photograph to phone screen.'
+        ]
+      },
+      {
+        h: 'Where it stands',
+        p: [
+          'In progress; the artist\'s back office is in place and the catalogue is being photographed and updated'
+        ]
+      }
     ],
-    img: './assets/images/projects/performer.png' },
+    roman: 'V'
+  },
 
-  { roman: 'IV', cat: 'Educational platform', status: 'Pilot proposal',
-    slug: 'russian-lyceum',
-    title: 'Russian Lyceum', client: 'Oxford \u00b7 UK',
+  {
+    title: 'Immersive story artist portfolio',
+    slug: 'story-artist',
+    cat: 'Performer\'s website',
+    client: 'Independent performer · London',
+    status: 'Work in progress',
+    register: 'Creative & independent',
+    scope: 'Editorial design · Motion · Back office · Payments',
+    live: '',
+    img: './assets/images/projects/story-artist-1200.webp',
+    desc: 'A cinematic animated portfolio for an independent performer, balancing dramatic atmosphere, biography, and online checkout for shows',
+    longText: 'Animated and captivating portfolio for a London-based performer hosted on Vercel, with a functional back office and payment integration. The design balances dramatic atmosphere against plain biography—a stage presence that still reads as a working professional page.',
+    quote: '',
+    quoteBy: '',
+    sections: [
+      {
+        h: 'The brief',
+        p: [
+          ' A performer whose work is theatrical and whose website has to be bookable—atmosphere for an audience, plain facts for a producer, and no sense that the two were designed by different people.'
+        ]
+      },
+      {
+        h: 'What was built',
+        p: [
+          'An editorial structure with custom animations and staged reveals timed to reading speed rather than to a scroll position, and a back office in which dates, prices and availability are edited without touching the design.',
+          'Payment and enquiry flows sit behind the same layer, so a booking never leaves the site.'
+        ]
+      },
+      {
+        h: 'Where it stands',
+        p: [
+          'Work-in-progress: we are working with the client on refining the frontend design and their backoffice'
+        ]
+      }
+    ],
+    roman: 'III'
+  },
+
+  {
+    title: 'Independent school',
+    slug: 'independent-school',
+    cat: 'Educational platform',
+    client: 'Independent school, Oxford · UK',
+    status: 'Proposal stage',
+    register: 'Creative & independent',
+    scope: 'Design system · Content structure · Back office',
+    live: '',
+    img: './assets/images/projects/independent-school-1200.webp',
     desc: 'A warm, clear website system built around trust, parent-facing clarity and an elegant information hierarchy.',
-    longText: 'A pilot for a small private school in Oxford: an interactive, editorial-style website with carefully structured public-facing content and an administrative back office. The system is designed around trust \u2014 parent-facing clarity, warm tone, and an information hierarchy that answers questions before they are asked.',
-    scope: 'Design system \u00b7 Content structure \u00b7 Back office', register: 'Creative & independent',
+    longText: 'A pilot for a small private school in Oxford: an interactive, editorial-style website with carefully structured public-facing content and an administrative back office. The system is designed around trust — parent-facing clarity, warm tone, and an information hierarchy that answers questions before they are asked.',
+    quote: '',
+    quoteBy: '',
     sections: [
-      { h: 'The brief', p: [
-        'PLACEHOLDER. A small bilingual school whose parents arrive with the same six questions and were finding none of them answered above the fold — and a staff of three who would have to keep the site current themselves.' ] },
-      { h: 'What was built', p: [
-        'PLACEHOLDER. An information hierarchy built backwards from those six questions, a warm and unfussy type system that survives being edited by non-designers, and an administrative back office sized for the people who actually use it.' ] },
-      { h: 'Where it stands', p: [
-        'PLACEHOLDER. Pilot proposal, awaiting the school\u2019s decision on the next academic year.' ] }
+      {
+        h: 'The brief',
+        p: [
+          'A small bilingual school whose parents arrive with the same six questions and were finding none of them answered above the fold — and a staff of three who would have to keep the site current themselves.'
+        ]
+      },
+      {
+        h: 'What was built',
+        p: [
+          'An information hierarchy built backwards from those six questions, a warm and unfussy type system that survives being edited by non-designers, and an administrative back office sized for the people who actually use it.'
+        ]
+      },
+      {
+        h: 'Where it stands',
+        p: [
+          'Proposal stage awaiting the school’s decision'
+        ]
+      }
     ],
-    img: './assets/images/projects/russian-lyceum.png' },
-
-  { roman: 'V', cat: 'Artist website', status: 'In progress',
-    slug: 'sofia-sharomazova',
-    title: 'Sofia Sharomazova', client: 'Painter \u00b7 Oxford',
-    desc: 'A painter\u2019s site built around the work itself: staged reveals, careful colour, and a lightweight back office.',
-    longText: 'A site for an Oxford-based painter working in portraiture and an expressionist register. The design puts the paintings first \u2014 staged reveals, restrained typography and colour handling that lets the work set the temperature of the page \u2014 with a lightweight back office and a managed image pipeline underneath.',
-    scope: 'Design \u00b7 Motion \u00b7 Image pipeline \u00b7 Back office', register: 'Creative & independent',
-    sections: [
-      { h: 'The brief', p: [
-        'PLACEHOLDER. A painter in an expressionist register, whose canvases carry their own colour temperature — so any page they sit on has to be quiet enough not to argue with them, and consistent enough that the argument is never accidental.' ] },
-      { h: 'What was built', p: [
-        'PLACEHOLDER. A near-monochrome shell with the paintings as the only colour in it, staged reveals that give a work the beat it needs before the next one arrives, and an image pipeline that keeps colour faithful from studio photograph to phone screen.' ] },
-      { h: 'Where it stands', p: [
-        'PLACEHOLDER. In progress; the back office is in place and the catalogue is being photographed.' ] }
-    ],
-    img: './assets/images/projects/sofia-sharomazova.png' },
-
-  { roman: 'VI', cat: 'Creative portfolio', status: 'Private commission',
-    slug: 'private-commission',
-    title: 'Shown on request', client: 'Private \u00b7 Oxford',
-    desc: 'A private commission: a monochrome rendered portrait, staged reveals and a lightweight back office.',
-    longText: 'A private commission built around a striking monochrome rendered portrait in the hero, animated reveals, and a carefully staged presentation of the work, with hosted imagery and backend functionality. The site is not public; it is shown to prospective clients on request.',
-    scope: 'Design \u00b7 Motion \u00b7 Back office \u00b7 Image pipeline', register: 'Creative & independent',
-    sections: [
-      { h: 'The commission', p: [
-        'PLACEHOLDER. A private commission, built around a single rendered portrait and shown to prospective clients on request rather than published.' ] },
-      { h: 'What was built', p: [
-        'PLACEHOLDER. A monochrome hero carrying the rendered portrait at full bleed, a staged presentation of the work below it, and hosted imagery with the same back office the other commissions use.' ] },
-      { h: 'Where it stands', p: [
-        'PLACEHOLDER. Delivered. Shown on request \u2014 write if you would like to see it.' ] }
-    ],
-    img: null }
-
+    roman: 'IV'
+  }
 ];
 
+(function () { for (var i = 0; i < P.length; i++) P[i] = normWork(P[i]); })();
+
 COPY.works = P;
+
+var IMAGES = window.STYLOS_IMAGES || {};
+var IMG_DIR = './assets/images/projects/';
+var CARD_SIZES = '(max-width: 900px) 92vw, (max-width: 1042px) 250px, (max-width: 1708px) 24vw, 410px';
+
+function localImage(src) {
+  var m = /(?:^|\/)assets\/images\/projects\/([a-z0-9-]+)\.(?:png|jpe?g|webp|avif)$/i.exec(String(src || '').trim());
+  if (!m) return null;
+  var stem = m[1].toLowerCase(), cut = stem.replace(/-\d+$/, ''), k, was;
+  if (IMAGES[stem]) return { name: stem, e: IMAGES[stem] };
+  if (IMAGES[cut]) return { name: cut, e: IMAGES[cut] };
+  for (k in IMAGES) {
+    was = IMAGES[k].was || [];
+    if (was.indexOf(stem) >= 0 || was.indexOf(cut) >= 0) return { name: k, e: IMAGES[k] };
+  }
+  return null;
+}
+function imagePath(name, w, ext) { return IMG_DIR + name + '-' + w + '.' + ext; }
+function srcsetOf(li, ext) {
+  return li.e.widths.map(function (w) { return imagePath(li.name, w, ext) + ' ' + w + 'w'; }).join(', ');
+}
+function pictureHTML(src, alt, sizes, attrs) {
+  var li = localImage(src);
+  attrs = attrs || '';
+  if (!li) return '<img src="' + esc(safeHref(src)) + '" alt="' + esc(alt) + '"' + attrs + '>';
+  return '<picture>'
+    + '<source type="image/avif" srcset="' + esc(srcsetOf(li, 'avif')) + '" sizes="' + sizes + '">'
+    + '<source type="image/webp" srcset="' + esc(srcsetOf(li, 'webp')) + '" sizes="' + sizes + '">'
+    + '<img src="' + esc(imagePath(li.name, li.e.fallback, 'webp')) + '" width="' + li.e.w + '" height="' + li.e.h + '"'
+    + ' alt="' + esc(alt) + '"' + attrs + '></picture>';
+}
 
 var track = $('track'), counter = $('counter'), barFill = $('barFill');
 var wIdx = 0, suppress = false;
@@ -680,7 +892,8 @@ function buildCards() {
     b.setAttribute('aria-label', 'Case study: ' + p.title);
     b.innerHTML =
       '<div class="shot' + (p.img ? '' : ' veiled') + '">'
-      + (p.img ? '<img loading="lazy" alt="' + esc(p.title) + ' \u2014 interface study" src="' + esc(safeHref(p.img)) + '"><span class="scan" aria-hidden="true"></span>'
+      + (p.img ? pictureHTML(p.img, p.title + ' \u2014 interface study', CARD_SIZES, ' loading="lazy" decoding="async"')
+                 + '<span class="scan" aria-hidden="true"></span>'
                : '<span class="veil mono">Shown on request</span>')
       + '<span class="plus" aria-hidden="true">+</span></div>'
       + '<div class="card-meta"><div class="row mono"><span>' + esc(p.cat) + '</span></div>'
@@ -697,7 +910,7 @@ track.addEventListener('click', function (e) {
   e.preventDefault();
   if (suppress) return;
   var i = cards.indexOf(card);
-  if (i >= 0) openCase(i);
+  if (i >= 0) caseMorph(card, i);
 });
 
 function centerOn(i) {
@@ -855,6 +1068,7 @@ var caseEl = $('case');
 var C = {
   count: $('caseCount'), cat: $('caseCat'), title: $('caseTitle'), long: $('caseLong'),
   dek: $('caseDek'), facts: $('caseFacts'), media: $('caseMedia'), status: $('caseStatus'),
+  live: $('caseLive'),
   mast: caseEl.querySelector('.case-mast'), scroll: $('caseScroll')
 };
 
@@ -876,28 +1090,89 @@ function fillCase(i) {
   C.cat.textContent = p.cat;
   C.title.textContent = p.title;
 
-  if (C.dek) C.dek.textContent = p.desc || '';
+  if (C.dek) C.dek.innerHTML = expand(p.desc || '');
 
   var html = String(p.longText || '')
     .split(/\n\s*\n/)
-    .map(function (para) { return '<p>' + esc(para.trim()) + '</p>'; })
+    .map(function (para) { para = para.trim(); return para ? '<p>' + expand(para) + '</p>' : ''; })
     .join('');
+  if (String(p.quote || '').trim()) {
+    html += '<blockquote class="case-quote"><p>' + expand(String(p.quote).trim()) + '</p>'
+          + (String(p.quoteBy || '').trim() ? '<cite class="mono">' + esc(String(p.quoteBy).trim()) + '</cite>' : '')
+          + '</blockquote>';
+  }
   (p.sections || []).forEach(function (sec) {
-    html += '<h4>' + esc(sec.h) + '</h4>';
-    (sec.p || []).forEach(function (para) { html += '<p>' + esc(para) + '</p>'; });
+    if (!sec) return;
+    if (typeof sec === 'string') { if (sec.trim()) html += '<p>' + expand(sec) + '</p>'; return; }
+    if (String(sec.h || '').trim()) html += '<h4>' + esc(sec.h) + '</h4>';
+    (sec.p || []).forEach(function (para) {
+      if (String(para || '').trim()) html += '<p>' + expand(para) + '</p>';
+    });
   });
   C.long.innerHTML = html;
 
+  var live = linkHref(p.live);
+  if (live && !isExternal(live)) live = '';
+  if (C.live) {
+    C.live.hidden = !live;
+    C.live.setAttribute('href', live || '#');
+  }
+
   C.status.textContent = p.status;
   C.facts.innerHTML =
-    row('Client', p.client) + row('Register', p.register) + row('Scope', p.scope) + row('Status', p.status);
+    row('Client', p.client) + row('Register', p.register) + row('Scope', p.scope) + row('Status', p.status)
+    + (live ? '<div class="f"><dt>Live site</dt><dd>' + linkHTML(live, esc(hostOf(live)) + ARROW, 'tx-link') + '</dd></div>' : '');
 
   syncRowTo(i);
 
   C.media.innerHTML = p.img
-    ? '<img src="' + p.img + '" alt="' + esc(p.title) + ' \u2014 interface study" loading="lazy">'
+    ? pictureHTML(p.img, p.title + ' \u2014 interface study', '100vw', ' decoding="async"')
     : '<div class="ph"><span class="mono cap">Shown on request</span></div>';
   function row(k, v) { return '<div class="f"><dt>' + k + '</dt><dd>' + esc(v) + '</dd></div>'; }
+}
+
+var VT = typeof document.startViewTransition === 'function';
+var MORPH = 'case-shot';
+
+function inView(el) {
+  var r = el.getBoundingClientRect();
+  return r.width > 0 && r.bottom > 0 && r.top < window.innerHeight && r.right > 0 && r.left < window.innerWidth;
+}
+function waitFor(p, ms) {
+  return Promise.race([p, new Promise(function (r) { setTimeout(r, ms); })]);
+}
+
+function caseMorph(card, i) {
+  var shot = card && card.querySelector('.shot');
+  if (REDUCED || !VT || !shot || !inView(shot) || document.visibilityState !== 'visible') { openCase(i); return; }
+  shot.style.viewTransitionName = MORPH;
+  root.classList.add('case-vt');
+  var t = document.startViewTransition(function () {
+    shot.style.viewTransitionName = '';
+    openCase(i);
+    C.media.style.viewTransitionName = MORPH;
+    var im = C.media.querySelector('img');
+    return (im && im.decode) ? waitFor(im.decode().catch(function () {}), 320) : null;
+  });
+  t.finished.then(clean, clean);
+  function clean() { C.media.style.viewTransitionName = ''; root.classList.remove('case-vt'); }
+}
+
+function caseUnmorph() {
+  var card = cards[cIdx], shot = card && card.querySelector('.shot');
+  if (!caseEl.classList.contains('open')) return;
+  if (REDUCED || !VT || !shot || document.visibilityState !== 'visible') { closeCase(); return; }
+  var r = shot.getBoundingClientRect();
+  if (!(r.width > 0) || r.bottom < 0 || r.top > window.innerHeight) { closeCase(); return; }
+  C.media.style.viewTransitionName = MORPH;
+  root.classList.add('case-vt');
+  var t = document.startViewTransition(function () {
+    C.media.style.viewTransitionName = '';
+    closeCase();
+    shot.style.viewTransitionName = MORPH;
+  });
+  t.finished.then(clean, clean);
+  function clean() { shot.style.viewTransitionName = ''; root.classList.remove('case-vt'); }
 }
 function esc(s) {
   return String(s == null ? '' : s)
@@ -931,12 +1206,12 @@ function closeCase(src) {
   if (src !== 'route') syncAddress(room >= 0 ? room : 9);
   if (lastFocus) lastFocus.focus();
 }
-$('caseX').addEventListener('click', function () { closeCase(); });
+$('caseX').addEventListener('click', function () { caseUnmorph(); });
 $('casePrev').addEventListener('click', function () { pageCase(-1); });
 $('caseNext').addEventListener('click', function () { pageCase(1); });
 document.addEventListener('keydown', function (e) {
   if (!caseEl.classList.contains('open')) return;
-  if (e.key === 'Escape') closeCase();
+  if (e.key === 'Escape') caseUnmorph();
   else if (e.key === 'ArrowLeft') pageCase(-1);
   else if (e.key === 'ArrowRight') pageCase(1);
 });
@@ -1200,8 +1475,27 @@ function enterRoom(i) {
   Array.prototype.forEach.call(document.querySelectorAll('.nav-link, .sheet-nav a'), function (a) {
     a.setAttribute('aria-current', String(a.dataset.nav === nav && nav !== ''));
   });
+  syncNavRule();
 
   syncAddress(i);
+}
+
+var navRule = $('navRule');
+function syncNavRule(snap) {
+  if (!navRule) return;
+  var pill = navRule.parentNode;
+  var a = pill.querySelector('.nav-link[aria-current="true"]');
+  if (!a || !a.offsetWidth) { navRule.classList.remove('on'); return; }
+  var cs = getComputedStyle(a);
+  var pl = parseFloat(cs.paddingLeft) || 0, pr = parseFloat(cs.paddingRight) || 0;
+  var x = a.offsetLeft + pl, w = Math.max(0, a.offsetWidth - pl - pr), y = a.offsetTop + a.offsetHeight - 2;
+  var jump = snap || !navRule.classList.contains('on');
+  if (jump) navRule.classList.add('snap');
+  navRule.style.setProperty('--rx', x.toFixed(1) + 'px');
+  navRule.style.setProperty('--ry', y.toFixed(1) + 'px');
+  navRule.style.setProperty('--rw', w.toFixed(1) + 'px');
+  if (jump) { void navRule.offsetWidth; navRule.classList.remove('snap'); }
+  navRule.classList.add('on');
 }
 
 var tick = null, vis = [];
@@ -1306,11 +1600,36 @@ var SETTLE = (function () {
   }
   function stop() { if (raf) cancelAnimationFrame(raf); raf = 0; }
 
+  var pass = null;
+  function passage() {
+    if (pass) return pass;
+    var a = -1, b = -1, i;
+    for (i = 0; i < screens.length; i++) {
+      if (!screens[i].classList.contains('show')) continue;
+      if (a < 0) a = i;
+      b = i;
+    }
+    pass = (a > 0 && b + 1 < screens.length) ? { from: a - 1, to: b + 1 } : { from: -1, to: -1 };
+    return pass;
+  }
+  function inPassage() {
+    var s = passage();
+    if (s.from < 0 || !tops.length) return false;
+    var y = window.scrollY, edge = vhRef * CARRY;
+    return y > tops[s.from] + edge && y < tops[s.to] - edge;
+  }
+
   function targetRoom() {
-    var p = deckPos(), i = Math.floor(p), f = p - i, n = tops.length;
-    if (dir > 0) return clamp(f > CARRY ? i + 1 : i, 0, n - 1);
-    if (dir < 0) return clamp(f < 1 - CARRY ? i : i + 1, 0, n - 1);
-    return clamp(Math.round(p), 0, n - 1);
+    var p = deckPos(), i = Math.floor(p), f = p - i, n = tops.length, r;
+    if (dir > 0) r = clamp(f > CARRY ? i + 1 : i, 0, n - 1);
+    else if (dir < 0) r = clamp(f < 1 - CARRY ? i : i + 1, 0, n - 1);
+    else r = clamp(Math.round(p), 0, n - 1);
+    var s = passage();
+    if (s.from >= 0 && r > s.from && r < s.to) {
+      var y = window.scrollY;
+      r = (y - tops[s.from] < tops[s.to] - y) ? s.from : s.to;
+    }
+    return r;
   }
 
   function insideTall() {
@@ -1346,7 +1665,7 @@ var SETTLE = (function () {
   function settle() {
     quiet = null;
     if (touching || performance.now() < suspendUntil || !tops.length) return;
-    if (insideTall()) { dir = 0; return; }
+    if (insideTall() || inPassage()) { dir = 0; return; }
     var r = targetRoom();
     glideTo(tops[r], r);
   }
@@ -1984,9 +2303,49 @@ if (burger && sheetEl) {
 
 $('toTop').addEventListener('click', function () { goTo(screens[0]); });
 
+function copyText(s) {
+  function legacy() {
+    var ta = document.createElement('textarea'), ok = false;
+    ta.value = s; ta.setAttribute('readonly', '');
+    ta.style.cssText = 'position:fixed;top:0;left:0;width:1px;height:1px;opacity:0;pointer-events:none';
+    document.body.appendChild(ta);
+    ta.select();
+    try { ok = document.execCommand('copy'); } catch (e) {}
+    ta.remove();
+    return ok;
+  }
+  if (navigator.clipboard && window.isSecureContext) {
+    return navigator.clipboard.writeText(s).then(function () { return true; }, function () { return legacy(); });
+  }
+  return Promise.resolve(legacy());
+}
+
+function initCopyMail() {
+  var b = $('emailCopy');
+  if (!b) return;
+  var label = b.querySelector('.email-copy-t'), timer = null;
+  b.addEventListener('click', function () {
+    var ct = COPY.site.contact || {}, addr = String(ct.email || '').trim();
+    if (!addr) return;
+    copyText(addr).then(function (ok) {
+      if (!ok) {
+        var mail = document.querySelector('.contact .email'), sel = window.getSelection && window.getSelection();
+        if (mail && sel) { var rg = document.createRange(); rg.selectNodeContents(mail); sel.removeAllRanges(); sel.addRange(rg); }
+      }
+      b.classList.add('done');
+      label.textContent = ok ? 'Copied' : 'Selected';
+      clearTimeout(timer);
+      timer = setTimeout(function () { b.classList.remove('done'); label.textContent = 'Copy'; }, 2200);
+    });
+  });
+}
+
 var THEMES = { blue: '#07264c', green: '#092c2a', wax: '#ece6d6' };
 
 var INK_NAMES = { blue: 'Blue', green: 'Green', wax: 'Wax' };
+
+var ICONS = { blue: './assets/icons/favicon-blue.svg', green: './assets/icons/favicon.svg', wax: './assets/icons/favicon-wax.svg' };
+var INK_MS = 720;
 
 function setTheme(k) {
   if (!THEMES[k]) return;
@@ -1998,8 +2357,29 @@ function setTheme(k) {
   if (Portrait) Portrait.redraw();
   var m = document.querySelector('meta[name="theme-color"]');
   if (m) m.setAttribute('content', THEMES[k]);
+  var ic = document.querySelector('link[rel="icon"][type="image/svg+xml"]');
+  if (ic && ICONS[k] && ic.getAttribute('href') !== ICONS[k]) ic.setAttribute('href', ICONS[k]);
 
   try { localStorage.setItem('stylos-ink', k); } catch (err) {}
+}
+
+function inkReveal(k, from) {
+  if (!THEMES[k]) return;
+  if (k === currentTheme() || REDUCED || !VT || document.visibilityState !== 'visible') { setTheme(k); return; }
+  var r = from && from.getBoundingClientRect ? from.getBoundingClientRect() : null;
+  var W = window.innerWidth, H = window.innerHeight;
+  var x = (r && r.width) ? r.left + r.width / 2 : W / 2;
+  var y = (r && r.height) ? r.top + r.height / 2 : H / 2;
+  var far = Math.ceil(Math.hypot(Math.max(x, W - x), Math.max(y, H - y)));
+  root.classList.add('ink-vt');
+  var t = document.startViewTransition(function () { setTheme(k); });
+  t.ready.then(function () {
+    root.animate(
+      { clipPath: ['circle(0px at ' + x + 'px ' + y + 'px)', 'circle(' + far + 'px at ' + x + 'px ' + y + 'px)'] },
+      { duration: INK_MS, easing: 'cubic-bezier(.45,.05,.16,1)', pseudoElement: '::view-transition-new(root)' });
+  }, function () {});
+  t.finished.then(done, done);
+  function done() { root.classList.remove('ink-vt'); }
 }
 function currentTheme() {
   return root.classList.contains('t-wax') ? 'wax'
@@ -2064,7 +2444,7 @@ if (inkBtn && inkMenu) {
 document.addEventListener('click', function (e) {
   var b = e.target.closest ? e.target.closest('[data-theme]') : null;
   if (b && b.dataset.theme && THEMES[b.dataset.theme]) {
-    setTheme(b.dataset.theme);
+    inkReveal(b.dataset.theme, b.querySelector('.ink-chip') || b);
     if (inkOpen) { setInkMenu(false); if (inkBtn) inkBtn.focus({ preventScroll: true }); }
     return;
   }
@@ -2135,6 +2515,7 @@ window.addEventListener('resize', function () {
     setWorks(wIdx, 'resize');
 
     watchMid();
+    syncNavRule(true);
   }, 200);
 });
 
@@ -2147,14 +2528,35 @@ var consLastFocus = null;
 
 var BLOCK_CLASSES = ['', 'aside', 'hand-over', 'hand-over aside'];
 
+var PROSE_HINT = 'Links: paste an address as it is (https://…), or select words and press Link. Bold: select and press Bold.';
+
 var FIELD_META = {
-  slug:  { mono: true,  hint: 'The public address. Changing it breaks any link already sent.' },
-  img:   { mono: true,  hint: 'A URL. Images are not uploaded here — see the note in section 7.' },
-  href:  { mono: true },
-  cls:   { choose: BLOCK_CLASSES }
+  slug:     { mono: true,  hint: 'The public address. Changing it breaks any link already sent.' },
+  img:      { picker: true },
+  href:     { mono: true },
+  cls:      { choose: BLOCK_CLASSES },
+  live:     { mono: true, label: 'Live site',
+              hint: 'The address of the live website, with https://. When it is filled in, the case study shows “Visit the live site”. Leave it empty while a site is not public.' },
+  quote:    { prose: true, hint: 'A sentence from the client, in their words and with their agreement. Leave it empty and nothing is shown.' },
+  quoteBy:  { label: 'Quote by', hint: 'How the person is named under the quote, e.g. “Principal investigator, University of Vienna”.' },
+  body:     { prose: true },
+  lede:     { prose: true },
+  t:        { prose: true },
+  p:        { prose: true },
+  desc:     { prose: true },
+  longText: { prose: true },
+  note:     { prose: true }
 };
 
 var FIELD_LOCKED = { id: 1, order: 1, __k: 1 };
+
+var ARRAY_TEMPLATES = {
+  sections: function () { return { h: '', p: [''] }; },
+  steps:    function () { return { n: '', h: '', p: '' }; },
+  creds:    function () { return { b: '', v: '' }; },
+  columns:  function () { return { h: '', lines: [''] }; },
+  links:    function () { return { label: '', href: '' }; }
+};
 
 function consClone(v) {
   if (Array.isArray(v)) return v.map(consClone);
@@ -2261,8 +2663,13 @@ function consRender() {
   if (consSel.kind === 'works') consWorkTools(host);
   if (consSel.kind === 'rooms') {
     host.appendChild(consEl_('p', 'cons-note',
-      'Room copy only. Which rooms exist, and the order they are read in, is the deck — see section 7 in the script.'));
+      'Room copy only. Which rooms exist, and the order they are read in, is the deck — a change to index.html, not a document.'));
   }
+  if (consSel.kind === 'site' && consSel.id === 'meta') {
+    host.appendChild(consEl_('p', 'cons-note',
+      'The browser tab’s title and the description search engines read. Link previews on Facebook, WhatsApp and LinkedIn do not read this document: they read the og: tags in index.html, which change only when the site is deployed.'));
+  }
+  if (consSel.kind !== 'site') host.appendChild(consEl_('p', 'cons-note', PROSE_HINT));
 
   Object.keys(doc).forEach(function (k) {
     consField(host, doc, k, k);
@@ -2281,14 +2688,29 @@ function consField(host, obj, key, label) {
   if (FIELD_LOCKED[key]) return;
   if (Array.isArray(v)) return consArray(host, obj, key, label);
   if (v && typeof v === 'object') return consObject(host, v, label);
+  if ((FIELD_META[key] || {}).picker) return consImage(host, obj, key);
   return consScalar(host, obj, key, label);
 }
 
-function consScalar(host, obj, key, label) {
-  var meta = FIELD_META[key] || {};
+var consUid = 0;
+
+function consScalar(host, obj, key, label, ctx) {
+  var meta = (typeof key === 'string' && FIELD_META[key]) || (ctx && FIELD_META[ctx]) || {};
   var wrap = consEl_('div', 'cons-field');
-  var lab = consEl_('label', 'cons-lab', consLabel(label));
-  wrap.appendChild(lab);
+  var lab = consEl_('label', 'cons-lab', meta.label || consLabel(label));
+  var fid = 'cf-' + (++consUid);
+  lab.setAttribute('for', fid);
+  if (meta.prose) {
+    var head = consEl_('div', 'cons-lab-row');
+    head.appendChild(lab);
+    var tools = consEl_('span', 'cons-tools');
+    tools.appendChild(consTool('Link', 'Make the selected words a link, or insert an address', function () { consWrap(node, 'link'); }));
+    tools.appendChild(consTool('Bold', 'Make the selected words bold', function () { consWrap(node, 'bold'); }));
+    head.appendChild(tools);
+    wrap.appendChild(head);
+  } else {
+    wrap.appendChild(lab);
+  }
 
   var v = obj[key] == null ? '' : String(obj[key]);
   var node;
@@ -2312,7 +2734,8 @@ function consScalar(host, obj, key, label) {
     node.className = 'cons-in' + (meta.mono ? ' cons-code' : '');
     node.value = v;
   }
-  lab.appendChild(node);
+  node.id = fid;
+  if (meta.prose) wrap.appendChild(node); else lab.appendChild(node);
   node.addEventListener('input', function () {
     obj[key] = node.value;
     consMark(true);
@@ -2394,7 +2817,7 @@ function consArray(host, obj, key, label) {
       } else if (Array.isArray(item)) {
         consArray(row, arr, i, 'items');
       } else {
-        consScalar(row, arr, i, '');
+        consScalar(row, arr, i, '', key);
       }
       list.appendChild(row);
     });
@@ -2404,8 +2827,8 @@ function consArray(host, obj, key, label) {
   var add = consEl_('button', 'cons-add', '+ Add ' + consLabel(label).toLowerCase().replace(/s$/, ''));
   add.type = 'button';
   add.addEventListener('click', function () {
-
-    arr.push(arr.length ? consBlankLike(arr[0]) : '');
+    var make = ARRAY_TEMPLATES[key];
+    arr.push(arr.length ? consBlankLike(arr[0]) : (make ? make() : ''));
     consMark(true); redraw();
     wrap.firstChild.textContent = consLabel(label) + '  (' + arr.length + ')';
   });
@@ -2418,6 +2841,118 @@ function consMini(glyph, title, fn, extra) {
   b.type = 'button'; b.title = title; b.setAttribute('aria-label', title);
   b.addEventListener('click', fn);
   return b;
+}
+
+function consTool(text, title, fn) {
+  var b = consEl_('button', 'cons-tool', text);
+  b.type = 'button'; b.title = title;
+  b.addEventListener('mousedown', function (e) { e.preventDefault(); });
+  b.addEventListener('click', fn);
+  return b;
+}
+
+function consWrap(node, kind) {
+  var v = node.value, s = node.selectionStart || 0, e = node.selectionEnd || 0;
+  var sel = v.slice(s, e), a = s, z = e, ins;
+  if (kind === 'bold') {
+    if (!sel.trim()) { window.alert('Select the words to make bold first.'); node.focus(); return; }
+    ins = '{b|' + sel + '}';
+  } else {
+    var bare = sel.replace(/^\{b\|/, '').replace(/\}$/, '');
+    var guess = /^(https?:\/\/|www\.|mailto:)/i.test(sel.trim()) ? sel.trim() : 'https://';
+    var url = window.prompt(sel.trim() ? 'Link “' + bare + '” to this address:' : 'Address to insert:', guess);
+    if (url == null) { node.focus(); return; }
+    url = url.trim();
+    if (!url || url === 'https://') { node.focus(); return; }
+    if (!/^(https?:\/\/|mailto:|#|\/|\.\.?\/)/i.test(url)) {
+      url = /@/.test(url) && !/\//.test(url) ? 'mailto:' + url : 'https://' + url.replace(/^\/+/, '');
+    }
+    var before = v.slice(Math.max(0, s - 3), s), after = v.charAt(e);
+    if (before === '{b|' && (after === '}' || after === '|')) {
+      a = s - 3;
+      z = after === '}' ? e + 1 : v.indexOf('}', e) + 1;
+      if (z <= e) z = e;
+      ins = '{b|' + sel + '|' + url + '}';
+    } else if (/^\{b\|[^{}|]*\}$/.test(sel)) {
+      ins = '{b|' + bare + '|' + url + '}';
+    } else if (!sel.trim() || sel.trim() === url) {
+      ins = url;
+    } else {
+      ins = '{link|' + sel + '|' + url + '}';
+    }
+  }
+  node.value = v.slice(0, a) + ins + v.slice(z);
+  node.dispatchEvent(new Event('input', { bubbles: true }));
+  node.focus();
+  var c = a + ins.length;
+  try { node.setSelectionRange(c, c); } catch (err) {}
+}
+
+function consImage(host, obj, key) {
+  var wrap = consEl_('div', 'cons-field');
+  var fid = 'cf-' + (++consUid);
+  var lab = consEl_('label', 'cons-lab', 'Image');
+  lab.setAttribute('for', fid);
+  wrap.appendChild(lab);
+
+  var grid = consEl_('div', 'cons-pics');
+  grid.setAttribute('role', 'group');
+  grid.setAttribute('aria-label', 'Images on the site');
+  var input = document.createElement('input');
+  input.type = 'text'; input.id = fid; input.className = 'cons-in cons-code';
+  input.value = obj[key] == null ? '' : String(obj[key]);
+  input.placeholder = 'or paste the address of an image';
+
+  var names = Object.keys(IMAGES).sort(function (a, b) {
+    return String(IMAGES[b].added || '').localeCompare(String(IMAGES[a].added || ''));
+  });
+  var newest = names.length ? String(IMAGES[names[0]].added || '') : '';
+  var tiles = [];
+
+  function current() {
+    var li = localImage(obj[key]);
+    if (li) return li.name;
+    return String(obj[key] || '').trim() ? '' : '-none-';
+  }
+  function mark() {
+    var c = current();
+    tiles.forEach(function (t) { t.setAttribute('aria-pressed', String(t.dataset.name === c)); });
+  }
+  function tile(name) {
+    var b = consEl_('button', 'cons-pic');
+    b.type = 'button';
+    b.dataset.name = name;
+    if (name === '-none-') {
+      b.appendChild(consEl_('span', 'cons-pic-none', 'Shown on request'));
+      b.appendChild(consEl_('span', 'cons-pic-t', 'No image'));
+    } else {
+      var e = IMAGES[name], im = document.createElement('img');
+      im.src = imagePath(name, e.widths[0], 'webp'); im.alt = ''; im.loading = 'lazy';
+      b.appendChild(im);
+      b.appendChild(consEl_('span', 'cons-pic-t', name + (newest && e.added === newest && names.length > 1 ? '  ·  new' : '')));
+      b.title = name + '  ·  ' + e.w + ' × ' + e.h;
+    }
+    b.addEventListener('click', function () {
+      obj[key] = name === '-none-' ? '' : imagePath(name, IMAGES[name].fallback, 'webp');
+      input.value = obj[key];
+      consMark(true);
+      mark();
+    });
+    tiles.push(b);
+    grid.appendChild(b);
+  }
+  names.forEach(tile);
+  tile('-none-');
+  mark();
+
+  input.addEventListener('input', function () { obj[key] = input.value; consMark(true); mark(); });
+  wrap.appendChild(grid);
+  wrap.appendChild(input);
+  wrap.appendChild(consEl_('span', 'cons-hint',
+    'Pick one of the images on the site, or paste the address of one. The picker lists the images in assets/images/projects: '
+    + 'to add a new one, run tools/add-image.py (how is at the top of that file) and deploy, or ask Claude to add it.'));
+  host.appendChild(wrap);
+  return wrap;
 }
 
 function consWorkTools(host) {
@@ -2452,7 +2987,8 @@ function consWorkTools(host) {
 
 function consAddWork() {
 
-  var w = P.length ? consBlankLike(P[0]) : { roman: '', cat: '', status: '', slug: '', title: '', client: '', desc: '', longText: '', scope: '', register: '', sections: [], img: '' };
+  var w = P.length ? consBlankLike(P[0]) : normWork({});
+  delete w.id; delete w.order;
   w.title = 'Untitled project';
   w.roman = consRoman(P.length + 1);
   w.__k = 'new-' + Date.now();
@@ -2497,6 +3033,7 @@ function consApply() {
   buildHit();
   setWorks(Math.min(wIdx, Math.max(0, P.length - 1)), 'console');
   onScroll();
+  syncNavRule(true);
   auditFit();
   consMark(false);
   consRailBuild();
@@ -2707,6 +3244,8 @@ function initialise() {
   watchMid();
   auditFit();
   initConsole();
+  initCopyMail();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { syncNavRule(true); });
 
   if (window.FIGURE) {
     window.FIGURE.init();

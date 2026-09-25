@@ -1,10 +1,10 @@
 # Stylos
 
-> Stylos is a one-person web design studio in Oxford, founded by classicist and archaeologist Arkadiy Avdokhin. The studio creates websites, research platforms, digital exhibitions, and portfolios for research, heritage, and creative practice.
+> Stylos is a one-person web design studio in Oxford, founded by classicist and archaeologist Arkadiy Avdokhin. The studio creates websites, research platforms, digital exhibitions, and portfolios for research, heritage, and creative practice — built by an active Oxford academic.
 
-Canonical website: https://stylos.co/
+Canonical website: https://www.stylos.uk/
 
-Contact: office@stylos.co
+Contact: studio@stylos.uk
 
 ## Services
 
@@ -16,17 +16,17 @@ Contact: office@stylos.co
 
 ## Selected work
 
-- Aphrodisias 3D Epigraphy: a public platform combining interactive 3D models with scholarly object records
-- Festivals & Society: a research website and Firebase database for a Vienna-based project on Roman-era papyri
-- Anna Connolly: a proposal-stage portfolio for a performance storyteller
-- Russian Lyceum: a parent-facing website system for a private school in Oxford
-- Sofia Sharomazova: an artist website centred on painting, motion, and a managed image pipeline
+- Aphrodisias 3D Epigraphy: an online platform of interactive 3D models and scholarly object records from late antique Aphrodisias, University of Oxford
+- Festivals & Society: a public-facing website and searchable database on festivals in Roman-era Egypt, University of Vienna — https://festivals-egypt.org
+- Portrait painter: a portfolio website for an Oxford-based painter, with an artist's back office and a managed image pipeline
+- Immersive story artist portfolio: an animated portfolio for a London-based performer, with a back office and online checkout
+- Independent school: a pilot website system for a small private school in Oxford
 
 ## Primary sections
 
-- Studio: https://stylos.co/#studio
-- Scope: https://stylos.co/#scope
-- Projects: https://stylos.co/#projects
-- About: https://stylos.co/#about
-- Commission: https://stylos.co/#commission
-- Contact: https://stylos.co/#contact
+- Studio: https://www.stylos.uk/#studio
+- Scope: https://www.stylos.uk/#scope
+- Projects: https://www.stylos.uk/#projects
+- About: https://www.stylos.uk/#about
+- Commission: https://www.stylos.uk/#commission
+- Contact: https://www.stylos.uk/#contact

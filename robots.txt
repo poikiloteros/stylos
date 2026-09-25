@@ -7,4 +7,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://stylos.co/sitemap.xml
+Sitemap: https://www.stylos.uk/sitemap.xml
